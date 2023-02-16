@@ -40,4 +40,4 @@ Let your brilliant engineers work on the tooling they use on a daily basis. Let 
 
 By all means, we do not wish to excluded any other F# enthusiasts, but our main focus group are developers code F# for a living.
 Companies should give back to the open-source language that is making them money.
-They can easily do that by granting some time to contribute to F# open-source. 
+They can easily do that by granting some time to contribute to F# open-source.
