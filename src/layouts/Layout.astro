@@ -16,9 +16,18 @@ const { title } = Astro.props;
     <title>{title} | Amplifying F&#35;</title>
   </head>
   <body>
-    <nav class="navbar bg-transparent">
+    <nav class="navbar navbar-expand-md bg-transparent">
       <div class="container-fluid">
         <span class="navbar-brand mb-0 h1">Amplifying F&#35;</span>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNavAltMarkup"
+        >
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link" href="/testimonials">Testimonials</a>
+          </div>
+        </div>
       </div>
     </nav>
     <slot />

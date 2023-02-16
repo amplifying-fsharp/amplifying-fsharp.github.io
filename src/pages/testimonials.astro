@@ -1,0 +1,33 @@
+﻿---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const testimonials = await getCollection("testimonials");
+---
+
+<Layout title="Testimonials">
+  <header class="bg-light p-8">
+    <h1 class="display-2">Testimonials</h1>
+  </header>
+  <main>
+    {
+      testimonials.map(async (testimonial, idx) => {
+        const { title } = testimonial.data;
+        const { Content } = await testimonial.render();
+        const altTheme = idx % 2 === 1;
+        return (
+          <section
+            class:list={[ "py-2",{ "bg-dark": altTheme, "text-white": altTheme }]}
+          >
+            <div class="container">
+              <h2>{title}</h2>
+              <div class="py-4">
+                <Content />
+              </div>
+            </div>
+          </section>
+        );
+      })
+    }
+  </main>
+</Layout>
