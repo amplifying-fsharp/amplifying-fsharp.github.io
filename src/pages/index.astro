@@ -1,5 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Content as MissionStatement } from '../homepage/MissionStatement.md'
+import { Content as WhoAreWe } from '../homepage/WhoAreWe.md'
+import { Content as WhatToContribute } from '../homepage/WhatToContribute.md'
+import { Content as ConvincingYourBoss } from '../homepage/ConvincingYourBoss.md'
 ---
 
 <Layout title="Home">
@@ -29,123 +33,25 @@ import Layout from "../layouts/Layout.astro";
     <section id="mission-statement" class="lead">
       <div class="container">
         <h2 class="display-3 mb-5 d-block">Mission Statement</h2>
-        <p>
-          F# is an programming language that runs on predominantly on `dotnet`.
-          The larger F# ecosystem (compiler/tooling/frameworks) consists out of
-          open-source software.<br />
-          <br />
-          When dealing <strong
-            >open-source software it is important that it sustainable and
-            future-proof</strong
-          >. Otherwise, as an enterprise, you cannot justify choosing F# over an
-          other language when there are no guarantees that the language will
-          sustain the test of time.
-        </p>
-        <p>
-          It is important the <strong
-            >F# ecosystem stays healthy can attract new companies</strong
-          > that will use F# as in their production code.<br />
-          When companies make money using F#, money can flow back into the F# ecosystem.<br
-          />
-          As it stand today, we believe a more <strong
-            >targeted effort is required</strong
-          > to achieve balance in this flow.
-        </p>
-        <h3 class="display-6 mt-4">The Messiah problem</h3>
-        <p>
-          F# is known to face a "Messiah problem". One individual or
-          organisation is carrying the weight of a popular project. Said project
-          has no sustainable funding and thus is completely at the mercy of the
-          individual or company. This is not healthy and can lead to burn-out
-          situations with the maintainers. Any popular project should not be
-          abandoned when one individual or organisation does not have the
-          bandwidth or energy to respond.
-        </p>
-        <p>
-          More companies should get involved in popular projects and earn a seat
-          at the table. The prosperity of an open-source should be influenced by
-          the commercial user-base. It should be normalized that companies
-          actually contribute back to their most-widely used projects.
-        </p>
-        <p>
-          There is no need in playing the waiting game for that matter. Don't
-          wait until a project lost its sole maintainer to step up and take
-          responsibility.
-        </p>
-        <h3 class="display-6 mt-4">Giving back</h3>
-        <p>
-          To make a substantial difference in project (be it solving a bug or
-          adding a feature) actual code needs to be written. Being able to code,
-          the skill every software developer possesses, is the one thing we are
-          after in our endeavour. We need people that use F# for developing
-          commercial software, to do some of that coding on open-source
-          projects.
-        </p>
-        <p>
-          Why people in the enterprise landscape? Because they can reliably
-          contribute during working hours. That is the effort we are seeking
-          companies to do. Let your brilliant engineers work on the tooling they
-          use on a daily basis. Let us sharpen the saw and everybody more
-          productive in F#.
-        </p>
-        <p>
-          By all means, we do not wish to excluded any other F# enthusiasts, but
-          our main focus group are developers code F# for a living. Companies
-          should give back to the open-source language that is making them
-          money. They can easily do that by granting some time to contribute to
-          F# open-source.
-        </p>
+        <MissionStatement />
       </div>
     </section>
     <section id="who">
       <div class="container">
         <h2 class="display-4">Who are we?</h2>
-        <p>
-          We are a group of independent individuals, not tied to any
-          organisation with an ambition to see `F#` grow. What brought us
-          together our aspiration to make an actual difference in the F#
-          open-source landscape. United we can take this F# ecosystem to the
-          next level. By hand-ons collaboration and targeted efforts.
-        </p>
-        <h3 class="display-6 mt-4">Enter the hive</h3>
-        <p>
-          The world of open-source software can be quite overwhelming to get
-          your feet in wet. There is a lot to learn and you might not be
-          confident that you can contribute actually code changes. A just like
-          starting a new job, you need to learn a new codebase. An open-source
-          project is no different. You can read more about this experience is
-          [Edgar's testimonial](#). And that is why we want to invoke our
-          collective hive-mind to help people get started. We want to guide you
-          as best as we can to scratch your own itch in the open-source space.
-        </p>
+        <WhoAreWe />
       </div>
     </section>
     <section id="what">
       <div class="container">
         <h2 class="display-4">What to contribute?</h2>
-        <p>
-          Literally anything (within reason 😸) you want to see improved in your
-          daily F# experience. Be it a compiler feature, tooling improvement,
-          performance increase, ... There is so much work left to do in the F#
-          eco-system and there for sure is something we can do that will rock
-          your boat.
-        </p>
+        <WhatToContribute />
       </div>
     </section>
     <section id="convince">
       <div class="container">
         <h2 class="display-4">Convincing your boss?</h2>
-        <p>
-          In practical terms, you should see this initiative as two things:
-          educational and an attempt to improve daily productivity. There is a
-          lot you can learn from pair/mob programming with seasoned F# developer
-          all over the world. The diversity of backgrounds can broaden your
-          perspective and genuinely make you better at your job. Being able to
-          solve outstanding problems that hinder your day-to-day flow, will
-          reward itself over time. If you need more help to convince your boss,
-          you can refer to our [incitation letter](#) or we reach [out to
-          us](#email) and we would happily chime in.
-        </p>
+        <ConvincingYourBoss />
       </div>
     </section>
   </main>
