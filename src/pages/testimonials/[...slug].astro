@@ -1,0 +1,18 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "../../layouts/PageLayout.astro";
+
+export async function getStaticPaths() {
+  const testimonialsEntries = await getCollection("testimonials");
+  return testimonialsEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { title } = entry.data;
+---
+
+<PageLayout backgroundImage="/images/testimonials-header.jpg" />
+<p>For a slug page for {title}</p>

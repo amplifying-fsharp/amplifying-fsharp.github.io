@@ -1,8 +1,7 @@
 import { defineConfig } from "astro/config";
 import remarkMermaid from "astro-diagram/remark-mermaid";
-
-// https://astro.build/config
 import purgecss from "astro-purgecss";
+import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,5 +10,10 @@ export default defineConfig({
     gfm: false,
     remarkPlugins: [remarkMermaid],
   },
-  integrations: [purgecss()],
+  integrations: [
+    purgecss(),
+    image({
+      serviceEntryPoint: "@astrojs/image/sharp",
+    }),
+  ],
 });

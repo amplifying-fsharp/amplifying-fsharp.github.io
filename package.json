@@ -11,11 +11,13 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "astro": "^2.0.12",
+    "@astrojs/image": "^0.15.0",
+    "astro": "^2.0.14",
     "astro-diagram": "^0.6.3",
     "astro-purgecss": "^2.0.0",
     "bootstrap": "^5.3.0-alpha1",
-    "mermaid": "^9.4.0"
+    "mermaid": "^9.4.0",
+    "sharp": "^0.31.3"
   },
   "devDependencies": {
     "prettier": "^2.8.4",

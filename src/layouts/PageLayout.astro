@@ -1,0 +1,41 @@
+---
+import Layout from "./Layout.astro";
+import { getImage } from "@astrojs/image";
+
+const props = Astro.props;
+const { backgroundImage } = props;
+const { src } = await getImage({
+  src: backgroundImage,
+  alt: "Foo",
+  height: 300,
+  quality: 80,
+  aspectRatio: 21 / 3,
+  format: "avif",
+});
+---
+
+<Layout {...props}>
+  <header style={{ backgroundImage: `url(${src})` }}>
+    <h1>Header for any normal page</h1>
+  </header>
+  <slot />
+</Layout>
+
+<style lang="sass">
+  @import "/node_modules/bootstrap/scss/functions"
+  @import "/node_modules/bootstrap/scss/variables"
+  @import "/node_modules/bootstrap/scss/mixins"
+
+  header
+    height: 200px
+    padding: $spacer * 3
+    background-size: cover
+    background-blend-mode: darken
+    background-color: transparentize($dark, 0.5)
+    background-position: 50%
+    color: $white
+
+    @include media-breakpoint-up(md)
+      height: 300px
+      padding: $spacer * 4
+</style>
