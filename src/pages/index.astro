@@ -4,6 +4,10 @@ import { Content as MissionStatement } from "../homepage/MissionStatement.md";
 import { Content as WhoAreWe } from "../homepage/WhoAreWe.md";
 import { Content as WhatToContribute } from "../homepage/WhatToContribute.md";
 import { Content as ConvincingYourBoss } from "../homepage/ConvincingYourBoss.md";
+
+import { getCollection } from "astro:content";
+const testimonials = await getCollection("testimonials");
+console.log(testimonials);
 ---
 
 <Layout title="Home">
@@ -54,11 +58,70 @@ import { Content as ConvincingYourBoss } from "../homepage/ConvincingYourBoss.md
         <ConvincingYourBoss />
       </div>
     </section>
+    <section id="testimonials">
+      <div class="container">
+        <h2 class="mb-4">Testimonials</h2>
+        <div
+          id="testimonialCarousel"
+          class="carousel carousel-dark slide"
+          data-bs-theme="dark"
+        >
+          <div class="carousel-inner">
+            {
+              testimonials.map((testimonial, idx) => {
+                {
+                  return (
+                    <a
+                      href={`/testimonials/${testimonial.slug}`}
+                      class:list={[
+                        "carousel-item text-dark text-decoration-none",
+                        { active: idx === 0 },
+                      ]}
+                    >
+                      <figure class="text-center">
+                        <blockquote class="blockquote">
+                          <p>{testimonial.data.preview}</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                          {testimonial.data.author}
+                        </figcaption>
+                      </figure>
+                    </a>
+                  );
+                }
+              })
+            }
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
   </main>
 </Layout>
 
-<style>
-  section {
-    margin: 3rem 0;
-  }
+<style lang="sass">
+  section
+    margin: 3rem 0
 </style>
+
+<script>
+  import { Carousel } from "https://cdn.skypack.dev/bootstrap@5.3.0-alpha1";
+  new Carousel("#testimonialCarousel");
+</script>

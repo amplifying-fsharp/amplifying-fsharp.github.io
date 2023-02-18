@@ -7,6 +7,7 @@ const testimonialCollection = defineCollection({
     preview: z.string(),
     author: z.string(),
     isDraft: z.boolean(),
+    profilePicture: z.string(),
   }),
 });
 // 3. Export a single `collections` object to register your collection(s)

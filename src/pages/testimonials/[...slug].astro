@@ -11,8 +11,18 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { title } = entry.data;
+const { Content } = await entry.render();
+const { title, author, profilePicture } = entry.data;
+const pageTitle = `Testimonial of ${title}`;
+const mainTitle = pageTitle;
+const authorProp = { name: author, picture: profilePicture };
 ---
 
-<PageLayout backgroundImage="/images/testimonials-header.jpg" />
-<p>For a slug page for {title}</p>
+<PageLayout
+  backgroundImage="/images/testimonials-header.jpg"
+  title={pageTitle}
+  mainTitle={mainTitle}
+  author={authorProp}
+>
+  <Content />
+</PageLayout>

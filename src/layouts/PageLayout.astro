@@ -1,14 +1,15 @@
 ---
 import Layout from "./Layout.astro";
 import { getImage } from "@astrojs/image";
+import { Image } from "@astrojs/image/components";
 
 const props = Astro.props;
-const { backgroundImage } = props;
+const { backgroundImage, mainTitle, author } = props;
 const { src } = await getImage({
   src: backgroundImage,
   alt: "Foo",
   height: 300,
-  quality: 80,
+  quality: 75,
   aspectRatio: 21 / 3,
   format: "avif",
 });
@@ -16,9 +17,31 @@ const { src } = await getImage({
 
 <Layout {...props}>
   <header style={{ backgroundImage: `url(${src})` }}>
-    <h1>Header for any normal page</h1>
+    <div class="inner">
+      <div class="container">
+        <h1>{mainTitle}</h1>
+        {
+          author && (
+            <div id="author">
+              <Image
+                src={author.picture}
+                alt={`Profile picture of ${author.name}`}
+                width={100}
+                height={100}
+                class="img-thumbnail"
+              />
+              <strong>{author.name}</strong>
+            </div>
+          )
+        }
+      </div>
+    </div>
   </header>
-  <slot />
+  <main class="m-4">
+    <div class="container">
+      <slot />
+    </div>
+  </main>
 </Layout>
 
 <style lang="sass">
@@ -28,14 +51,28 @@ const { src } = await getImage({
 
   header
     height: 200px
-    padding: $spacer * 3
     background-size: cover
-    background-blend-mode: darken
-    background-color: transparentize($dark, 0.5)
     background-position: 50%
+    background-repeat: no-repeat
     color: $white
+    position: relative
+
+    .inner
+      background-color: transparentize($dark, 0.5)
+      position: relative
+      z-index: 2
+      height: 100%
+      width: 100%
 
     @include media-breakpoint-up(md)
       height: 300px
-      padding: $spacer * 4
+      .inner
+        padding: $spacer * 4
+
+    #author
+      display: flex
+      align-items: end
+      flex-direction: column
+      strong
+        margin-top: $spacer
 </style>
