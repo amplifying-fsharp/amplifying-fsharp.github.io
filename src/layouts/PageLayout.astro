@@ -3,7 +3,8 @@ import Layout from "./Layout.astro";
 import { getImage } from "@astrojs/image";
 import { Image } from "@astrojs/image/components";
 
-const props = Astro.props;
+// The props will come from frontmatter if we are targetting an *.md file
+const props = Astro.props.frontmatter ?? Astro.props;
 const { backgroundImage, mainTitle, author } = props;
 const { src } = await getImage({
   src: backgroundImage,
