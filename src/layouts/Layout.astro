@@ -51,15 +51,17 @@ const footerIcons = [
           id="navbarNavAltMarkup"
         >
           <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-            <a class="nav-link active" aria-current="page" href="/incitation"
+            <a class="nav-link" aria-current="page" href="/incitation"
               >Incitation</a
             >
+            <a class="nav-link" href="/join-us">Join us!</a>
           </div>
         </div>
       </div>
     </nav>
-    <slot />
+    <div>
+      <slot />
+    </div>
     <footer class="bg-dark text-white py-2">
       <div class="container d-flex justify-content-between align-items-center">
         {
