@@ -12,7 +12,7 @@ const footerIcons = [
   },
   {
     link: "https://mastodon.social/@amplifyingfsharp",
-    text: "mastodon.social/@amplifyingfsharp",
+    text: "@amplifyingfsharp",
     icon: "simple-icons:mastodon",
     color: "#6364ff",
   },
@@ -46,9 +46,17 @@ const footerIcons = [
     <nav class="navbar navbar-expand-md bg-transparent">
       <div class="container-fluid">
         <a class="navbar-brand mb-0 h1" href="/">Amplifying F&#35;</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarToggler"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div
           class="collapse navbar-collapse justify-content-end"
-          id="navbarNavAltMarkup"
+          id="navbarToggler"
         >
           <div class="navbar-nav">
             <a class="nav-link" aria-current="page" href="/incitation"
@@ -72,7 +80,7 @@ const footerIcons = [
               class="text-white text-decoration-none"
             >
               <Icon name={icon} width="24" height="24" color={color} />
-              {text}
+              <span class="d-none d-md-inline-block">{text}</span>
             </a>
           ))
         }
@@ -80,3 +88,7 @@ const footerIcons = [
     </footer>
   </body>
 </html>
+<script>
+  import { Collapse } from "https://cdn.skypack.dev/bootstrap@5.3.0-alpha1";
+  new Collapse("#navbarToggler", { toggle: false });
+</script>
