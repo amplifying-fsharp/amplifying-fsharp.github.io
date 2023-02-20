@@ -1,7 +1,33 @@
 ﻿---
+import { Icon } from "astro-icon";
 import "../styles/style.sass";
 
 const { title } = Astro.props;
+const footerIcons = [
+  {
+    link: "https://twitter.com/amplifyfsharp",
+    text: "amplifyfsharp",
+    icon: "ion:logo-twitter",
+    color: "#1DA1F2",
+  },
+  {
+    link: "https://mastodon.social/@amplifyingfsharp",
+    text: "mastodon.social/@amplifyingfsharp",
+    icon: "simple-icons:mastodon",
+    color: "#6364ff",
+  },
+  {
+    link: "https://www.youtube.com/@amplifyingfsharp",
+    text: "@amplifyingfsharp",
+    icon: "uil:youtube",
+    color: "#ff0000",
+  },
+  {
+    link: "https://github.com/amplifying-fsharp/",
+    text: "amplifying-fsharp",
+    icon: "uil:github",
+  },
+];
 ---
 
 <!DOCTYPE html>
@@ -34,5 +60,21 @@ const { title } = Astro.props;
       </div>
     </nav>
     <slot />
+    <footer class="bg-dark text-white py-2">
+      <div class="container d-flex justify-content-between align-items-center">
+        {
+          footerIcons.map(({ link, text, icon, color }) => (
+            <a
+              href={link}
+              target="_blank"
+              class="text-white text-decoration-none"
+            >
+              <Icon name={icon} width="24" height="24" color={color} />
+              {text}
+            </a>
+          ))
+        }
+      </div>
+    </footer>
   </body>
 </html>
