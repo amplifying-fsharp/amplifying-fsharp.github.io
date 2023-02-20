@@ -8,7 +8,7 @@ const JoinUsForm = () => {
       "At this point, we should construct an issue link to our sessions GitHub repo."
     );
   };
-  const onError = (errors, e) => console.log(`Errors: ${errors}`);
+  const onError = (errors, e) => console.log("Errors: ", errors);
   watch("itch");
   const itch = getValues("itch");
 
@@ -21,7 +21,8 @@ const JoinUsForm = () => {
         <input
           type="text"
           className="form-control"
-          {...register("name", { required: true })}
+          {...register("name")}
+          required
         />
       </div>
       <div className="mb-3">
@@ -39,7 +40,8 @@ const JoinUsForm = () => {
         <input
           type="text"
           className="form-control"
-          {...register("timezone", { required: true })}
+          {...register("timezone")}
+          required
         />
       </div>
       <div className="mb-3">
