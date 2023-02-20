@@ -1,1 +1,7 @@
-*.* text eol=lf 
+*.astro text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.mjs text eol=lf
+*.sass text eol=lf
+*.md text eol=lf
+*.json text eol=lf
