@@ -1,12 +1,52 @@
+import { useRef } from "react";
 import { useForm } from "react-hook-form";
 
 const JoinUsForm = () => {
+  const linkRef = useRef();
+
   const { register, handleSubmit, watch, getValues, setValue } = useForm();
   const onSubmit = (data, _e) => {
     console.log(data);
-    alert(
-      "At this point, we should construct an issue link to our sessions GitHub repo."
-    );
+    const {
+      topic,
+      name,
+      company,
+      timezone,
+      itch,
+      issue,
+      project,
+      description,
+      extra,
+    } = data;
+    const title = `New session about ${topic}`;
+    const fromCompany = company && `, from ${company},`;
+    const tackle = (() => {
+      switch (itch) {
+        case "issue":
+          return issue;
+        case "project":
+          return project;
+        default:
+          return description;
+      }
+    })();
+
+    const body = `
+### Session on ${topic}
+
+${name}${fromCompany} in ${timezone} would like to tackle:
+${tackle}
+
+#### Extra
+
+${extra}
+    `;
+    console.log(body);
+    const href = `https://github.com/amplifying-fsharp/sessions/issues/new?title=${encodeURIComponent(
+      title
+    )}&body=${encodeURIComponent(body)}`;
+    linkRef.current.setAttribute("href", href);
+    linkRef.current.click();
   };
   const onError = (errors, e) => console.log("Errors: ", errors);
   watch("itch");
@@ -41,6 +81,17 @@ const JoinUsForm = () => {
           type="text"
           className="form-control"
           {...register("timezone")}
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label">
+          Your topic<strong>&nbsp;&#x2a;</strong>
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          {...register("topic")}
           required
         />
       </div>
@@ -102,7 +153,7 @@ const JoinUsForm = () => {
           <input
             type="text"
             className="form-control"
-            {...register("issue-link")}
+            {...register("issue")}
             required={itch === "issue"}
           />
         </div>
@@ -113,7 +164,7 @@ const JoinUsForm = () => {
           <input
             type="text"
             className="form-control"
-            {...register("project-link")}
+            {...register("project")}
             list="projects"
             required={itch === "project"}
           />
@@ -148,6 +199,7 @@ const JoinUsForm = () => {
       <button type="submit" className="btn btn-primary">
         Submit
       </button>
+      <a href="#" ref={linkRef} target="_blank"></a>
     </form>
   );
 };
