@@ -22,7 +22,7 @@ In summary, contributing to open-source software like F# offers numerous benefit
 We plan to organize hands-on video call sessions where experts and champions meet. A champion is someone or some organization that wishes to address an actual issue in the open-source space.
 The goal is to investigate as a group what can be done. Once we identified the problem-space we will try to compose pull requests wherever needed.
 
-This allows us as a group to learn hands-on about various projects. Sharing knowledge and responsibility in the process. At the time of writing our collective hive-mind has experitize in the follow projects:
+This allows us as a group to learn hands-on about various projects. Sharing knowledge and responsibility in the process. At the time of writing our collective hive-mind has expertise in the follow projects:
 
 - [dotnet/fsharp](https://github.com/dotnet/fsharp)
 - [fsharp/fsautocomplete](https://github.com/fsharp/fsautoComplete)
