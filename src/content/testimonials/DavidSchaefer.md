@@ -1,4 +1,4 @@
-﻿---
+---
 title: David Schaefer
 preview: Each one, teach one
 isDraft: true
@@ -13,10 +13,12 @@ As a teenager in the 90s, I got into the Hip-Hop culture. That was how I learned
 While having a far greater historical background and being used in a wide range of contexts, for us, it simply meant that an experienced Graffiti writer, DJ, B-Boy etc. would teach a starter how to do it.  
 Being on both ends of this relation was a given. There was no hesitation at all. To not pass on the hard-earned knowledge, was considered a no-go.
 
-Back then, open source software had a somewhat rebelious feeling to it. No question, that was where I wanted to be, when I discoverd my passion for coding.
-I made it as far as being a package maintainer for a free operating system. But beyond that, I was stuck. I wasn't making any real progress. Eventually, I lost my drive and stopped.
+Back then, open source software had a somewhat rebelious feeling to it. No question, that was where I wanted to be, when I discoverd my passion for coding.  
+I made it as far as being a package maintainer for a free operating system. But beyond that, I was stuck. I wasn't making any real progress.  
+Eventually, I lost my drive and stopped.
 
-Years later, I entered the F# community with a reignited enthusiasm and found real mentorship. A few months later, I found myself being a co-maintainer of Fantomas. In my opinion, one of the most important developer tools in the ecosystem.  
+Years later, I entered the F# community with a reignited enthusiasm and found real mentorship.  
+A few months later, I found myself being a co-maintainer of Fantomas. In my opinion, one of the most important developer tools in the ecosystem.  
 _Each one, teach one_ worked for me, again. And again, I want to be on both sides of the relation.
 
 ### Karma
