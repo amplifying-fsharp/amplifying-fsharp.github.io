@@ -11,7 +11,7 @@ profilePicture: /images/authors/EdgarGonzalez.jpg
 
 Are you a programmer who is using F#? Have you ever thought about how you can make a difference and help others through your work?
 
-My story might inspire you. I was a soldier for 11 years as part of the Spanish special forces, but due to a life-changing accident, I had to switch careers and become a programmer. 
+My story might inspire you. I was a soldier for 11 years as part of the Spanish special forces, but due to a life-changing accident, I had to switch careers and become a programmer.
 
 Being a soldier for 11 years definitely had a significant impact on my life and career. In many ways, my experience in the military prepared me for the challenges of contributing to open-source.
 
