@@ -5,7 +5,7 @@ mainTitle: "Frequently Asked Questions"
 title: "FAQ"
 ---
 
-## Is this initiative affliated with Microsoft of the F# Foundation?
+## Is this initiative affiliated with Microsoft or the F# Foundation?
 
 No, we wish to remain an independent group of individuals. However, we definitely want to engage with other parties and organizations.  
 To remain as agile as possible, we prefer to organize our sessions independently.
