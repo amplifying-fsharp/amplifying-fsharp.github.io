@@ -30,6 +30,7 @@ Or Karma will collect the debt 😉
 
 Investing some hours per week into the F# community has opened a couple of doors for me I did not imagine to ever be able to pass through. Privately and professionally.
 Being a rather small community has it's drawbacks, no question. But it also has tremendous advantages:
+
 - You can really make a difference.
 - You can meet the people behind the code.
 - You can make friends.

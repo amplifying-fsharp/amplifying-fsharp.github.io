@@ -4,7 +4,8 @@ import { useForm } from "react-hook-form";
 const JoinUsForm = () => {
   const linkRef = useRef();
 
-  const { register, handleSubmit, watch, getValues, setValue } = useForm();
+  const { register, handleSubmit, watch, getValues, setValue, reset } =
+    useForm();
   const onSubmit = (data, _e) => {
     console.log(data);
     const {
@@ -47,6 +48,7 @@ ${extra}
     )}&body=${encodeURIComponent(body)}`;
     linkRef.current.setAttribute("href", href);
     linkRef.current.click();
+    reset();
   };
   const onError = (errors, e) => console.log("Errors: ", errors);
   watch("itch");
