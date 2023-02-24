@@ -4,7 +4,7 @@ preview: Each one, teach one
 isDraft: true
 author: David Schaefer
 slug: david-schaefer
-profilePicture: /images/authors/dawedawe.jpg
+profilePicture: /images/authors/DavidSchaefer.jpg
 ---
 
 ## Each one, teach one
