@@ -6,6 +6,7 @@ author: Edgar Gonzalez
 slug: edgar-gonzalez
 profilePicture: /images/authors/EdgarGonzalez.jpg
 ---
+
 ## My journey from a soldier to an F# OSS contributor
 
 I was a soldier for 11 years as part of the Spanish special forces, but due to a life-changing [accident](https://scielo.isciii.es/scielo.php?script=sci_arttext&pid=S1887-85712014000400006), I decided it was a good moment in my life to switch careers.
@@ -13,6 +14,7 @@ So I went back to school and studied for two years to become a Mobile developer 
 I realize that I was not only a new language but a new way of thinking and a new way of programming. So I deiced that was time to find a job as an F# where I could use it in my daily work.
 
 ### My first job as an F# developer
+
 After a few months of searching, I found a job as an F# developer and I was so excited to start working with it. But I was also a little bit nervous because I was going to work with a language that I was still learning and I was afraid that I was not going to be able to do my job properly.
 But after the initial fear, I started to feel more confident and I started to contribute to the [F#](https://github.com/dotnet/fsharp) and [Fabulous](https://github.com/fabulous-dev) as we were using it in our project.
 
