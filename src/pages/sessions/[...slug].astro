@@ -14,7 +14,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 const { title, company, issueLink, repository } = entry.data;
 const repoLink = issueLink ?? repository;
-let linkText = repoLink.replace("https://github.com/", "");
+let linkText = (repoLink ?? "").replace("https://github.com/", "");
 linkText =
   linkText.indexOf("/issues/") !== -1
     ? `${linkText.split("/issues/")[0]}#${linkText.split("/issues/")[1]}`
