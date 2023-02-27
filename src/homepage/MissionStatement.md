@@ -8,13 +8,10 @@ It is important that the F# ecosystem stays healthy and can attract new companie
 When companies make money using F#, money can flow back into the F# ecosystem.
 As it stands today, we believe a more targeted effort is required to achieve balance in this flow.
 
-```mermaid
-graph LR
-    A["Make money with F#"]
-    B["Invest money in F# eco system"]
-    A --> B
-    B --> A
-```
+<!-- npx  mmdc -i .\src\homepage\misssion.mmd -o .\public\images\mission-statement-diagram.svg -->
+<div class="text-center py-4">
+    <img src="./images/mission-statement-diagram.svg" alt="Mission statement diagram" class="w-50">
+</div>
 
 ## The Messiah problem
 
