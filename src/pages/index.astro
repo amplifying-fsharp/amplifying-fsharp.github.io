@@ -69,9 +69,10 @@ const testimonials = await getCollection("testimonials");
             {
               testimonials.map((testimonial, idx) => {
                 {
+                  const href = `/testimonials/${testimonial.slug}`;
                   return (
                     <a
-                      href={`/testimonials/${testimonial.slug}`}
+                      href={href}
                       class:list={[
                         "carousel-item text-dark text-decoration-none",
                         { active: idx === 0 },
@@ -84,6 +85,7 @@ const testimonials = await getCollection("testimonials");
                         <figcaption class="blockquote-footer">
                           {testimonial.data.author}
                         </figcaption>
+                        <small class="text-link mt-4">Read more 📖</small>
                       </figure>
                     </a>
                   );
