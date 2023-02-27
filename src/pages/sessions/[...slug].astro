@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "../../layouts/PageLayout.astro";
+
+export async function getStaticPaths() {
+  const sessionEntries = await getCollection("sessions");
+  return sessionEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const { title, company, issueLink, repository } = entry.data;
+const repoLink = issueLink ?? repository;
+let linkText = repoLink.replace("https://github.com/", "");
+linkText =
+  linkText.indexOf("/issues/") !== -1
+    ? `${linkText.split("/issues/")[0]}#${linkText.split("/issues/")[1]}`
+    : linkText;
+---
+
+<PageLayout
+  backgroundImage="/images/session-header.jpg"
+  title={title}
+  mainTitle={title}
+>
+  {
+    (repoLink || company) && (
+      <div class="pb-3">
+        {repoLink && (
+          <a href={repoLink} target="_blank">
+            <span class="badge bg-primary">{linkText}</span>
+          </a>
+        )}
+        {company && <span class="badge bg-primary">{company}</span>}
+      </div>
+    )
+  }
+  <Content />
+</PageLayout>

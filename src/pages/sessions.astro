@@ -1,0 +1,49 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+import { getCollection } from "astro:content";
+let sessions = await getCollection("sessions");
+sessions = sessions.sort((a, b) => a.date - b.date);
+const getDate = (d: Date) => {
+  const addLeadingZero = (n: number) => (n < 10 ? `0${n}` : n.toString());
+
+  const day = addLeadingZero(d.getDate());
+  const month = addLeadingZero(d.getMonth() + 1);
+  return `${day}/${month}/${d.getFullYear()}`;
+};
+---
+
+<PageLayout
+  title="Sessions"
+  backgroundImage="/images/sessions-header.jpg"
+  mainTitle="Sessions"
+>
+  <h2>Hands-on sessions overview</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Champion</th>
+        <th>Company</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        sessions.map((session) => {
+          const href = `/sessions/${session.slug}`;
+          return (
+            <tr>
+              <td>
+                <a href={href}>{session.data.title}</a>
+              </td>
+              <td>{getDate(session.data.date)}</td>
+              <td>{session.data.champion}</td>
+              <td>{session.data.company}</td>
+            </tr>
+          );
+        })
+      }
+    </tbody>
+  </table>
+</PageLayout>
