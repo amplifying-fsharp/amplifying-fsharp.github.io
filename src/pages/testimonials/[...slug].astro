@@ -4,13 +4,28 @@ import PageLayout from "../../layouts/PageLayout.astro";
 
 export async function getStaticPaths() {
   const testimonialsEntries = await getCollection("testimonials");
-  return testimonialsEntries.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+  return testimonialsEntries.map((entry, index) => {
+    const prevTestimonial = testimonialsEntries.at(
+      (index - 1) % testimonialsEntries.length
+    );
+    const prevLink = prevTestimonial && prevTestimonial.slug;
+    const nextTestimonial = testimonialsEntries.at(
+      (index + 1) % testimonialsEntries.length
+    );
+    const nextLink = nextTestimonial && nextTestimonial.slug;
+
+    return {
+      params: { slug: entry.slug },
+      props: {
+        entry,
+        prevLink,
+        nextLink,
+      },
+    };
+  });
 }
 
-const { entry } = Astro.props;
+const { entry, prevLink, nextLink } = Astro.props;
 const { Content } = await entry.render();
 const { title, author, profilePicture } = entry.data;
 const pageTitle = `Testimonial of ${title}`;
@@ -25,4 +40,8 @@ const authorProp = { name: author, picture: profilePicture };
   author={authorProp}
 >
   <Content />
+  <div class="d-flex justify-content-between">
+    {prevLink && <a href={`/testimonials/${prevLink}`}>Previous testimonial</a>}
+    {nextLink && <a href={`/testimonials/${nextLink}`}>Next testimonial</a>}
+  </div>
 </PageLayout>
