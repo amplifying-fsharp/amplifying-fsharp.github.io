@@ -7,9 +7,9 @@ sessions = sessions.sort((a, b) => a.date - b.date);
 const getDate = (d: Date) => {
   const addLeadingZero = (n: number) => (n < 10 ? `0${n}` : n.toString());
 
-  const day = addLeadingZero(d.getDate());
-  const month = addLeadingZero(d.getMonth() + 1);
-  return `${day}/${month}/${d.getFullYear()}`;
+  const day = addLeadingZero(d.getUTCDate());
+  const month = addLeadingZero(d.getUTCMonth() + 1);
+  return `${day}/${month}/${d.getUTCFullYear()}`;
 };
 ---
 
