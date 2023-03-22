@@ -1,0 +1,21 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import { Content as MissionStatement } from "../homepage/MissionStatement.md";
+---
+
+<PageLayout
+  title="Join us"
+  backgroundImage="/images/mission-statement-header.jpg"
+  mainTitle="Mission statement"
+>
+  <section id="mission-statement" class="lead">
+    <div class="container">
+      <h2 class="display-4 mb-5 d-block">Raison d'être</h2>
+      <MissionStatement />
+    </div>
+  </section>
+</PageLayout>
+<style lang="sass" is:global>
+  h2:not(.display-4)
+    margin-top: 2rem !important
+</style>

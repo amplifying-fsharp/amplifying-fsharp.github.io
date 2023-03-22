@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Content as MissionStatement } from "../homepage/MissionStatement.md";
 import { Content as WhoAreWe } from "../homepage/WhoAreWe.md";
 import { Content as WhatToContribute } from "../homepage/WhatToContribute.md";
 import { Content as ConvincingYourBoss } from "../homepage/ConvincingYourBoss.md";
@@ -33,13 +32,49 @@ const testimonials = await getCollection("testimonials");
     </div>
   </header>
   <main>
-    <section id="mission-statement" class="lead">
+    <section>
       <div class="container">
-        <h2 class="display-3 mb-5 d-block">Mission Statement</h2>
-        <MissionStatement />
+        <div class="row">
+          <div class="col-12 mb-2 col-md">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">Mission statement</h2>
+                <p class="card-text">
+                  We believe businesses should contribute back to F# OSS.
+                </p>
+                <a href="/mission-statement" class="card-link">Read more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mb-2 col-md">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">Testimonials</h2>
+                <p class="card-text">
+                  Open-source has changed people's professional lives.
+                </p>
+                <a href="#testimonials" class="card-link"
+                  >Read some inspiring stories</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mb-2 col-md">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">Sessions</h2>
+                <p class="card-text">
+                  Every week we try to highlight a different open-source project
+                  by actively contributing during a live stream.
+                </p>
+                <a href="/sessions" class="card-link">View sessions</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-    <section id="who">
+    <section id="who" class="bg-primary text-white">
       <div class="container">
         <h2 class="display-4">Who are we?</h2>
         <WhoAreWe />
@@ -51,13 +86,13 @@ const testimonials = await getCollection("testimonials");
         <WhatToContribute />
       </div>
     </section>
-    <section id="convince">
+    <section id="convince" class="bg-secondary text-white">
       <div class="container">
         <h2 class="display-4">Convincing your boss?</h2>
         <ConvincingYourBoss />
       </div>
     </section>
-    <section id="testimonials">
+    <section id="testimonials" class="bg-dark text-white">
       <div class="container">
         <h2 class="mb-4 display-4">Testimonials</h2>
         <p>
@@ -66,7 +101,7 @@ const testimonials = await getCollection("testimonials");
         </p>
         <div
           id="testimonialCarousel"
-          class="carousel carousel-dark slide"
+          class="carousel slide mt-6"
           data-bs-theme="dark"
         >
           <div class="carousel-inner">
@@ -78,7 +113,7 @@ const testimonials = await getCollection("testimonials");
                     <a
                       href={href}
                       class:list={[
-                        "carousel-item text-dark text-decoration-none",
+                        "carousel-item text-white text-decoration-none",
                         { active: idx === 0 },
                       ]}
                     >
@@ -131,7 +166,15 @@ const testimonials = await getCollection("testimonials");
   @import "bootstrap/scss/mixins"
 
   section
-    margin: (3 * $spacer) 0
+    padding: (4 * $spacer) 0
+
+  @include media-breakpoint-up(md)
+    .card
+      min-height: 250px
+
+  @include media-breakpoint-up(lg)
+    .card
+      min-height: 220px
 </style>
 
 <script>
