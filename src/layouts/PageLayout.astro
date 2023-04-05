@@ -17,25 +17,23 @@ const { src } = await getImage({
 ---
 
 <Layout {...props}>
-  <header style={{ backgroundImage: `url(${src})` }}>
+  <header style={{ backgroundImage: `url(${src})` }} class="container p-0">
     <div class="inner">
-      <div class="container">
-        <h1>{mainTitle}</h1>
-        {
-          author && (
-            <div id="author">
-              <Image
-                src={author.picture}
-                alt={`Profile picture of ${author.name}`}
-                width={100}
-                height={100}
-                class="img-thumbnail"
-              />
-              <strong>{author.name}</strong>
-            </div>
-          )
-        }
-      </div>
+      <h1 class="ms-4">{mainTitle}</h1>
+      {
+        author && (
+          <div id="author">
+            <Image
+              src={author.picture}
+              alt={`Profile picture of ${author.name}`}
+              width={100}
+              height={100}
+              class="img-thumbnail"
+            />
+            <strong>{author.name}</strong>
+          </div>
+        )
+      }
     </div>
   </header>
   <main class="m-4">
