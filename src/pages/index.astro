@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-iconify";
 import Layout from "../layouts/Layout.astro";
 import { Content as WhoAreWe } from "../homepage/WhoAreWe.md";
 import { Content as WhatToContribute } from "../homepage/WhatToContribute.md";
@@ -35,75 +36,134 @@ const testimonials = await getCollection("testimonials");
     <section>
       <div class="container">
         <div class="row">
-          <div class="col-12 mb-2 col-md">
-            <div class="card">
-              <div class="card-body">
-                <h2 class="card-title">Mission statement</h2>
-                <p class="card-text">
-                  We believe businesses should contribute back to F# OSS.
-                </p>
-                <a href="/mission-statement" class="card-link">Read more</a>
+          <div class="row g-4 row-cols-1 row-cols-lg-3">
+            <div class="col d-flex align-items-start">
+              <div
+                class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
+              >
+                <Icon
+                  pack="mingcute"
+                  name="target-fill"
+                  width="1em"
+                  height="1em"
+                />
               </div>
-            </div>
-          </div>
-          <div class="col-12 mb-2 col-md">
-            <div class="card">
-              <div class="card-body">
-                <h2 class="card-title">Testimonials</h2>
-                <p class="card-text">
-                  Open-source has changed people's professional lives.
-                </p>
-                <a href="#testimonials" class="card-link"
-                  >Read some inspiring stories</a
+              <div>
+                <h3 class="fs-2">Mission statement</h3>
+                <p>We believe businesses should contribute back to F# OSS.</p>
+                <a href="/mission-statement"
+                  >Read more <Icon
+                    pack="bi"
+                    name="chevron-right"
+                    width="1rem"
+                    height="1rem"
+                  /></a
                 >
               </div>
             </div>
-          </div>
-          <div class="col-12 mb-2 col-md">
-            <div class="card">
-              <div class="card-body">
-                <h2 class="card-title">Sessions</h2>
-                <p class="card-text">
+            <div class="col d-flex align-items-start">
+              <div
+                class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
+              >
+                <Icon pack="cil" name="speech" width="1em" height="1em" />
+              </div>
+              <div>
+                <h3 class="fs-2">Testimonials</h3>
+                <p>Open-source has changed people's professional lives.</p>
+                <a href="#testimonials"
+                  >Read some inspiring stories <Icon
+                    pack="bi"
+                    name="chevron-right"
+                    width="1rem"
+                    height="1rem"
+                  /></a
+                >
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <div
+                class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
+              >
+                <Icon pack="ic" name="round-live-tv" width="1em" height="1em" />
+              </div>
+              <div>
+                <h3 class="fs-2">Sessions</h3>
+                <p>
                   Every week we try to highlight a different open-source project
                   by actively contributing during a live stream.
                 </p>
-                <a href="/sessions" class="card-link">View sessions</a>
+                <a href="/sessions"
+                  >View sessions <Icon
+                    pack="bi"
+                    name="chevron-right"
+                    width="1rem"
+                    height="1rem"
+                  /></a
+                >
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="who" class="bg-primary text-white">
+    <section id="who">
       <div class="container">
-        <h2 class="display-4">Who are we?</h2>
-        <WhoAreWe />
+        <div class="row">
+          <div class="col-12 col-md-7">
+            <h2 class="h1">Who are we?</h2>
+            <WhoAreWe />
+          </div>
+          <div class="col-12 col-md-5 d-flex">
+            <img src="/images/who.jpg" alt="Who we are" class="m-auto w-75" />
+          </div>
+        </div>
       </div>
     </section>
     <section id="what">
       <div class="container">
-        <h2 class="display-4">What to contribute?</h2>
-        <WhatToContribute />
+        <div class="row">
+          <div class="col-12 col-md-5 d-flex">
+            <img
+              src="/images/what.jpg"
+              alt="What to contribute"
+              class="m-auto w-75"
+            />
+          </div>
+          <div class="col-12 col-md-7 mt-4 mt-md-0">
+            <h2 class="h1">What to contribute?</h2>
+            <WhatToContribute />
+          </div>
+        </div>
       </div>
     </section>
-    <section id="convince" class="bg-secondary text-white">
+    <section id="convince" class="">
       <div class="container">
-        <h2 class="display-4">Convincing your boss?</h2>
-        <ConvincingYourBoss />
+        <div class="row">
+          <div class="col-12">
+            <h2 class="h1">Convincing your boss?</h2>
+          </div>
+          <div class="col-12 col-md-5">
+            <ConvincingYourBoss />
+          </div>
+          <div class="col-12 col-md-7 d-flex">
+            <!-- npx  mmdc -i .\src\homepage\convincing.mmd -o .\public\images\convincing-diagram.svg -->
+            <img
+              src="./images/convincing-diagram.svg"
+              alt="Mission statement diagram"
+              class="w-100"
+            />
+          </div>
+        </div>
       </div>
     </section>
-    <section id="testimonials" class="bg-dark text-white">
+    <section id="testimonials" class="text-center">
       <div class="container">
-        <h2 class="mb-4 display-4">Testimonials</h2>
+        <h2 class="mb-4 h1">Testimonials</h2>
         <p>
           Explore the experiences of individuals who have contributed to
           open-source projects within the F# community.
         </p>
-        <div
-          id="testimonialCarousel"
-          class="carousel slide mt-6"
-          data-bs-theme="dark"
-        >
+        <div id="testimonialCarousel" class="carousel carousel-dark slide mt-6">
           <div class="carousel-inner">
             {
               testimonials.map((testimonial, idx) => {
@@ -113,7 +173,7 @@ const testimonials = await getCollection("testimonials");
                     <a
                       href={href}
                       class:list={[
-                        "carousel-item text-white text-decoration-none",
+                        "carousel-item text-dark text-decoration-none",
                         { active: idx === 0 },
                       ]}
                     >
@@ -168,13 +228,13 @@ const testimonials = await getCollection("testimonials");
   section
     padding: (4 * $spacer) 0
 
-  @include media-breakpoint-up(md)
-    .card
-      min-height: 250px
+  .icon-square
+    width: 3 * $spacer
+    height: 3 * $spacer
+    border-radius: 0.75 * $spacer
 
-  @include media-breakpoint-up(lg)
-    .card
-      min-height: 220px
+  img
+    filter: grayscale(100%)
 </style>
 
 <script>
