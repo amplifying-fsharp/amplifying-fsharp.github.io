@@ -1,0 +1,51 @@
+---
+interface Props {
+    title?: string;
+    description?: string;
+    date?: Date;
+    url?: string;
+}
+
+const { title, description, date, url } = Astro.props;
+
+const header =
+    date && date >= new Date() ? "Upcoming Session" : "Previous Session";
+---
+
+<div class="card border p-3 bg-light">
+    <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted" id="session-header">
+            {header}
+        </h6>
+        <h5 class="card-title">{title}</h5>
+        <p class="card-text">
+            {description}
+        </p>
+        <h4 class="card-subtitle mb-2 text-muted" id="session-time">
+            {date?.toLocaleDateString()}
+        </h4>
+        {
+            url && (
+                <a href={url} class="card-link">
+                    Read more
+                </a>
+            )
+        }
+    </div>
+</div>
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"
+></script>
+
+<script define:vars={{ date }}>
+    // updating session-time
+    const currentSessionTime = document.getElementById("session-time");
+    currentSessionTime.innerText += ` - ${moment(date).fromNow()}`;
+    // updating session-header
+    const currentSessionHeader = document.getElementById("session-header");
+    if (moment(date).isAfter(moment())) {
+        currentSessionHeader.innerText = "Upcoming Session";
+    } else {
+        currentSessionHeader.innerText = "Previous Session";
+    }
+</script>
