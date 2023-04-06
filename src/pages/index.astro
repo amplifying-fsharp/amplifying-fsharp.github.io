@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-iconify";
+import { Icon } from "astro-icon";
 import Layout from "../layouts/Layout.astro";
 import { Content as WhoAreWe } from "../homepage/WhoAreWe.md";
 import { Content as WhatToContribute } from "../homepage/WhatToContribute.md";
@@ -42,8 +42,8 @@ const testimonials = await getCollection("testimonials");
                 class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
               >
                 <Icon
-                  pack="mingcute"
-                  name="target-fill"
+                  pack="mdi"
+                  name="bullseye-arrow"
                   width="1em"
                   height="1em"
                 />
