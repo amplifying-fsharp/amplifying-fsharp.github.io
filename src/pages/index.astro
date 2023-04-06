@@ -1,6 +1,6 @@
 ---
+import { Icon } from "astro-iconify";
 import Layout from "../layouts/Layout.astro";
-import { Content as MissionStatement } from "../homepage/MissionStatement.md";
 import { Content as WhoAreWe } from "../homepage/WhoAreWe.md";
 import { Content as WhatToContribute } from "../homepage/WhatToContribute.md";
 import { Content as ConvincingYourBoss } from "../homepage/ConvincingYourBoss.md";
@@ -33,42 +33,137 @@ const testimonials = await getCollection("testimonials");
     </div>
   </header>
   <main>
-    <section id="mission-statement" class="lead">
+    <section>
       <div class="container">
-        <h2 class="display-3 mb-5 d-block">Mission Statement</h2>
-        <MissionStatement />
+        <div class="row">
+          <div class="row g-4 row-cols-1 row-cols-lg-3">
+            <div class="col d-flex align-items-start">
+              <div
+                class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
+              >
+                <Icon
+                  pack="mingcute"
+                  name="target-fill"
+                  width="1em"
+                  height="1em"
+                />
+              </div>
+              <div>
+                <h3 class="fs-2">Mission statement</h3>
+                <p>We believe businesses should contribute back to F# OSS.</p>
+                <a href="/mission-statement"
+                  >Read more <Icon
+                    pack="bi"
+                    name="chevron-right"
+                    width="1rem"
+                    height="1rem"
+                  /></a
+                >
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <div
+                class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
+              >
+                <Icon pack="cil" name="speech" width="1em" height="1em" />
+              </div>
+              <div>
+                <h3 class="fs-2">Testimonials</h3>
+                <p>Open-source has changed people's professional lives.</p>
+                <a href="#testimonials"
+                  >Read some inspiring stories <Icon
+                    pack="bi"
+                    name="chevron-right"
+                    width="1rem"
+                    height="1rem"
+                  /></a
+                >
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <div
+                class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
+              >
+                <Icon pack="ic" name="round-live-tv" width="1em" height="1em" />
+              </div>
+              <div>
+                <h3 class="fs-2">Sessions</h3>
+                <p>
+                  Every week we try to highlight a different open-source project
+                  by actively contributing during a live stream.
+                </p>
+                <a href="/sessions"
+                  >View sessions <Icon
+                    pack="bi"
+                    name="chevron-right"
+                    width="1rem"
+                    height="1rem"
+                  /></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <section id="who">
       <div class="container">
-        <h2 class="display-4">Who are we?</h2>
-        <WhoAreWe />
+        <div class="row">
+          <div class="col-12 col-md-7">
+            <h2 class="h1">Who are we?</h2>
+            <WhoAreWe />
+          </div>
+          <div class="col-12 col-md-5 d-flex">
+            <img src="/images/who.jpg" alt="Who we are" class="m-auto w-75" />
+          </div>
+        </div>
       </div>
     </section>
     <section id="what">
       <div class="container">
-        <h2 class="display-4">What to contribute?</h2>
-        <WhatToContribute />
+        <div class="row">
+          <div class="col-12 col-md-5 d-flex">
+            <img
+              src="/images/what.jpg"
+              alt="What to contribute"
+              class="m-auto w-75"
+            />
+          </div>
+          <div class="col-12 col-md-7 mt-4 mt-md-0">
+            <h2 class="h1">What to contribute?</h2>
+            <WhatToContribute />
+          </div>
+        </div>
       </div>
     </section>
-    <section id="convince">
+    <section id="convince" class="">
       <div class="container">
-        <h2 class="display-4">Convincing your boss?</h2>
-        <ConvincingYourBoss />
+        <div class="row">
+          <div class="col-12">
+            <h2 class="h1">Convincing your boss?</h2>
+          </div>
+          <div class="col-12 col-md-5">
+            <ConvincingYourBoss />
+          </div>
+          <div class="col-12 col-md-7 d-flex">
+            <!-- npx  mmdc -i .\src\homepage\convincing.mmd -o .\public\images\convincing-diagram.svg -->
+            <img
+              src="./images/convincing-diagram.svg"
+              alt="Mission statement diagram"
+              class="w-100"
+            />
+          </div>
+        </div>
       </div>
     </section>
-    <section id="testimonials">
+    <section id="testimonials" class="text-center">
       <div class="container">
-        <h2 class="mb-4 display-4">Testimonials</h2>
+        <h2 class="mb-4 h1">Testimonials</h2>
         <p>
           Explore the experiences of individuals who have contributed to
           open-source projects within the F# community.
         </p>
-        <div
-          id="testimonialCarousel"
-          class="carousel carousel-dark slide"
-          data-bs-theme="dark"
-        >
+        <div id="testimonialCarousel" class="carousel carousel-dark slide mt-6">
           <div class="carousel-inner">
             {
               testimonials.map((testimonial, idx) => {
@@ -131,7 +226,15 @@ const testimonials = await getCollection("testimonials");
   @import "bootstrap/scss/mixins"
 
   section
-    margin: (3 * $spacer) 0
+    padding: (4 * $spacer) 0
+
+  .icon-square
+    width: 3 * $spacer
+    height: 3 * $spacer
+    border-radius: 0.75 * $spacer
+
+  img
+    filter: grayscale(100%)
 </style>
 
 <script>
