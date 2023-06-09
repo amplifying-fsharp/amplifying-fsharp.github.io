@@ -21,6 +21,8 @@ const sessionCollection = defineCollection({
     company: z.string().optional(),
     repository: z.string().optional(),
     issueLink: z.string().optional(),
+    youtubeId: z.string().optional(),
+    thumbnail: z.string().optional(),
   }),
 });
 
