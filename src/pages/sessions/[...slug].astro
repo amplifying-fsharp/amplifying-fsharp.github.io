@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
-const { title, company, issueLink, repository } = entry.data;
+const { title, company, issueLink, repository, youtubeId } = entry.data;
 const repoLink = issueLink ?? repository;
 let linkText = (repoLink ?? "").replace("https://github.com/", "");
 linkText =
@@ -36,6 +36,22 @@ linkText =
         )}
         {company && <span class="badge bg-primary">{company}</span>}
       </div>
+    )
+  }
+  {
+    youtubeId && (
+      <>
+        <h2>Watch this session</h2>
+        <div class="ratio ratio-16x9 mb-4">
+          <iframe
+            src={`https://www.youtube.com/embed/${youtubeId}`}
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          />
+        </div>
+      </>
     )
   }
   <Content />

@@ -5,7 +5,12 @@ import { Image } from "@astrojs/image/components";
 
 // The props will come from frontmatter if we are targetting an *.md file
 const props = Astro.props.frontmatter ?? Astro.props;
-const { backgroundImage, mainTitle, author } = props;
+const {
+  backgroundImage,
+  mainTitle,
+  author,
+  containerClass = "container",
+} = props;
 const { src } = await getImage({
   src: backgroundImage,
   alt: "Foo",
@@ -39,7 +44,7 @@ const { src } = await getImage({
     </div>
   </header>
   <main class="m-4">
-    <div class="container">
+    <div class={containerClass}>
       <slot />
     </div>
   </main>
