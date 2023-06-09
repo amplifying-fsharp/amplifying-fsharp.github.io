@@ -81,13 +81,20 @@ const sessions = await getCollection("sessions");
   }
 
   #upcoming-sessions a {
-    width: 420px;
-    height: 260px;
+    height: 180px;
+    width: 320px;
     padding: 1rem;
     text-decoration: none;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  @media screen and (min-width: 600px) {
+    #upcoming-sessions a {
+      width: 420px;
+      height: 260px;
+    }
   }
 
   #upcoming-sessions a h3 {
