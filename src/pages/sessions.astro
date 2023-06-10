@@ -15,11 +15,73 @@ const sessions = await getCollection("sessions");
   <SessionsGrid client:load sessions={sessions} />
 </PageLayout>
 <style is:global>
-  #past-sessions {
+  .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, 320px);
     grid-row-gap: 1rem;
     grid-column-gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .grid-container h2 {
+    display: inline-block;
+    grid-row: 1;
+    grid-column: 1 / -1;
+  }
+
+  .grid-container > a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    height: 180px;
+    width: 320px;
+    margin: 0;
+    position: relative;
+    padding: 0.75rem;
+  }
+
+  #upcoming-sessions a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #upcoming-sessions a h3 {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  #upcoming-sessions a div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #upcoming-sessions a h4 {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  #upcoming-sessions a time {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  #upcoming-sessions a:nth-child(3n + 1) {
+    background-color: #bae4e5;
+    color: white;
+  }
+
+  #upcoming-sessions a:nth-child(3n + 2) {
+    background-color: #eaf2d7;
+    color: black;
+  }
+
+  #upcoming-sessions a:nth-child(3n + 3) {
+    background-color: #d24d57;
+    color: white;
   }
 
   #past-sessions > a {
@@ -32,6 +94,7 @@ const sessions = await getCollection("sessions");
     position: relative;
     padding: 0.75rem;
   }
+
   #past-sessions div .overlay {
     background-color: rgba(0, 0, 0, 0.2);
     position: absolute;
@@ -70,70 +133,5 @@ const sessions = await getCollection("sessions");
 
   #no-new-sessions a {
     color: #2d3436;
-  }
-
-  #upcoming-sessions {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 320px);
-    grid-row-gap: 1rem;
-    grid-column-gap: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  #upcoming-sessions a {
-    height: 180px;
-    width: 320px;
-    padding: 1rem;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  @media screen and (min-width: 600px) {
-    #upcoming-sessions {
-      grid-template-columns: repeat(auto-fill, 420px);
-    }
-
-    #upcoming-sessions a {
-      width: 420px;
-      height: 260px;
-    }
-  }
-
-  #upcoming-sessions a h3 {
-    font-size: 2rem;
-    margin: 0;
-  }
-
-  #upcoming-sessions a div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #upcoming-sessions a h4 {
-    font-size: 1rem;
-    margin: 0;
-  }
-
-  #upcoming-sessions a time {
-    font-weight: bold;
-    font-size: 1rem;
-  }
-
-  #upcoming-sessions a:nth-child(3n + 1) {
-    background-color: #bae4e5;
-    color: white;
-  }
-
-  #upcoming-sessions a:nth-child(3n + 2) {
-    background-color: #eaf2d7;
-    color: black;
-  }
-
-  #upcoming-sessions a:nth-child(3n + 3) {
-    background-color: #d24d57;
-    color: white;
   }
 </style>

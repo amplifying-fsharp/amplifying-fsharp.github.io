@@ -16,4 +16,11 @@ export default defineConfig({
     }),
     react(),
   ],
+  vite: {
+    server: {
+      watch: {
+        ignored: ["**/.idea/**"],
+      },
+    },
+  },
 });

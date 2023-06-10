@@ -7,7 +7,6 @@ function SessionsGrid({ sessions }) {
     .sort((a, b) => b.data.date - a.data.date);
   return (
     <div>
-      <h2>On the next Amplifying F#!</h2>
       {upcomingSessions.length === 0 ? (
         <p id="no-new-sessions">
           No news sessions in sight 😔.
@@ -15,7 +14,8 @@ function SessionsGrid({ sessions }) {
           Please submit one <a href="/join-us">here</a>!
         </p>
       ) : (
-        <div id="upcoming-sessions">
+        <div id="upcoming-sessions" className={"grid-container"}>
+          <h2>On the next Amplifying F#!</h2>
           {upcomingSessions.map((session, idx) => {
             return (
               <a
@@ -32,8 +32,8 @@ function SessionsGrid({ sessions }) {
           })}
         </div>
       )}
-      <h2>Past sessions</h2>
-      <div id="past-sessions">
+      <div id="past-sessions" className={"grid-container"}>
+        <h2>Past sessions</h2>
         {pastSessions.map((session) => {
           const thumbnail = session.data.youtubeId
             ? `url('https://img.youtube.com/vi/${session.data.youtubeId}/mqdefault.jpg')`
