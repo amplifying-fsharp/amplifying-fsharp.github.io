@@ -74,7 +74,7 @@ const sessions = await getCollection("sessions");
 
   #upcoming-sessions {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 420px);
+    grid-template-columns: repeat(auto-fill, 320px);
     grid-row-gap: 1rem;
     grid-column-gap: 1rem;
     margin-bottom: 2rem;
@@ -91,6 +91,10 @@ const sessions = await getCollection("sessions");
   }
 
   @media screen and (min-width: 600px) {
+    #upcoming-sessions {
+      grid-template-columns: repeat(auto-fill, 420px);
+    }
+
     #upcoming-sessions a {
       width: 420px;
       height: 260px;
