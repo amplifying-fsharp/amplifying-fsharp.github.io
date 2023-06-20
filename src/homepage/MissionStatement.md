@@ -10,7 +10,7 @@ As it stands today, we believe a more targeted effort is required to achieve bal
 
 <!-- npx  mmdc -i .\src\homepage\misssion.mmd -o .\public\images\mission-statement-diagram.svg -->
 <div class="text-center py-4">
-    <img src="./images/mission-statement-diagram.svg" alt="Mission statement diagram" class="w-50">
+    <img src="/images/mission-statement-diagram.svg" alt="Mission statement diagram" class="w-50">
 </div>
 
 ## The Messiah problem
