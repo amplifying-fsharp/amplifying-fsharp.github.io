@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import PageLayout from "../../layouts/PageLayout.astro";
+import LocalTime from "../../components/LocalTime.jsx";
 
 export async function getStaticPaths() {
   const sessionEntries = await getCollection("sessions");
@@ -12,7 +13,17 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
-const { title, company, issueLink, repository, youtubeId } = entry.data;
+const {
+  title,
+  company,
+  issueLink,
+  repository,
+  youtubeId,
+  date,
+  zoomLink,
+  zoomPasscode,
+  thumbnail,
+} = entry.data;
 const repoLink = issueLink ?? repository;
 let linkText = (repoLink ?? "").replace("https://github.com/", "");
 linkText =
@@ -55,6 +66,25 @@ linkText =
     )
   }
   <Content />
+  {
+    !thumbnail && (
+      <>
+        <h2>Links</h2>
+        <ul>
+          <li>
+            Date:
+            <LocalTime client:only="react" utcDate={date} />
+          </li>
+          {zoomLink && (
+            <li>
+              Session link: <a href={zoomLink}>{zoomLink}</a>
+            </li>
+          )}
+          {zoomPasscode && <li>Passcode: {zoomPasscode}</li>}
+        </ul>
+      </>
+    )
+  }
 </PageLayout>
 <style is:global>
   img {

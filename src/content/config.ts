@@ -23,6 +23,8 @@ const sessionCollection = defineCollection({
     issueLink: z.string().optional(),
     youtubeId: z.string().optional(),
     thumbnail: z.string().optional(),
+    zoomLink: z.string().optional(),
+    zoomPasscode: z.string().optional(),
   }),
 });
 
