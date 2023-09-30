@@ -1,5 +1,10 @@
+---
+title: Data Science in F#
+date: 2023-09-30
+slug: "2023/09/30"
+---
 
-## DataScience in F# in Berlin - 2023-09-30
+## Data Science in F# in Berlin - 2023-09-30
 
 Some of us made the trip to Berlin to attend the [Data Science in F#](https://datascienceinfsharp.com/) conference.  
 First of all, we want to give a big shoutout to the organizers for putting together the first real live F# conference after many years.
@@ -11,6 +16,6 @@ In the discussions a lot of opportunities for collaboration came up, and we are 
 Regarding Amplifying F# itself, we are very happy to welcome [Ronald Schlenker](https://github.com/RonaldSchlenker) in our team.
 A great buddy and a great F# developer known for his work on [FsHttp](https://github.com/fsprojects/FsHttp), [Vide](https://github.com/RonaldSchlenker/Vide), and many other projects.
 
-Many ideas to drive our initiative forward and to lift Amplifying F# to the next level came up during the conference.  
+Many ideas to take the next steps in our initiative and to lift Amplifying F# to the next level came up during the conference.  
 Stay tuned for more news in the coming weeks.
 ![The Amplifying F# team and friends.](/images/blog/datascience2023.jpg)

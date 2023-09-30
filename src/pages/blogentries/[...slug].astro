@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "../../layouts/PageLayout.astro";
+import LocalTime from "../../components/LocalTime.jsx";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blogentries");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const {
+  title,
+  date,
+} = entry.data;
+---
+
+<PageLayout
+  backgroundImage="/images/blog-header.jpg"
+  title={title}
+  mainTitle={title}
+>
+  <Content />
+</PageLayout>
+
+<style is:global>
+  img {
+    margin: 0.5rem auto;
+    width: 100%;
+    max-width: 960px;
+  }
+</style>
