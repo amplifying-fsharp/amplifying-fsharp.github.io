@@ -31,27 +31,29 @@ Things change; this is an inevitable truth. I'm honestly happy for people who to
 Steps (Hermann Hesse, 1941; translated by Walter A. Aue)
 ---
 
-> Like ev’ry flower wilts, like youth is fading
-> and turns to age, so also one’s achieving:
-> Each virtue and each wisdom needs parading
-> in one’s own time, and must not last forever.
-> The heart must be, at each new call for leaving,
-> prepared to part and start without the tragic,
-> without the grief – with courage to endeavor
-> a novel bond, a disparate connection:
-> for each beginning bears a special magic
-> that nurtures living and bestows protection.
-> 
-> We’ll walk from space to space in glad progression
-> and should not cling to one as homestead for us.
-> The cosmic spirit will not bind nor bore us;
-> it lifts and widens us in ev’ry session:
-> for hardly set in one of life’s expanses
-> we make it home, and apathy commences.
-> But only he, who travels and takes chances,
-> can break the habits’ paralyzing stances.
-> 
-> It might be, even, that the last of hours
-> will make us once again a youthful lover:
-> The call of life to us forever flowers...
-> Anon, my heart: Say farewell and recover!
+```
+Like ev’ry flower wilts, like youth is fading
+and turns to age, so also one’s achieving:
+Each virtue and each wisdom needs parading
+in one’s own time, and must not last forever.
+The heart must be, at each new call for leaving,
+prepared to part and start without the tragic,
+without the grief – with courage to endeavor
+a novel bond, a disparate connection:
+for each beginning bears a special magic
+that nurtures living and bestows protection.
+
+We’ll walk from space to space in glad progression
+and should not cling to one as homestead for us.
+The cosmic spirit will not bind nor bore us;
+it lifts and widens us in ev’ry session:
+for hardly set in one of life’s expanses
+we make it home, and apathy commences.
+But only he, who travels and takes chances,
+can break the habits’ paralyzing stances.
+
+It might be, even, that the last of hours
+will make us once again a youthful lover:
+The call of life to us forever flowers...
+Anon, my heart: Say farewell and recover!
+```
