@@ -1,10 +1,9 @@
 function BlogEntries({ blogentries }) {
-  const entries = blogentries
-    .sort((a, b) => b.data.date - a.data.date);
+  const entries = blogentries.sort((a, b) => b.data.date - a.data.date);
   return (
     <div>
       <ul>
-        {(
+        {
           <div id="blogentries">
             {entries.map((blogentry, idx) => {
               return (
@@ -22,7 +21,7 @@ function BlogEntries({ blogentries }) {
               );
             })}
           </div>
-        )}
+        }
       </ul>
     </div>
   );
