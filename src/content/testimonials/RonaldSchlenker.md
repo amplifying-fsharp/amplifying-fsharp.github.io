@@ -14,7 +14,7 @@ Bring Back the Joy
 
 The outcome of approaching a problem is usually so much more than just a solution. When learning F#, you inevitably end up with didactic masters such as Scott Wlaschin, which probably almost every F# developer knows. His legendary "F# For Fun and Profit", talks like "Four Languages From Forty Years Ago" or the book "Domain Modeling Made Functional" turbo-boosted my thinkung and dev-skills. There's a lot of money to make by selling trainings, scrum-here, agile-there, architecture-whatever. Buy it all - gladly also from me. And: Dig into Scott Wlaschin's stuff. It's a treasure chest filled with knowledge and joy-for-programming.
 
-It's not twitter that counts
+It's Not Twitter That Counts
 ---
 
 Taking every possible turn on my journey, I discovered people like Krzysztof Cieślak, who virtually single-handedly created the F# extension "Ionide" for VSCode from scratch. There's Tomas Petricek, a master mind who's doing tons of crazy-cool stuff, from academic papers to talks like "Write your own Excel in 100 lines of F#" or his hand-crafted F#-written Commodore C64 emulator. To me, this is just lovely, sympathic, and personal: There's someone trying to honestly share his knowledge and ideas, by adressing the good memories of your jounger self. Isn't that a masterpiece in communication? Who doesn't want to learn from such people?
@@ -28,30 +28,30 @@ A whole can be more than the sum of it's parts. That sounds trivial, and it mean
 
 Things change; this is an inevitable truth. I'm honestly happy for people who took a step and moved on. While this might create a vacuum or lead so sadness, there are alternatives we have as to choose from: Knowing that we have something great in our hands, we can turn sadness into happiness. Get things going, keep things rolling. Don't wait for others, and take initiative, get involved and be a part of something new.
 
-"Stufen" (Hermann Hesse 1941, "Steps", translated by Walter A. Aue)
+Steps (Hermann Hesse, 1941; translated by Walter A. Aue)
 ---
 
-Like ev’ry flower wilts, like youth is fading 
-and turns to age, so also one’s achieving: 
-Each virtue and each wisdom needs parading 
-in one’s own time, and must not last forever. 
-The heart must be, at each new call for leaving,
-prepared to part and start without the tragic, 
-without the grief – with courage to endeavor 
-a novel bond, a disparate connection: 
-for each beginning bears a special magic 
-that nurtures living and bestows protection.
-
-We’ll walk from space to space in glad progression 
-and should not cling to one as homestead for us. 
-The cosmic spirit will not bind nor bore us; 
-it lifts and widens us in ev’ry session: 
-for hardly set in one of life’s expanses 
-we make it home, and apathy commences. 
-But only he, who travels and takes chances, 
-can break the habits’ paralyzing stances.
-
-It might be, even, that the last of hours 
-will make us once again a youthful lover: 
-The call of life to us forever flowers… 
-Anon, my heart: Say farewell and recover! 
+> Like ev’ry flower wilts, like youth is fading
+> and turns to age, so also one’s achieving:
+> Each virtue and each wisdom needs parading
+> in one’s own time, and must not last forever.
+> The heart must be, at each new call for leaving,
+> prepared to part and start without the tragic,
+> without the grief – with courage to endeavor
+> a novel bond, a disparate connection:
+> for each beginning bears a special magic
+> that nurtures living and bestows protection.
+> 
+> We’ll walk from space to space in glad progression
+> and should not cling to one as homestead for us.
+> The cosmic spirit will not bind nor bore us;
+> it lifts and widens us in ev’ry session:
+> for hardly set in one of life’s expanses
+> we make it home, and apathy commences.
+> But only he, who travels and takes chances,
+> can break the habits’ paralyzing stances.
+> 
+> It might be, even, that the last of hours
+> will make us once again a youthful lover:
+> The call of life to us forever flowers...
+> Anon, my heart: Say farewell and recover!
