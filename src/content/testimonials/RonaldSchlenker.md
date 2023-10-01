@@ -2,67 +2,56 @@
 "Jedem Anfang wohnt ein Zauber inne" (Hermann Hesse; Stufen)
 ===
 
-There was it: The moment when the knot bursts. I knew now: I got it solved, and the problem I stared on for a long time looked so simple now. As we all must meet our moment of truth one day, I faced a moment of joy. It's the joy that you feel when knowledge turns into cognition. And there was much more to discover than just that moment.
+When the knot bursts and a problem is solved, when it suddenly looks so simple: That's a moment of joy for me. I feel that joy when knowledge turns into cognition. To make a long story short: If you are looking for that, then learning and using F# will perhaps be your thing. If you are looking for more, then read on.
 
-More Than a Language (My Personal Way to F#)
+My Personal Way to F#
 ---
 
-There it was: My first attempt to really get a thing done in F# which simply wasn't possible in C# at all. I was searching for a way of doing digital signal processing. DSP in general requires "state", which is: "Accessible values from past evaluations". DSP chains are usually composed from smaller building blocks, where each block has it's own "local" state. Using C# and objects for this task felt extremely cumbersome: Objects have to be instanciated before they can be used; their evaluation must explicitly triggered, which was error-prone and destroyed the "easy-play-with-code" idea that I had in my mind. Now there were pure functions, which meant that there's only thing: Composition. One just has to put a function at the right place in a computation - and that's it. That sounded very compelling, and it was exactly what I aimed for. There was a problem, since pure functions are like: "There's no past; there's only present". How could I find a consens between these 2 concepts?
+My first attempt to really get a thing done in F# was: Making music, or more precise: Sample-exact digital signal processing. DSP in general requires "state", which is: "Accessible values from past evaluations". DSP chains are usually composed from smaller building blocks, where each block has it's own "local" state. Using C# and objects was cumbersome: Objects have to be instanciated, their evaluation must explicitly triggered, which was error-prone and annoying. I instead liked that "pure functions" thing: Just put a function at the right place in a computation - and that's it. That sounded very compelling, and the mission was clear: Find a way that allows for composing "state-aware" functions as simple as if they were pure functions. And that's how my journey begun.
 
-My mission was clear: Find a way that allows for composeing "state-aware" functions in a way that is as simple as if they were just pure functions. Years before, a friend of mine and me toured with a "Monads in C#"-speaking through user groups in Germany. It wasn't very successful, because they are not useful in C#. But I knew: Monads - as the queen of composition - was propably the way to go for this problem. My journey started learning F#, digging through the legendard "F# for Fun and Profit". I thought that I was a real good developer at that time, but I understood: There's still so much to learn, and knowing that made me happy.
-
-I admired (and still do) the way Scott Wlaschin was able to teach, and I re-read his articles and book frequently. I took every turn I could take, revisiting things like state monad, which turned out to have a "global state" approach, but I needed a "local state" thing - so I moved on and discovered more and more, but no solution. So I wrapped my mind around the problem until that one "moment of joy". I still don't know if I discovered something new, but I didn't care, since I definitely found something that I lost for long: The joy of writing programs - and: It was clear to me that I wanted to get in touch with all the people I knew now from all my studies.
-
-
-More than the sum of it's parts
+Bring Back the Joy
 ---
 
-The F# community is quite small, and that opens up many possibilities. There are so many ways to get yourself involved: Comment or write language suggestions, contribute to libraries, write your own stuff - that was all easy and low-barrier. 
+The outcome of approaching a problem is usually so much more than just a solution. When learning F#, you inevitably end up with didactic masters such as Scott Wlaschin, which probably almost every F# developer knows. His legendary "F# For Fun and Profit", talks like "Four Languages From Forty Years Ago" or the book "Domain Modeling Made Functional" turbo-boosted my thinkung and dev-skills. There's a lot of money to make by selling trainings, scrum-here, agile-there, architecture-whatever. Buy it all - gladly also from me. And: Dig into Scott Wlaschin's stuff. It's a treasure chest filled with knowledge and joy-for-programming.
 
-
-You are not alone
+It's not twitter that counts
 ---
 
-Sometimes, people might feel like "abandoned" or like you're the only left-over of a past thing. That's not the case! Beleive me: There's a strong community, engaged people and you are not alone!
+Taking every possible turn on my journey, I discovered people like Krzysztof Cieślak, who virtually single-handedly created the F# extension "Ionide" for VSCode from scratch. There's Tomas Petricek, a master mind who's doing tons of crazy-cool stuff, from academic papers to talks like "Write your own Excel in 100 lines of F#" or his hand-crafted F#-written Commodore C64 emulator. To me, this is just lovely, sympathic, and personal: There's someone trying to honestly share his knowledge and ideas, by adressing the good memories of your jounger self. Isn't that a masterpiece in communication? Who doesn't want to learn from such people?
 
-F# Applied challenge
+The F# Community is rather small, but filled with those unique and highly-skilled people. More than that, I felt that they are all welcoming, friendly, approachable and willing to help. From my personal experience, most F# users care a lot about improving, developing and spreading F#. It's easy for anyone to get involved. There are so much possibilities from commenting, writing or implementing language features, contributing to libraries, writing own stuff and getting in touch with others: It's all easy and low-barrier. Instead of "strong opinions", I experienced open-minds and thoughtfulness. I have no doubt that talent and hard work can be keys to success, but I'm also convinced that you can get as far with curiosity and joy.
 
-
-
-...last but not least: There is Edgar, David, Florian and Jimmy. They built up Amplifying F# with their good spirit, their effort and 
-
-
-
-
-"Met F# Londoners" - Isaac Abraham, 
-
-Dawe, Edgar, Timothy Laviere... All trustful people. They are motivating and positive; they give the feeling of "You can do it; what you do is great", and it costed them: Nothing. I can easily say: These people are role models to me, ... Anstatt Verdacht zu wittern, lieber: Do what they do; be positive, open and motivating, tell them that they do great - because that's my honest opinion - and it will hopefully set energy free in thema, and also in me. And it costs me: Nothing, but gives me a smile, joy, and a lot of energy, too out of nothing. Sometimes, it's just so easy - and everyone can do that, too.
-
+Old School Players to New School Fools
 ---
 
-All that sounds like a happening of cool and positive people. And there's more: The people I met are one-of-a-kind highly skilled engineers, die mit ihren Fähigkeiten aus der Masse herausragen. Das mag vielieicht an Talent oder harter Arbeit liegen. Das bezweifle ich nicht. Doch bin ich überzeugt, dass man genau so weit kommen kann mit diesen beiden Fähigkeiten: Neugier und Spaß an der Sache. Ich sage es nochmal: Ich bin überzeugt, dass man damit genau so weit kommen kann. With F# as a language which automatically leads you on track towards these 2 properties.
+A whole can be more than the sum of it's parts. That sounds trivial, and it means: Being part of something, knowing people and being bound to them in a good way, can release a lot of energy. It motivates, it brings joy and leads to new ideas and ways that weren't even seen before. Amplifying F# is an initiative founded by Edgar Gonzales, David Schäfer, Florian Verdonck, and Jimmy Byrd. They literally took the initiative, using their talent, hard work, curiosity and joy to bring people together. It's already a success story.
 
+Things change; this is an inevitable truth. I'm honestly happy for people who took a step and moved on. While this might create a vacuum or lead so sadness, there are alternatives we have as to choose from: Knowing that we have something great in our hands, we can turn sadness into happiness. Get things going, keep things rolling. Don't wait for others, and take initiative, get involved and be a part of something new.
 
-Timo Mühlhaus, who spend their time to enable 
+"Stufen" (Hermann Hesse 1941, "Steps", translated by Walter A. Aue)
+---
 
-Jimmy Byrd - first impression was hig TNG background on a Zoom video session. Immediately sympathised. It was THE TV show of my youth - extremely underrated, weil sie Themen ansprach, die heutzutage so relevant sind wie kaum jemans zuvor. Now there are many reasons why to like TNG. Captain Picard. All the things described above... He's a person with human weaknesses - as we all are. But then, he's the strongest character, and he gets his strengeth out of being thoughtful, no easy decisions, taking initiative, being kind and respectful to others. Out of all this erwächst ein ehrliches, nicht zu erschütterndes Vertrauen derer, die ihn kennen.  ...und können sie in uns willkommen heißen.
+Like ev’ry flower wilts, like youth is fading 
+and turns to age, so also one’s achieving: 
+Each virtue and each wisdom needs parading 
+in one’s own time, and must not last forever. 
+The heart must be, at each new call for leaving,
+prepared to part and start without the tragic, 
+without the grief – with courage to endeavor 
+a novel bond, a disparate connection: 
+for each beginning bears a special magic 
+that nurtures living and bestows protection.
 
+We’ll walk from space to space in glad progression 
+and should not cling to one as homestead for us. 
+The cosmic spirit will not bind nor bore us; 
+it lifts and widens us in ev’ry session: 
+for hardly set in one of life’s expanses 
+we make it home, and apathy commences. 
+But only he, who travels and takes chances, 
+can break the habits’ paralyzing stances.
 
-It's meeting people - online or in-person - that matters.
-
-F# didn't only give me back the joy of programming - the "play instinct", but much more. A feeling being connected to people who share similar feelings. Not only sharing similar interests - similar feelings. That's a difference. 
-
-Of course I'm sometimes a little big "angry" that F# is not there where it could be from the aspect of popularity. Many are I guess. 
-
-
-never "strong opinions". There were of course opinions, but they were intelligent, thoughtful and vermittelten niemals den Eindruck, unantastbar, unanzweifelbar oder unfehlbar zu sein. The communication was in my experience full of kindness, it was humorous and never bitter, open for other ideas and respectful even though one might have a different opinion. 
-
-Tomas Pet, Krystof Cies, Isaac Abraham, and last but not least: Philipp Carter and Don Syme. 
-
-
-I'm honestly happy for people who (...) have moved on; who found something new, etc. One can look at it with sadness; or happy if found place in "heart". It's trivial to read these words; for me propably took a long time to understand "turn sadness into happieness"; it means to me: Get things going, keep them rolling, and take initiative. 
-
-"It's not twitter that counts"
-
-
-"Tell the people what you're here for"
+It might be, even, that the last of hours 
+will make us once again a youthful lover: 
+The call of life to us forever flowers… 
+Anon, my heart: Say farewell and recover! 
