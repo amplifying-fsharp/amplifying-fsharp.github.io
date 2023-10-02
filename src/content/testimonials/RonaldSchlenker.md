@@ -21,7 +21,7 @@ The F# Community is rather small, but filled with those unique and highly-skille
 Old School Players to New School Fools
 ---
 
-A whole can be more than the sum of it's parts. That sounds trivial, and it means: Being part of something, knowing people and being bound to them in a good way, can release a lot of energy. It motivates, it brings joy and leads to new ideas and ways that weren't even seen before. Amplifying F# is an initiative founded by Edgar Gonzales, David Schäfer, Florian Verdonck, and Jimmy Byrd. They literally took the initiative, using all their talent, hard work, curiosity and joy to bring people together. It's already a success story, of which I'm proud to be now a part of.
+A whole can be more than the sum of it's parts. That sounds trivial, and it means: Being part of something, knowing people and being bound to them in a good way, can release a lot of energy. It motivates, it brings joy and leads to new ideas and ways that weren't even seen before. Amplifying F# is an initiative founded by Edgar Gonzales, David Schaefer, Florian Verdonck, and Jimmy Byrd. They literally took the initiative, using all their talent, hard work, curiosity and joy to bring people together. It's already a success story, of which I'm proud to be now a part of.
 
 Things change; this is an inevitable truth. I'm honestly happy for people who took a step and moved on. While this might create a vacuum or lead so sadness, there are alternatives we can choose from: Knowing that we have something great in our hands, we can turn sadness into happiness. Get things going, keep things rolling. Don't wait for others, and take initiative, get involved and be a part of something new. It's all on us.
 
