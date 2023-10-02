@@ -1,3 +1,11 @@
+---
+title: Ronald Schlenker
+preview: For each Beginning Bears a Special Magic
+isDraft: true
+author: Ronald Schlenker
+slug: ronald.schlenker
+profilePicture: /images/authors/RonaldSchlenker.jpg
+---
 
 "Jedem Anfang wohnt ein Zauber inne" (Hermann Hesse; Stufen)
 ===
