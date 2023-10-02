@@ -15,7 +15,7 @@ When the knot bursts and a problem is solved, when it suddenly looks so simple: 
 My Personal Way to F#
 ---
 
-My first attempt to really get a thing done in F# was: Making music, or more precise: Sample-exact digital signal processing. DSP in general requires "state", which is: "Accessible values from past evaluations". DSP chains are usually composed from smaller building blocks, where each block has it's own "local" state. Using C# and objects was cumbersome: Objects have to be instanciated, their evaluation must explicitly triggered, which was error-prone and annoying. I instead liked that "pure functions" thing: Just put a function at the right place in a computation - and that's it. That sounded very compelling, and the mission was clear: Find a way that allows for composing "state-aware" functions as simple as if they were pure functions. And that's how my journey begun.
+My first attempt to really get a thing done in F# was: Making music, or more precise: Sample-exact digital signal processing. DSP in general requires "state", which is: "Accessible values from past evaluations". DSP chains are usually composed from smaller building blocks, where each block has it's own "local" state. Using C# and objects was cumbersome: Objects have to be instanciated, their evaluation has to be triggered explicitly, which was error-prone and annoying. I instead liked that "pure functions" thing: Just put a function at the right place in a computation - and that's it. That sounded very compelling, and the mission was clear: Find a way that allows for composing "state-aware" functions as simple as if they were pure functions. And that's how my journey begun.
 
 Bring Back the Joy
 ---
