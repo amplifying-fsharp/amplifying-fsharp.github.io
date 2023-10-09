@@ -16,6 +16,7 @@ function Blog({ blogEntries }) {
                     <div>
                       <time>{blog.data.date.toLocaleDateString()}</time>
                     </div>
+                    <div>by {blog.data.author}</div>
                   </a>
                 </li>
               );

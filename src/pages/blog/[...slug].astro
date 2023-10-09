@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
-const { title, date } = entry.data;
+const { title, date, author } = entry.data;
 ---
 
 <PageLayout
