@@ -6,6 +6,7 @@ slug: "2023/09/30"
 ---
 
 ## Data Science in F# in Berlin - 2023-09-30
+
 ##### by dawe
 
 The Europe-based part of us made the trip to Berlin to attend the [Data Science in F#](https://datascienceinfsharp.com/) conference.  

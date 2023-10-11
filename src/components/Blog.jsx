@@ -8,10 +8,7 @@ function Blog({ blogEntries }) {
             {entries.map((blog, idx) => {
               return (
                 <li key={idx} className={"d-flex justify-content-center mt-5"}>
-                  <a
-                    href={`/blog/${blog.slug}`}
-                    key={`${blog.id}_${idx}`}
-                  >
+                  <a href={`/blog/${blog.slug}`} key={`${blog.id}_${idx}`}>
                     <h3>{blog.data.title}</h3>
                     <div>
                       <time>{blog.data.date.toLocaleDateString()}</time>
