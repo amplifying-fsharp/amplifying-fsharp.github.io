@@ -11,9 +11,9 @@ function Blog({ blogEntries }) {
                   <a href={`/blog/${blog.slug}`} key={`${blog.id}_${idx}`}>
                     <h3>{blog.data.title}</h3>
                     <div>
-                      <time>{blog.data.date.toLocaleDateString()}</time>
+                      <time className={"d-flex justify-content-center"}>{blog.data.date.toLocaleDateString()}</time>
                     </div>
-                    <div>by {blog.data.author}</div>
+                    <div className={"d-flex justify-content-center"}>by {blog.data.author}</div>
                   </a>
                 </li>
               );
