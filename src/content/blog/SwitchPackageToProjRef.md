@@ -5,7 +5,7 @@ author: "dawe"
 slug: "2023/11/11"
 ---
 
-## Switching seemlessly between Package and Project references - 2023-11-11
+## Switching seamlessly between Package and Project references - 2023-11-11
 
 ##### by dawe
 
@@ -46,4 +46,4 @@ The last needed change is to adjust the individual `.fsproj` files or the [Direc
 </ItemGroup>
 ```
 
-That's it. Now you can switch between package and project references by setting the `UseLocalAnalyzersSDK` property to `true` or `false` and pointing the `LocalAnalyzersSDKRepo` property to your local repo of the SDK. You can see the full PR [here](https://github.com/ionide/ionide-analyzers/pull/18). Enjoy seemless hacking and don't forget to contribute back to the upstream repo.
+That's it. Now you can switch between package and project references by setting the `UseLocalAnalyzersSDK` property to `true` or `false` and pointing the `LocalAnalyzersSDKRepo` property to your local repo of the SDK. You can see the full PR [here](https://github.com/ionide/ionide-analyzers/pull/18). Enjoy seamless hacking and don't forget to contribute back to the upstream repo.
