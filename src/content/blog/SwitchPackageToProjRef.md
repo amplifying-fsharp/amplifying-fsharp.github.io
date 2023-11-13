@@ -1,5 +1,5 @@
 ---
-title: Seemless switching between Package and Project references
+title: Seamless switching between Package and Project references
 date: 2023-11-11
 author: "dawe"
 slug: "2023/11/11"
