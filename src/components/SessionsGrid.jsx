@@ -6,7 +6,7 @@ function SessionsGrid({ sessions }) {
     .filter((session) => session.data.date > new Date())
     .sort((a, b) => b.data.date - a.data.date);
   return (
-    <div>
+    <>
       {upcomingSessions.length === 0 ? (
         <p id="no-new-sessions">
           No news sessions in sight 😔.
@@ -56,7 +56,7 @@ function SessionsGrid({ sessions }) {
           );
         })}
       </div>
-    </div>
+    </>
   );
 }
 
