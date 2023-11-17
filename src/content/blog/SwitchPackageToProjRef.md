@@ -22,7 +22,7 @@ Create a separate ItemGroup for the packages you want to switch between package 
 ```xml
 <ItemGroup Condition="'$(UseLocalAnalyzersSDK)' == 'false'">
 <PackageVersion Include="FSharp.Analyzers.SDK" Version="[0.19.0]" />
-<PackageVersion Include="FSharp.Analyzers.SDK.Testing" Version="[0.19.0]" />    
+<PackageVersion Include="FSharp.Analyzers.SDK.Testing" Version="[0.19.0]" />
 </ItemGroup>
 ```
 
