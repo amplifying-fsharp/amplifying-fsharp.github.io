@@ -14,7 +14,7 @@
   "dependencies": {
     "@astrojs/react": "3.0.7",
     "@types/react": "^18.2.42",
-    "@types/react-dom": "^18.0.11",
+    "@types/react-dom": "^18.2.17",
     "astro": "4.0.2",
     "astro-icon": "0.8.2",
     "astro-purgecss": "4.0.0",
