@@ -1,9 +1,13 @@
 ---
 import { Icon } from "astro-icon";
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import { Content as WhoAreWe } from "../homepage/WhoAreWe.md";
 import { Content as WhatToContribute } from "../homepage/WhatToContribute.md";
 import { Content as ConvincingYourBoss } from "../homepage/ConvincingYourBoss.md";
+import who from "../images/who.jpg";
+import what from "../images/what.jpg";
+import convincing from "../images/convincing-diagram.svg";
 
 import { getCollection } from "astro:content";
 const testimonials = await getCollection("testimonials");
@@ -17,10 +21,10 @@ const testimonials = await getCollection("testimonials");
           Making a difference for the F&#35; ecosystem
         </h1>
         <p class="fs-4">
-          <strong>Amplifying F&#35;</strong> is a new initiative to encourage hands-on
-          collaboration on open-source F&#35; software!<br />
-          We aim to inspire developers all over the world to chime in and make F&#35;
-          better in the process.
+          <strong>Amplifying F&#35;</strong> is a new initiative to encourage
+          hands-on collaboration on open-source F&#35; software!<br />
+           We aim to inspire developers all over the world to chime in and make
+          F&#35; better in the process.
         </p>
         <div class="d-flex justify-content-center mt-5">
           <a href="/join-us" class="">
@@ -115,7 +119,7 @@ const testimonials = await getCollection("testimonials");
             <WhoAreWe />
           </div>
           <div class="col-12 col-md-5 d-flex">
-            <img src="/images/who.jpg" alt="Who we are" class="m-auto w-75" />
+            <Image src={who} alt="Who we are" class="m-auto w-75 h-auto" />
           </div>
         </div>
       </div>
@@ -124,10 +128,10 @@ const testimonials = await getCollection("testimonials");
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-5 d-flex">
-            <img
-              src="/images/what.jpg"
+            <Image
+              src={what}
               alt="What to contribute"
-              class="m-auto w-75"
+              class="m-auto w-75 h-auto"
             />
           </div>
           <div class="col-12 col-md-7 mt-4 mt-md-0">
@@ -147,11 +151,11 @@ const testimonials = await getCollection("testimonials");
             <ConvincingYourBoss />
           </div>
           <div class="col-12 col-md-7 d-flex">
-            <!-- npx  mmdc -i .\src\homepage\convincing.mmd -o .\public\images\convincing-diagram.svg -->
-            <img
-              src="./images/convincing-diagram.svg"
+            <!-- npx  mmdc -i ./src/homepage/convincing.mmd -o ./src/images/convincing-diagram.svg -->
+            <Image
+              src={convincing}
               alt="Mission statement diagram"
-              class="w-100"
+              class="w-100 h-auto"
             />
           </div>
         </div>
@@ -174,7 +178,7 @@ const testimonials = await getCollection("testimonials");
                     <a
                       href={href}
                       class:list={[
-                        "carousel-item text-dark text-decoration-none",
+                        "carousel-item text-dark text-decoration-none bg-light border-start border-5 border-black",
                         { active: idx === 0 },
                       ]}
                     >

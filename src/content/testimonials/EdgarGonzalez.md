@@ -4,7 +4,7 @@ preview: I went from zero to hero in no time
 isDraft: true
 author: Edgar Gonzalez
 slug: edgar-gonzalez
-profilePicture: /images/authors/EdgarGonzalez.jpg
+profilePicture: "../../images/authors/EdgarGonzalez.jpg"
 ---
 
 ## My journey from a soldier to an F# OSS contributor

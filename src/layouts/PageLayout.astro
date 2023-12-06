@@ -1,24 +1,49 @@
 ---
 import Layout from "./Layout.astro";
-import { getImage } from "@astrojs/image";
-import { Image } from "@astrojs/image/components";
+import { Image, getImage } from "astro:assets";
 
 // The props will come from frontmatter if we are targetting an *.md file
 const props = Astro.props.frontmatter ?? Astro.props;
-const {
-  backgroundImage,
-  mainTitle,
-  author,
-  containerClass = "container",
-} = props;
-const { src } = await getImage({
-  src: backgroundImage,
-  alt: "Foo",
-  height: 300,
-  quality: 75,
-  aspectRatio: 21 / 3,
-  format: "avif",
-});
+const { mainTitle, author, containerClass = "container" } = props;
+
+import missionStatementHeader from "../images/mission-statement-header.jpg";
+import incitationHeader from "../images/incitation-header.jpg";
+import blogHeader from "../images/blog-header.jpg";
+import sessionsHeader from "../images/sessions-header.jpg";
+import faqHeader from "../images/faq-header.jpg";
+import joinUsHeader from "../images/join-us-header.jpg";
+import testimonialHeader from "../images/testimonials-header.jpg";
+
+function getImageSrc(path) {
+  if (path.match(/mission/)) {
+    return missionStatementHeader.src;
+  } else if (path.match(/incitation/)) {
+    return incitationHeader.src;
+  } else if (path.match(/blog/)) {
+    return blogHeader.src;
+  } else if (path.match(/sessions/)) {
+    return sessionsHeader.src;
+  } else if (path.match(/faq/)) {
+    return faqHeader.src;
+  } else if (path.match(/join/)) {
+    return joinUsHeader.src;
+  } else if (path.match(/testimonials/)) {
+    return testimonialHeader.src;
+  } else {
+    return "";
+  }
+}
+
+const src = getImageSrc(Astro.url.pathname);
+
+// await getImage({ src: backgroundImage }).then(result => result.src);
+// await /* @vite-ignore */ import(backgroundImage)
+//   .then((src) => {
+//     return getImage({
+//       src: src.default,
+//     });
+//   })
+//   .then((transformedImage) => transformedImage.src);
 ---
 
 <Layout {...props}>

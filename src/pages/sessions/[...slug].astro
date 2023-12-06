@@ -32,11 +32,7 @@ linkText =
     : linkText;
 ---
 
-<PageLayout
-  backgroundImage="/images/session-header.jpg"
-  title={title}
-  mainTitle={title}
->
+<PageLayout title={title} mainTitle={title} containerClass="container session">
   {
     (repoLink || company) && (
       <div class="pb-3">
@@ -87,9 +83,10 @@ linkText =
   }
 </PageLayout>
 <style is:global>
-  img {
-    margin: 0.5rem auto;
-    width: 100%;
+  .session img {
+    margin: 1rem auto;
     max-width: 960px;
+    height: initial;
+    display: block;
   }
 </style>

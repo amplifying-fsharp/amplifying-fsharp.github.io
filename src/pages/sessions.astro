@@ -8,13 +8,16 @@ const sessions = await getCollection("sessions");
 
 <PageLayout
   title="Sessions"
-  backgroundImage="/images/sessions-header.jpg"
+  backgroundImage="../images/sessions-header.jpg"
   mainTitle="Sessions"
-  containerClass="container-fluid"
+  containerClass="container-fluid sessions"
 >
   <SessionsGrid client:load sessions={sessions} />
 </PageLayout>
 <style is:global>
+  .sessions {
+  }
+
   .container-fluid {
     padding-inline: 2rem;
   }

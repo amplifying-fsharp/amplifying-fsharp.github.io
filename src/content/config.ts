@@ -2,13 +2,14 @@
 import { z, defineCollection } from "astro:content";
 // 2. Define your collection(s)
 const testimonialCollection = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    preview: z.string(),
-    author: z.string(),
-    isDraft: z.boolean(),
-    profilePicture: z.string(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      preview: z.string(),
+      author: z.string(),
+      isDraft: z.boolean(),
+      profilePicture: image(),
+    }),
 });
 
 const sessionCollection = defineCollection({

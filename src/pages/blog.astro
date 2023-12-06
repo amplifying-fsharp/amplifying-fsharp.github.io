@@ -6,20 +6,12 @@ import { getCollection } from "astro:content";
 const blogEntries = await getCollection("blog");
 ---
 
-<PageLayout
-  title="Blog"
-  backgroundImage="/images/blog-header.jpg"
-  mainTitle="Blog"
-  containerClass="container-fluid"
->
+<PageLayout title="Blog" mainTitle="Blog" containerClass="container-fluid">
   <Blog client:load blogEntries={blogEntries} />
 </PageLayout>
 
 <style lang="sass" is:global>
-  img
-    max-width: 80pc
-    margin: 2rem
-  ul
+  #blog
     padding-inline: 2rem
     text-align: center
 </style>

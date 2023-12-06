@@ -44,7 +44,7 @@ ${extra}
     `;
     console.log(body);
     const href = `https://github.com/amplifying-fsharp/sessions/issues/new?title=${encodeURIComponent(
-      title
+      title,
     )}&body=${encodeURIComponent(body)}`;
     linkRef.current.setAttribute("href", href);
     linkRef.current.click();
