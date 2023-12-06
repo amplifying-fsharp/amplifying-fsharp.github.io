@@ -1,5 +1,9 @@
 # Astro Starter Kit: Minimal
 
+## Requirements
+
+You need Node.JS 20 LTS or higher!
+
 ```
 npm create astro@latest -- --template minimal
 ```
@@ -40,6 +44,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`      | Preview your build locally, before deploying     |
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro --help` | Get help using the Astro CLI                     |
+| `npm run format`       | Formats the code using prettier                  |
 
 ## 👀 Want to learn more?
 
