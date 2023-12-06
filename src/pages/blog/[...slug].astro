@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import PageLayout from "../../layouts/PageLayout.astro";
-import LocalTime from "../../components/LocalTime.jsx";
 
 export async function getStaticPaths() {
   const blogs = await getCollection("blog");
@@ -16,18 +15,17 @@ const { Content } = await entry.render();
 const { title, date, author } = entry.data;
 ---
 
-<PageLayout
-  backgroundImage="/images/blog-header.jpg"
-  title={title}
-  mainTitle={title}
->
+<PageLayout title={title} mainTitle={title} containerClass="container blog">
   <Content />
 </PageLayout>
 
 <style is:global>
-  img {
+  .blog img {
     display: block;
-    margin: 1.5rem auto;
+    margin: 2rem auto;
+    width: 100%;
     max-width: 960px;
+    height: initial;
+    aspect-ratio: 16 / 9;
   }
 </style>

@@ -1,6 +1,5 @@
 ---
 layout: "../layouts/PageLayout.astro"
-backgroundImage: "/images/faq-header.jpg"
 mainTitle: "Frequently Asked Questions"
 title: "FAQ"
 ---

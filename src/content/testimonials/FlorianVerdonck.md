@@ -4,7 +4,7 @@ preview: Open-source heavily influenced my career.
 isDraft: true
 author: Florian Verdonck
 slug: florian-verdonck
-profilePicture: /images/authors/FlorianVerdonck.jpg
+profilePicture: "../../images/authors/FlorianVerdonck.jpg"
 ---
 
 ## This crazy little thing called Fantomas

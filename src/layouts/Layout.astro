@@ -1,5 +1,6 @@
 ﻿---
 import { Icon } from "astro-icon";
+import { Image } from "astro:assets";
 import "../styles/style.sass";
 
 const { title } = Astro.props;
@@ -28,15 +29,17 @@ const footerIcons = [
     icon: "uil:github",
   },
 ];
+
+import navLogo from "../images/nav-logo.jpg";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3D96369PRB"
     ></script>
-    <script>
+    <script type="text/javascript">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -64,9 +67,9 @@ const footerIcons = [
     <nav class="navbar navbar-expand-md bg-transparent">
       <div class="container-fluid">
         <a class="navbar-brand mb-0 h1" href="/">
-          <img
-            style="width:auto; max-height: 40px"
-            src="/images/nav-logo.jpg"
+          <Image
+            src={navLogo}
+            height="40"
             alt="Amplifying F# logo inside the navigation menu"
           />
         </a>
@@ -114,7 +117,7 @@ const footerIcons = [
     </footer>
   </body>
 </html>
-<script>
-  import { Collapse } from "https://cdn.skypack.dev/bootstrap@5.3.0-alpha1";
+<script type="module">
+  import { Collapse } from "https://esm.sh/bootstrap@5.3.2";
   new Collapse("#navbarToggler", { toggle: false });
 </script>
