@@ -13,6 +13,7 @@ export default defineConfig({
     server: {
       watch: {
         ignored: ["**/.idea/**"],
+        usePolling: true,
       },
     },
   },

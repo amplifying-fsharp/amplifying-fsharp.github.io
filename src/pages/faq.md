@@ -2,6 +2,7 @@
 layout: "../layouts/PageLayout.astro"
 mainTitle: "Frequently Asked Questions"
 title: "FAQ"
+color: "magenta"
 ---
 
 ## Is this initiative affiliated with Microsoft or the F# Foundation?
