@@ -51,9 +51,25 @@ const src = getImageSrc(Astro.url.pathname);
 
 <Layout {...props}>
   <Header mainTitle={mainTitle} src={src} author={author} color={color} />
-  <main class="my-4">
-    <div class={containerClass}>
-      <slot />
-    </div>
+  <main class="container">
+    <slot />
   </main>
 </Layout>
+<style>
+  main {
+    margin-block: var(--spacing-400);
+    padding-inline: var(--spacing-200);
+    @media screen and (min-width: 768px) {
+      padding-inline: 0;
+    }
+
+    h2:first-child {
+      margin-top: 0;
+    }
+
+    p img {
+      display: block;
+      margin-inline: auto;
+    }
+  }
+</style>
