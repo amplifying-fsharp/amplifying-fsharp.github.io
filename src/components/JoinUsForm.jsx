@@ -1,5 +1,37 @@
 import { useRef } from "react";
 import { useForm } from "react-hook-form";
+import styled from "styled-components";
+
+const StyledForm = styled.form`
+  background-color: var(--cyan-300);
+  padding: var(--spacing-200);
+
+  > div {
+    margin-bottom: var(--spacing-500);
+
+    > label {
+      display: block;
+      margin-bottom: var(--spacing-200);
+      font-weight: 500;
+    }
+
+    > input,
+    > textarea {
+      outline: 2px solid var(--cyan-700);
+      border: none;
+      border-radius: var(--radius);
+      padding: var(--spacing-100);
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    .form-text {
+      color: var(--cyan-800);
+      margin-block: var(--spacing-300);
+    }
+  }
+`;
 
 const JoinUsForm = () => {
   const linkRef = useRef();
@@ -55,49 +87,57 @@ ${extra}
   const itch = getValues("itch");
 
   return (
-    <form onSubmit={handleSubmit(onSubmit, onError)}>
-      <div className="mb-3">
+    <StyledForm onSubmit={handleSubmit(onSubmit, onError)}>
+      <div>
         <label className="form-label">
           Your name<strong>&nbsp;&#x2a;</strong>
         </label>
         <input
           type="text"
+          placeholder={"John Doe"}
           className="form-control"
           {...register("name")}
           required
         />
       </div>
-      <div className="mb-3">
+      <div>
         <label className="form-label">Company name</label>
-        <input type="text" className="form-control" {...register("company")} />
+        <input
+          type="text"
+          className="form-control"
+          placeholder={"Contoso Inc"}
+          {...register("company")}
+        />
         <div className="form-text">
           Don't worry this field is optional, you are also most welcome as an
           individual contributor.
         </div>
       </div>
-      <div className="mb-3">
+      <div>
         <label className="form-label">
           Your timezone<strong>&nbsp;&#x2a;</strong>
         </label>
         <input
           type="text"
           className="form-control"
+          placeholder={"CET"}
           {...register("timezone")}
           required
         />
       </div>
-      <div className="mb-3">
+      <div>
         <label className="form-label">
           Your topic<strong>&nbsp;&#x2a;</strong>
         </label>
         <input
           type="text"
           className="form-control"
+          placeholder={"Working on Ionide"}
           {...register("topic")}
           required
         />
       </div>
-      <div className="mb-3">
+      <div>
         <label className="form-label">
           What kind of itch do you have<strong>&nbsp;&#x2a;</strong>
         </label>
@@ -150,7 +190,7 @@ ${extra}
         </div>
       </div>
       {itch === "issue" && (
-        <div className="mb-3">
+        <div>
           <label className="form-label">Issue link</label>
           <input
             type="text"
@@ -161,7 +201,7 @@ ${extra}
         </div>
       )}
       {itch === "project" && (
-        <div className="mb-3">
+        <div>
           <label className="form-label">Project link</label>
           <input
             type="text"
@@ -182,7 +222,7 @@ ${extra}
         </div>
       )}
       {itch === "unknown" && (
-        <div className="mb-3">
+        <div>
           <label className="form-label">Tell us about your quest?</label>
           <textarea
             className="form-control"
@@ -192,7 +232,7 @@ ${extra}
           />
         </div>
       )}
-      <div className="mb-3">
+      <div>
         <label className="form-label">
           Is there anything else we need to know
         </label>
@@ -202,7 +242,7 @@ ${extra}
         Submit
       </button>
       <a href="#" ref={linkRef} target="_blank"></a>
-    </form>
+    </StyledForm>
   );
 };
 

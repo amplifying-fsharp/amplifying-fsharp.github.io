@@ -26,7 +26,12 @@ import JoinUsForm from "../components/JoinUsForm";
     Please submit the following form so we can provide the best means of
     collaborating with you.
   </p>
-  <div id="formWrapper" class="col-md-6">
-    <JoinUsForm client:load />
+  <div id="formWrapper">
+    <JoinUsForm client:only="react" />
   </div>
 </PageLayout>
+<style>
+  #formWrapper {
+    padding-block: var(--spacing-400);
+  }
+</style>

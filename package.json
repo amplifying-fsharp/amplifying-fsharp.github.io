@@ -22,7 +22,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "7.49.2",
-    "sharp": "0.33.0"
+    "sharp": "0.33.0",
+    "styled-components": "^6.1.1"
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "10.6.1",
