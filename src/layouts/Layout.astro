@@ -325,4 +325,36 @@ import Footer from "../components/Footer.astro";
       max-width: var(--container-xl);
     }
   }
+
+  .btn,
+  button,
+  input[type="submit"] {
+    display: inline-block;
+    text-decoration: none;
+    padding: var(--spacing-100) var(--spacing-300);
+    outline: 2px solid var(--key);
+    border-radius: var(--radius);
+    transition: 100ms all;
+    cursor: pointer;
+    box-shadow: 0 1px 1px var(--shadow-color);
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    &.btn-yellow {
+      background-color: var(--yellow-300);
+      color: var(--key);
+      outline: 2px solid var(--yellow-200);
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--yellow-400);
+      }
+
+      &:active {
+        background-color: var(--yellow-500);
+      }
+    }
+  }
 </style>

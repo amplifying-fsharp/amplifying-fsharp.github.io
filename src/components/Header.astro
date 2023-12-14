@@ -77,7 +77,10 @@ const { color = "cyan", mainTitle, author, src }: HeaderProps = Astro.props;
 
     h1 {
       margin: 0;
-      padding: var(--spacing-900);
+      padding: var(--spacing-900) var(--spacing-600);
+      @media screen and (min-width: 768px) {
+        padding: var(--spacing-900);
+      }
       line-height: 1;
     }
   }

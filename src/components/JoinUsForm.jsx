@@ -5,6 +5,7 @@ import styled from "styled-components";
 const StyledForm = styled.form`
   background-color: var(--cyan-300);
   padding: var(--spacing-200);
+  max-width: var(--container-sm);
 
   > div {
     margin-bottom: var(--spacing-500);
@@ -15,20 +16,80 @@ const StyledForm = styled.form`
       font-weight: 500;
     }
 
-    > input,
+    > input[type="text"],
     > textarea {
       outline: 2px solid var(--cyan-700);
       border: none;
       border-radius: var(--radius);
       padding: var(--spacing-100);
+
       &::placeholder {
         color: rgba(0, 0, 0, 0.5);
+      }
+
+      @media screen and (min-width: 768px) {
+        min-width: 50%;
       }
     }
 
     .form-text {
       color: var(--cyan-800);
       margin-block: var(--spacing-300);
+    }
+  }
+
+  #itch-container {
+    display: flex;
+    border: 2px solid var(--cyan-200);
+    border-radius: var(--radius);
+    background-color: var(--cyan-50);
+    input[type="radio"] {
+      display: none;
+    }
+
+    label {
+      color: var(--cyan-800);
+      flex: 1;
+      @media screen and (min-width: 768px) {
+        white-space: nowrap;
+      }
+      border-radius: var(--radius);
+      display: block;
+      padding: var(--spacing-100) var(--spacing-200);
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--cyan-600);
+        color: var(--white);
+        outline: 2px solid var(--cyan-700);
+      }
+
+      &:active {
+        background-color: var(--cyan-900);
+      }
+    }
+
+    input[type="radio"]:checked + label {
+      outline: 2px solid var(--cyan-700);
+      color: var(--cyan-900);
+
+      &:hover {
+        color: var(--white);
+      }
+    }
+  }
+
+  button[type="submit"] {
+    background-color: var(--cyan-800);
+    color: var(--white);
+    float: right;
+
+    &:hover {
+      background-color: var(--cyan-700);
+    }
+
+    &:active {
+      background-color: var(--cyan-900);
     }
   }
 `;
@@ -89,22 +150,20 @@ ${extra}
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit, onError)}>
       <div>
-        <label className="form-label">
-          Your name<strong>&nbsp;&#x2a;</strong>
+        <label>
+          Your name?<strong>&nbsp;&#x2a;</strong>
         </label>
         <input
           type="text"
           placeholder={"John Doe"}
-          className="form-control"
           {...register("name")}
           required
         />
       </div>
       <div>
-        <label className="form-label">Company name</label>
+        <label>Company name?</label>
         <input
           type="text"
-          className="form-control"
           placeholder={"Contoso Inc"}
           {...register("company")}
         />
@@ -114,47 +173,39 @@ ${extra}
         </div>
       </div>
       <div>
-        <label className="form-label">
-          Your timezone<strong>&nbsp;&#x2a;</strong>
+        <label>
+          Your timezone?<strong>&nbsp;&#x2a;</strong>
         </label>
         <input
           type="text"
-          className="form-control"
           placeholder={"CET"}
           {...register("timezone")}
           required
         />
       </div>
       <div>
-        <label className="form-label">
-          Your topic<strong>&nbsp;&#x2a;</strong>
+        <label>
+          Your topic?<strong>&nbsp;&#x2a;</strong>
         </label>
         <input
           type="text"
-          className="form-control"
           placeholder={"Working on Ionide"}
           {...register("topic")}
           required
         />
       </div>
       <div>
-        <label className="form-label">
-          What kind of itch do you have<strong>&nbsp;&#x2a;</strong>
+        <label>
+          What kind of itch do you have?<strong>&nbsp;&#x2a;</strong>
         </label>
-        <div
-          className="btn-group mb-3"
-          role="group"
-          aria-label="Basic radio toggle button group"
-        >
+        <div id="itch-container">
           <input
             type="radio"
-            className="btn-check"
             {...register("itch", { required: true })}
             autoComplete="off"
             value="issue"
           />
           <label
-            className="btn btn-outline-secondary"
             onClick={() => setValue("itch", "issue", { shouldDirty: true })}
           >
             Fix a specific issue
@@ -162,13 +213,11 @@ ${extra}
 
           <input
             type="radio"
-            className="btn-check"
             {...register("itch", { required: true })}
             autoComplete="off"
             value="project"
           />
           <label
-            className="btn btn-outline-secondary"
             onClick={() => setValue("itch", "project", { shouldDirty: true })}
           >
             Work on a specific project
@@ -176,7 +225,6 @@ ${extra}
 
           <input
             type="radio"
-            className="btn-check"
             {...register("itch", { required: true })}
             autoComplete="off"
             value="unknown"
@@ -191,21 +239,21 @@ ${extra}
       </div>
       {itch === "issue" && (
         <div>
-          <label className="form-label">Issue link</label>
+          <label>Issue link</label>
           <input
             type="text"
-            className="form-control"
             {...register("issue")}
+            placeholder={"A link to a specific OSS issue."}
             required={itch === "issue"}
           />
         </div>
       )}
       {itch === "project" && (
         <div>
-          <label className="form-label">Project link</label>
+          <label>Project link</label>
           <input
             type="text"
-            className="form-control"
+            placeholder={"A link to your favorite OSS project."}
             {...register("project")}
             list="projects"
             required={itch === "project"}
@@ -223,9 +271,9 @@ ${extra}
       )}
       {itch === "unknown" && (
         <div>
-          <label className="form-label">Tell us about your quest?</label>
+          <label>Tell us about your quest?</label>
           <textarea
-            className="form-control"
+            placeholder={"Describe the change you want to see in the world."}
             {...register("description")}
             rows={3}
             required={itch === "unknown"}
@@ -233,10 +281,12 @@ ${extra}
         </div>
       )}
       <div>
-        <label className="form-label">
-          Is there anything else we need to know
-        </label>
-        <textarea className="form-control" {...register("extra")} rows={3} />
+        <label>Is there anything else we need to know?</label>
+        <textarea
+          placeholder={"Tell us what motivates you!"}
+          {...register("extra")}
+          rows={3}
+        />
       </div>
       <button type="submit" className="btn btn-primary">
         Submit
