@@ -3,7 +3,19 @@ import PageLayout from "../layouts/PageLayout.astro";
 import SessionsGrid from "../components/SessionsGrid.jsx";
 
 import { getCollection } from "astro:content";
-const sessions = await getCollection("sessions");
+const sessions = await getCollection("sessions").then((sessions) => {
+  return sessions.map((session) => {
+    return {
+      id: session.id,
+      youtubeId: session.data.youtubeId,
+      thumbnail: session.data.thumbnail && session.data.thumbnail.src,
+      title: session.data.title,
+      date: session.data.date,
+      champion: session.data.champion,
+      slug: session.slug,
+    };
+  });
+});
 ---
 
 <PageLayout
@@ -12,142 +24,5 @@ const sessions = await getCollection("sessions");
   mainTitle="Sessions"
   containerClass="container-fluid sessions"
 >
-  <SessionsGrid client:load sessions={sessions} />
+  <SessionsGrid client:only="react" sessions={sessions} />
 </PageLayout>
-<style is:global>
-  .sessions {
-  }
-
-  .container-fluid {
-    padding-inline: 2rem;
-  }
-
-  h2 {
-    margin-bottom: 1rem;
-  }
-
-  .grid-container {
-    margin-bottom: 2rem;
-    margin-left: -0.5rem;
-    margin-right: -0.5rem;
-
-    @media screen and (min-width: 700px) {
-      display: flex;
-      align-content: center;
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-  }
-
-  .grid-container a {
-    display: block;
-    box-sizing: border-box;
-    text-decoration: none;
-    color: #f2f1ef;
-    margin: 0.5rem;
-    position: relative;
-    padding: 1rem;
-    aspect-ratio: 16 / 9;
-    background-size: contain;
-    transition: all 200ms;
-
-    & h4 {
-      margin: 0;
-    }
-
-    @media screen and (min-width: 700px) {
-      width: 450px;
-    }
-  }
-
-  #upcoming-sessions a {
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-decoration: none;
-
-    > div {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      > h4 {
-        font-size: 1rem;
-        text-align: right;
-      }
-
-      > time {
-        font-weight: bold;
-        font-size: 1rem;
-      }
-    }
-  }
-
-  #upcoming-sessions a:nth-child(3n + 1) {
-    background-color: #bae4e5;
-    color: white;
-  }
-
-  #upcoming-sessions a:nth-child(3n + 2) {
-    background-color: #eaf2d7;
-    color: black;
-  }
-
-  #upcoming-sessions a:nth-child(3n + 3) {
-    background-color: #d24d57;
-    color: white;
-  }
-
-  #past-sessions a {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-
-    & h4 {
-      text-align: right;
-    }
-
-    & h3,
-    & h4 {
-      z-index: 1;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.25);
-      z-index: 0;
-      transition: all 200ms;
-    }
-
-    &:hover {
-      color: white;
-      outline: 3px solid #e4e9ed;
-
-      .overlay {
-        background-color: rgba(0, 0, 0, 0.05);
-      }
-    }
-  }
-
-  #no-new-sessions {
-    background: firebrick;
-    display: block;
-    width: 300px;
-    color: white;
-    font-size: 1.2rem;
-    padding: 1rem;
-    border-radius: 6px;
-    margin: auto auto 2rem;
-    text-align: center;
-  }
-
-  #no-new-sessions a {
-    color: #2d3436;
-  }
-</style>
