@@ -78,9 +78,13 @@ const src = getImageSrc(Astro.url.pathname);
       margin-top: 0;
     }
 
-    p img {
+    img {
       display: block;
-      margin: var(--spacing-200) auto;
+      margin-inline: auto;
+    }
+
+    img[alt="Mission statement diagram"] {
+      margin-block: var(--spacing-200);
     }
   }
 </style>

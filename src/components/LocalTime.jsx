@@ -16,8 +16,6 @@ function LocalTime({ utcDate }) {
     timeZone: timeZone,
   };
 
-  console.log(timeZone);
-
   return `${utcDate.toLocaleString(userLanguage, options)} ${timeZone} time`;
 }
 
