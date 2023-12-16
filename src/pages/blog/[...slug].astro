@@ -36,5 +36,19 @@ const { title, date, author } = entry.data;
   .blog pre.astro-code {
     margin-block: var(--spacing-400);
     padding: var(--spacing-100);
+
+    &::-webkit-scrollbar {
+      height: var(--spacing-100);
+      width: var(--spacing-100);
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: var(--scrollbar-track-background);
+      border: 1px solid var(--scrollbar-track-border);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--scrollbar-thumb-background);
+    }
   }
 </style>
