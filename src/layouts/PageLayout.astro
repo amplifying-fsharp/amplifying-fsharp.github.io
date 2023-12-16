@@ -22,6 +22,9 @@ import missionStatementHeader from "../images/mission-statement-header.jpg";
 import incitationHeader from "../images/incitation-header.jpg";
 import blogHeader from "../images/blog-header.jpg";
 import sessionsHeader from "../images/sessions-header.jpg";
+import sessionHeader1 from "../images/session-header-1.jpg";
+import sessionHeader2 from "../images/session-header-2.jpg";
+import sessionHeader3 from "../images/session-header-3.jpg";
 import faqHeader from "../images/faq-header.jpg";
 import joinUsHeader from "../images/join-us-header.jpg";
 import testimonialHeader from "../images/testimonials-header.jpg";
@@ -33,6 +36,14 @@ function getImageSrc(path) {
     return incitationHeader.src;
   } else if (path.match(/blog/)) {
     return blogHeader.src;
+  } else if (path.match(/\/sessions\/\d{4}\/\d{2}\/\d{2}/)) {
+    if (color === "cyan") {
+      return sessionHeader1.src;
+    } else if (color === "magenta") {
+      return sessionHeader2.src;
+    } else {
+      return sessionHeader3.src;
+    }
   } else if (path.match(/sessions/)) {
     return sessionsHeader.src;
   } else if (path.match(/faq/)) {
@@ -69,7 +80,7 @@ const src = getImageSrc(Astro.url.pathname);
 
     p img {
       display: block;
-      margin-inline: auto;
+      margin: var(--spacing-200) auto;
     }
   }
 </style>

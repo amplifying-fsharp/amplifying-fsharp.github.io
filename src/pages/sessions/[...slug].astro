@@ -5,13 +5,15 @@ import LocalTime from "../../components/LocalTime.jsx";
 
 export async function getStaticPaths() {
   const sessionEntries = await getCollection("sessions");
-  return sessionEntries.map((entry) => ({
+  const colors = ["magenta", "yellow", "cyan"];
+
+  return sessionEntries.map((entry, idx) => ({
     params: { slug: entry.slug },
-    props: { entry },
+    props: { entry, color: colors[idx % colors.length] },
   }));
 }
 
-const { entry } = Astro.props;
+const { entry, color } = Astro.props;
 const { Content } = await entry.render();
 const {
   title,
@@ -32,16 +34,16 @@ linkText =
     : linkText;
 ---
 
-<PageLayout title={title} mainTitle={title} containerClass="container session">
+<PageLayout title={title} mainTitle={title} color={color}>
   {
     (repoLink || company) && (
-      <div class="pb-3">
+      <div class="badges">
         {repoLink && (
-          <a href={repoLink} target="_blank" class="text-decoration-none">
-            <span class="badge bg-primary">{linkText}</span>
+          <a href={repoLink} target="_blank">
+            <span class={`badge ${color}`}>{linkText}</span>
           </a>
         )}
-        {company && <span class="badge bg-primary">{company}</span>}
+        {company && <span class={`badge ${color}`}>{company}</span>}
       </div>
     )
   }
@@ -49,7 +51,7 @@ linkText =
     youtubeId && (
       <>
         <h2>Watch this session</h2>
-        <div class="ratio ratio-16x9 mb-4">
+        <div class="youtube">
           <iframe
             src={`https://www.youtube.com/embed/${youtubeId}`}
             title="YouTube video player"
@@ -82,11 +84,39 @@ linkText =
     )
   }
 </PageLayout>
-<style is:global>
-  .session img {
-    margin: 1rem auto;
-    max-width: 960px;
-    height: initial;
-    display: block;
+<style>
+  /* TODO: check session with image */
+  .badges a {
+    text-decoration: none;
+  }
+
+  .badge {
+    color: var(--white);
+    padding: var(--spacing-50) var(--spacing-100);
+    font-weight: 600;
+    font-size: var(--font-100);
+    box-shadow: 0 1px 1px var(--shadow-color);
+    margin-right: var(--spacing-100);
+
+    &.magenta {
+      background-color: var(--magenta-500);
+    }
+
+    &.yellow {
+      background-color: var(--yellow-300);
+      color: var(--key);
+    }
+
+    &.cyan {
+      background-color: var(--cyan-500);
+    }
+  }
+
+  .youtube {
+    aspect-ratio: 16 / 9;
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
   }
 </style>
