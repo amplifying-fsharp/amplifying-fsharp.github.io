@@ -164,19 +164,19 @@ const StyledDiv = styled.div`
   }
 
   #no-new-sessions {
-    background: firebrick;
+    background: var(--magenta-900);
     display: block;
     width: 300px;
     color: var(--white);
-    font-size: 1.2rem;
-    padding: 1rem;
-    border-radius: 6px;
-    margin: auto auto 2rem;
+    font-size: var(--font-400);
+    padding: var(--spacing-300);
+    border-radius: var(--radius);
+    margin: auto;
     text-align: center;
   }
 
   #no-new-sessions a {
-    color: #2d3436;
+    color: var(--magenta-400);
   }
 `;
 
