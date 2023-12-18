@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 const { title } = Astro.props;
 import navLogo from "../images/nav-logo.jpg";
 import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
 ---
 
 <!doctype html>
@@ -14,9 +15,11 @@ import Footer from "../components/Footer.astro";
     ></script>
     <script type="text/javascript">
       window.dataLayer = window.dataLayer || [];
+
       function gtag() {
         dataLayer.push(arguments);
       }
+
       gtag("js", new Date());
 
       gtag("config", "G-3D96369PRB");
@@ -37,40 +40,7 @@ import Footer from "../components/Footer.astro";
     />
   </head>
   <body>
-    <!--<nav class="navbar navbar-expand-md bg-transparent">-->
-    <!--  <div class="container-fluid">-->
-    <!--    <a class="navbar-brand mb-0 h1" href="/">-->
-    <!--      <Image-->
-    <!--        src={navLogo}-->
-    <!--        height="40"-->
-    <!--        alt="Amplifying F# logo inside the navigation menu"-->
-    <!--      />-->
-    <!--    </a>-->
-    <!--    <button-->
-    <!--      class="navbar-toggler"-->
-    <!--      type="button"-->
-    <!--      data-bs-toggle="collapse"-->
-    <!--      data-bs-target="#navbarToggler"-->
-    <!--    >-->
-    <!--      <span class="navbar-toggler-icon"></span>-->
-    <!--    </button>-->
-    <!--    <div-->
-    <!--      class="collapse navbar-collapse justify-content-end"-->
-    <!--      id="navbarToggler"-->
-    <!--    >-->
-    <!--      <div class="navbar-nav">-->
-    <!--        <a class="nav-link" aria-current="page" href="/blog">Blog</a>-->
-    <!--        <a class="nav-link" aria-current="page" href="/incitation"-->
-    <!--          >Incitation</a-->
-    <!--        >-->
-    <!--        <a class="nav-link" aria-current="page" href="/sessions">Sessions</a-->
-    <!--        >-->
-    <!--        <a class="nav-link" aria-current="page" href="/faq">FAQ</a>-->
-    <!--        <a class="nav-link" href="/join-us">Join us!</a>-->
-    <!--      </div>-->
-    <!--    </div>-->
-    <!--  </div>-->
-    <!--</nav>-->
+    <Navigation />
     <div id="content">
       <slot />
     </div>
@@ -173,7 +143,7 @@ import Footer from "../components/Footer.astro";
   }
 
   // CSS reset
-  *, *::before, *::after {
+    *, *::before, *::after {
     box-sizing: border-box;
   }
 
@@ -319,8 +289,8 @@ import Footer from "../components/Footer.astro";
   }
 
   /* For those wondering why the min-width in the media query isn't using the variable
-  Not all browsers support this.
-   */
+    Not all browsers support this.
+     */
   .container {
     @media screen and (min-width: 768px) {
       max-width: var(--container-sm);

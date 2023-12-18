@@ -23,6 +23,7 @@ const sessions = await getCollection("sessions").then((sessions) => {
   backgroundImage="../images/sessions-header.jpg"
   mainTitle="Sessions"
   containerClass="container-fluid sessions"
+  color="yellow"
 >
   <SessionsGrid client:only="react" sessions={sessions} />
 </PageLayout>

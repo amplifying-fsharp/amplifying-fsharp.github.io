@@ -3,7 +3,7 @@ layout: "../layouts/PageLayout.astro"
 backgroundImage: "../images/incitation-header.jpg"
 mainTitle: "Provoking the Muse: An Incitement to Action"
 title: "Incitation"
-color: "magenta"
+color: "cyan"
 ---
 
 ## Why take the leap?
