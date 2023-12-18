@@ -153,7 +153,18 @@ import Footer from "../components/Footer.astro";
     --magenta-900: #573857;
     --magenta-950: #351d34;
 
-    --key: #000;
+    --key-50: #f6f6f6;
+    --key-100: #e7e7e7;
+    --key-200: #d1d1d1;
+    --key-300: #b0b0b0;
+    --key-400: #888888;
+    --key-500: #6d6d6d;
+    --key-600: #5d5d5d;
+    --key-700: #4f4f4f;
+    --key-800: #454545;
+    --key-900: #3d3d3d;
+    --key-950: #000;
+
     --white: #fcfbfc;
     --shadow-color: hsla(0, 0%, 0%, 0.1);
     --scrollbar-track-background: #424242;
@@ -336,7 +347,7 @@ import Footer from "../components/Footer.astro";
     display: inline-block;
     text-decoration: none;
     padding: var(--spacing-100) var(--spacing-300);
-    outline: 2px solid var(--key);
+    outline: 2px solid var(--key-950);
     border-radius: var(--radius);
     transition: 100ms all;
     cursor: pointer;
@@ -348,7 +359,7 @@ import Footer from "../components/Footer.astro";
 
     &.btn-yellow {
       background-color: var(--yellow-300);
-      color: var(--key);
+      color: var(--key-950);
       outline: 2px solid var(--yellow-200);
       cursor: pointer;
 

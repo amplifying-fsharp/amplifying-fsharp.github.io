@@ -95,6 +95,7 @@ const StyledDiv = styled.div`
   #upcoming-sessions a:nth-child(3n + 1) {
     background-color: var(--cyan-500);
     color: var(--white);
+
     &:hover {
       outline: 1px solid var(--cyan-200);
     }
@@ -102,8 +103,9 @@ const StyledDiv = styled.div`
 
   #upcoming-sessions a:nth-child(3n + 2) {
     background-color: var(--yellow-400);
-    color: var(--key);
+    color: var(--key-950);
     outline: 1px solid transparent;
+
     &:hover {
       outline: 1px solid var(--yellow-200);
     }
@@ -112,6 +114,7 @@ const StyledDiv = styled.div`
   #upcoming-sessions a:nth-child(3n + 3) {
     background-color: var(--magenta-500);
     color: var(--white);
+
     &:hover {
       outline: 1px solid var(--magenta-200);
     }

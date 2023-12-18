@@ -14,100 +14,70 @@ const testimonials = await getCollection("testimonials");
 ---
 
 <Layout title="Home">
-  <header class="pb-3 bg-light vh-50">
-    <div class="p-5 mb-1">
-      <div class="container py-5">
-        <h1 class="display-5 fw-bold my-5">
-          Making a difference for the F&#35; ecosystem
-        </h1>
-        <p class="fs-4">
-          <strong>Amplifying F&#35;</strong> is a new initiative to encourage
-          hands-on collaboration on open-source F&#35; software!<br />
-           We aim to inspire developers all over the world to chime in and make
-          F&#35; better in the process.
-        </p>
-        <div class="d-flex justify-content-center mt-5">
-          <a href="/join-us" class="">
-            <button role="button" class="btn btn-primary"
-              >Join us today! ⚡</button
-            ></a
-          >
-        </div>
-      </div>
+  <header>
+    <div class="container">
+      <h1>Making a difference for the F&#35; ecosystem</h1>
+      <p>
+        <strong>Amplifying F&#35;</strong> is a new initiative to encourage
+        hands-on collaboration on open-source F&#35; software!<br />
+         We aim to inspire developers all over the world to chime in and make
+        F&#35; better in the process.
+      </p>
+      <a href="/join-us">
+        <button role="button">Join us today! ⚡</button>
+      </a>
     </div>
   </header>
   <main>
-    <section>
+    <section id="foundation">
       <div class="container">
-        <div class="row">
-          <div class="row g-4 row-cols-1 row-cols-lg-3">
-            <div class="col d-flex align-items-start">
-              <div
-                class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
-              >
-                <Icon
-                  pack="mdi"
-                  name="bullseye-arrow"
-                  width="1em"
-                  height="1em"
-                />
-              </div>
-              <div>
-                <h3 class="fs-2">Mission statement</h3>
-                <p>We believe businesses should contribute back to F# OSS.</p>
-                <a href="/mission-statement"
-                  >Read more <Icon
-                    pack="bi"
-                    name="chevron-right"
-                    width="1rem"
-                    height="1rem"
-                  /></a
-                >
-              </div>
-            </div>
-            <div class="col d-flex align-items-start">
-              <div
-                class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
-              >
-                <Icon pack="cil" name="speech" width="1em" height="1em" />
-              </div>
-              <div>
-                <h3 class="fs-2">Testimonials</h3>
-                <p>Open-source has changed people's professional lives.</p>
-                <a href="#testimonials">
-                  Read some inspiring stories
-                  <Icon
-                    pack="bi"
-                    name="chevron-right"
-                    width="1rem"
-                    height="1rem"
-                  />
-                </a>
-              </div>
-            </div>
-            <div class="col d-flex align-items-start">
-              <div
-                class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
-              >
-                <Icon pack="ic" name="round-live-tv" width="1em" height="1em" />
-              </div>
-              <div>
-                <h3 class="fs-2">Sessions</h3>
-                <p>
-                  Every week we try to highlight a different open-source project
-                  by actively contributing during a live stream.
-                </p>
-                <a href="/sessions"
-                  >View sessions <Icon
-                    pack="bi"
-                    name="chevron-right"
-                    width="1rem"
-                    height="1rem"
-                  /></a
-                >
-              </div>
-            </div>
-          </div>
+        <div>
+          <h3>
+            <Icon
+              pack="mdi"
+              name="bullseye-arrow"
+              width="24px"
+              height="24px"
+            />Mission statement
+          </h3>
+          <p>We believe businesses should contribute back to F# OSS.</p>
+          <a href="/mission-statement"
+            ><Icon
+              pack="bi"
+              name="chevron-right"
+              width="16px"
+              height="16px"
+            />Read more
+          </a>
+        </div>
+        <div>
+          <h3>
+            <Icon
+              pack="cil"
+              name="speech"
+              width="24px"
+              height="24px"
+            />Testimonials
+          </h3>
+          <p>Open-source has changed people's professional lives.</p>
+          <a href="#testimonials">
+            <Icon pack="bi" name="chevron-right" width="16px" height="16px" />
+             Read some inspiring stories
+          </a>
+        </div>
+        <div>
+          <h3>
+            <Icon pack="ic" name="round-live-tv" width="24px" height="24px" />
+            Sessions
+          </h3>
+          <p>
+            Every week we try to highlight a different open-source project by
+            actively contributing during a live stream.
+          </p>
+          <a href="/sessions">
+            <Icon pack="bi" name="chevron-right" width="16px" height="16px" />
+             View sessions
+          </a>
         </div>
       </div>
     </section>
@@ -225,7 +195,122 @@ const testimonials = await getCollection("testimonials");
   </main>
 </Layout>
 <style>
-  img {
-    max-width: 100%;
+  header,
+  main {
+    padding-inline: var(--spacing-200);
+    @media screen and (min-width: 792px) {
+      padding-inline: 0;
+    }
+  }
+
+  header {
+    background: linear-gradient(
+      180deg,
+      var(--cyan-100) 0%,
+      var(--cyan-500) 100%
+    );
+    padding: var(--spacing-800) var(--spacing-600);
+
+    p {
+      margin-block: var(--spacing-400);
+      font-size: var(--font-500);
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      padding-top: var(--spacing-600);
+      button {
+        background-color: var(--cyan-950);
+        color: var(--white);
+      }
+    }
+  }
+
+  #foundation {
+    margin-block: var(--spacing-400);
+
+    > div > div {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin: var(--spacing-400) var(--spacing-600);
+
+      a {
+        text-decoration: underline dotted var(--magenta-500);
+        font-size: var(--font-400);
+        font-weight: 400;
+        padding: var(--spacing-200);
+        color: var(--magenta-700);
+        align-self: end;
+        transition: all 200ms;
+        display: flex;
+        align-items: center;
+
+        > svg {
+          margin-right: var(--spacing-50);
+        }
+
+        &:hover {
+          background-color: var(--magenta-100);
+          color: var(--magenta-950);
+          box-shadow: 0 2px 2px var(--shadow-color);
+        }
+      }
+
+      h3 {
+        line-height: var(--spacing-600);
+        margin: 0;
+        color: var(--magenta-800);
+        display: flex;
+        align-items: center;
+        > svg {
+          margin-right: var(--spacing-100);
+        }
+      }
+
+      p {
+        margin: 0;
+        font-size: var(--font-400);
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      > .container {
+        display: flex;
+        flex-direction: row;
+        gap: var(--spacing-400);
+
+        > div {
+          margin: 0;
+          flex: 1;
+
+          h3 {
+            font-size: var(--font-400);
+          }
+
+          p {
+            margin-block: var(--spacing-200);
+            padding-inline: var(--spacing-200);
+            min-height: 200px;
+            font-size: var(--font-300);
+          }
+
+          a {
+            align-self: start;
+
+            > svg {
+              margin-right: var(--spacing-200);
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: 960px) {
+      > .container > div p {
+        min-height: 140px;
+      }
+    }
   }
 </style>
