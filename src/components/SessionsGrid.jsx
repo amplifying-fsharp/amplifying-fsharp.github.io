@@ -61,6 +61,10 @@ const StyledDiv = styled.div`
         font-size: var(--font-400);
       }
     }
+
+    @media screen and (min-width: 1200px) {
+      width: calc(var(--container-xxl) / 3 - var(--spacing-300));
+    }
   }
 
   #upcoming-sessions a {

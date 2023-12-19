@@ -1,4 +1,4 @@
-﻿In practical terms, you should see this initiative as two things: educational and an attempt to improve daily productivity.
+﻿In practical terms, you should see this initiative as two things: **educational** and an attempt to improve **daily productivity**.
 
 There is a lot you can learn from pair/mob programming with seasoned F# developers from all over the world.
 The diversity of backgrounds can broaden your perspective and genuinely make you better at your job.

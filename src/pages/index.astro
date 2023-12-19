@@ -33,31 +33,19 @@ const testimonials = await getCollection("testimonials");
       <div class="container">
         <div>
           <h3>
-            <Icon
-              pack="mdi"
-              name="bullseye-arrow"
-              width="24px"
-              height="24px"
-            />Mission statement
+            <Icon pack="mdi" name="bullseye-arrow" width="24px" height="24px" />
+             Mission statement
           </h3>
           <p>We believe businesses should contribute back to F# OSS.</p>
-          <a href="/mission-statement"
-            ><Icon
-              pack="bi"
-              name="chevron-right"
-              width="16px"
-              height="16px"
-            />Read more
+          <a href="/mission-statement">
+            <Icon pack="bi" name="chevron-right" width="16px" height="16px" />
+             Read more
           </a>
         </div>
         <div>
           <h3>
-            <Icon
-              pack="cil"
-              name="speech"
-              width="24px"
-              height="24px"
-            />Testimonials
+            <Icon pack="cil" name="speech" width="24px" height="24px" />
+             Testimonials
           </h3>
           <p>Open-source has changed people's professional lives.</p>
           <a href="#testimonials">
@@ -83,52 +71,26 @@ const testimonials = await getCollection("testimonials");
     </section>
     <section id="who">
       <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-7">
-            <h2 class="h1">Who are we?</h2>
-            <WhoAreWe />
-          </div>
-          <div class="col-12 col-md-5 d-flex">
-            <Image src={who} alt="Who we are" class="m-auto w-75 h-auto" />
-          </div>
-        </div>
+        <h2>Who are we?</h2>
+        <WhoAreWe />
       </div>
     </section>
     <section id="what">
       <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-5 d-flex">
-            <Image
-              src={what}
-              alt="What to contribute"
-              class="m-auto w-75 h-auto"
-            />
-          </div>
-          <div class="col-12 col-md-7 mt-4 mt-md-0">
-            <h2 class="h1">What to contribute?</h2>
-            <WhatToContribute />
-          </div>
-        </div>
+        <h2>What to contribute?</h2>
+        <WhatToContribute />
       </div>
     </section>
-    <section id="convince" class="">
+    <section id="convince">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h2 class="h1">Convincing your boss?</h2>
-          </div>
-          <div class="col-12 col-md-5">
-            <ConvincingYourBoss />
-          </div>
-          <div class="col-12 col-md-7 d-flex">
-            <!-- npx  mmdc -i ./src/homepage/convincing.mmd -o ./src/images/convincing-diagram.svg -->
-            <Image
-              src={convincing}
-              alt="Mission statement diagram"
-              class="w-100 h-auto"
-            />
-          </div>
-        </div>
+        <h2 class="h1">Convincing your boss?</h2>
+        <ConvincingYourBoss />
+        <!-- npx  mmdc -i ./src/homepage/convincing.mmd -o ./src/images/convincing-diagram.svg -->
+        <Image
+          src={convincing}
+          alt="Mission statement diagram"
+          class="w-100 h-auto"
+        />
       </div>
     </section>
     <!--<section id="testimonials" class="text-center">-->
@@ -195,14 +157,6 @@ const testimonials = await getCollection("testimonials");
   </main>
 </Layout>
 <style>
-  header,
-  main {
-    padding-inline: var(--spacing-200);
-    @media screen and (min-width: 792px) {
-      padding-inline: 0;
-    }
-  }
-
   header {
     background: linear-gradient(
       180deg,
@@ -220,6 +174,7 @@ const testimonials = await getCollection("testimonials");
       display: block;
       text-align: center;
       padding-top: var(--spacing-600);
+
       button {
         background-color: var(--cyan-950);
         color: var(--white);
@@ -228,7 +183,8 @@ const testimonials = await getCollection("testimonials");
   }
 
   #foundation {
-    margin-block: var(--spacing-400);
+    padding-block: var(--spacing-400);
+    background: var(--magenta-50);
 
     > div > div {
       display: flex;
@@ -252,7 +208,7 @@ const testimonials = await getCollection("testimonials");
         }
 
         &:hover {
-          background-color: var(--magenta-100);
+          background-color: var(--white);
           color: var(--magenta-950);
           box-shadow: 0 2px 2px var(--shadow-color);
         }
@@ -264,6 +220,7 @@ const testimonials = await getCollection("testimonials");
         color: var(--magenta-800);
         display: flex;
         align-items: center;
+
         > svg {
           margin-right: var(--spacing-100);
         }
@@ -276,6 +233,8 @@ const testimonials = await getCollection("testimonials");
     }
 
     @media screen and (min-width: 768px) {
+      padding-block: var(--spacing-600);
+
       > .container {
         display: flex;
         flex-direction: row;
@@ -311,6 +270,78 @@ const testimonials = await getCollection("testimonials");
       > .container > div p {
         min-height: 140px;
       }
+    }
+  }
+
+  #who {
+    background: linear-gradient(
+      180deg,
+      var(--yellow-300) 0%,
+      var(--yellow-400) 100%
+    );
+    padding: var(--spacing-900) var(--spacing-400);
+    @media screen and (min-width: 768px) {
+      padding-inline: 0;
+    }
+
+    h2 {
+      font-size: var(--font-700);
+    }
+
+    h2:first-child {
+      margin: 0;
+    }
+
+    h2:last-of-type {
+      margin-top: var(--spacing-900);
+    }
+
+    p {
+      font-size: var(--font-400);
+    }
+  }
+
+  #what {
+    background-color: var(--key-950);
+    color: var(--white);
+    padding: var(--spacing-900) var(--spacing-400);
+    @media screen and (min-width: 768px) {
+      padding-inline: 0;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    p {
+      font-size: var(--font-400);
+    }
+  }
+
+  #convince {
+    padding: var(--spacing-900) var(--spacing-400);
+    @media screen and (min-width: 768px) {
+      padding-inline: 0;
+    }
+
+    background: linear-gradient(
+      180deg,
+      var(--magenta-800) 0%,
+      var(--magenta-900) 100%
+    );
+    color: var(--magenta-50);
+
+    p {
+      font-size: var(--font-400);
+    }
+
+    img {
+      margin: var(--spacing-400) auto;
+      display: block;
+    }
+
+    a {
+      color: var(--magenta-400);
     }
   }
 </style>
