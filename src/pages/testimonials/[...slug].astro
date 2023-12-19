@@ -40,7 +40,7 @@ const authorProp = { name: author, picture: profilePicture };
   author={authorProp}
 >
   <Content />
-  <div class="d-flex justify-content-between">
+  <div id="links">
     {prevLink && <a href={`/testimonials/${prevLink}`}>Previous testimonial</a>}
     {nextLink && <a href={`/testimonials/${nextLink}`}>Next testimonial</a>}
   </div>

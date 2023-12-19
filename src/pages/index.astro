@@ -11,6 +11,7 @@ import convincing from "../images/convincing-diagram.svg";
 
 import { getCollection } from "astro:content";
 const testimonials = await getCollection("testimonials");
+import Testimonials from "../components/Testimonials";
 ---
 
 <Layout title="Home">
@@ -91,6 +92,16 @@ const testimonials = await getCollection("testimonials");
           alt="Mission statement diagram"
           class="w-100 h-auto"
         />
+      </div>
+    </section>
+    <section id="testimonials">
+      <div class="container">
+        <h2>Testimonials</h2>
+        <p>
+          Explore the experiences of individuals who have contributed to
+          open-source projects within the F# community.
+        </p>
+        <Testimonials client:only="react" testimonials={testimonials} />
       </div>
     </section>
     <!--<section id="testimonials" class="text-center">-->
@@ -342,6 +353,30 @@ const testimonials = await getCollection("testimonials");
 
     a {
       color: var(--magenta-400);
+    }
+  }
+
+  #testimonials {
+    color: var(--cyan-500);
+    padding: var(--spacing-900) var(--spacing-400);
+    @media screen and (min-width: 768px) {
+      padding-inline: 0;
+    }
+
+    h2 {
+      font-size: var(--font-900);
+      text-align: center;
+      margin-top: 0;
+    }
+
+    p {
+      text-align: center;
+      font-size: var(--font-600);
+      margin-bottom: var(--spacing-600);
+    }
+
+    div {
+      margin-inline: auto;
     }
   }
 </style>
