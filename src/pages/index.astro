@@ -104,66 +104,10 @@ import Testimonials from "../components/Testimonials";
         <Testimonials client:only="react" testimonials={testimonials} />
       </div>
     </section>
-    <!--<section id="testimonials" class="text-center">-->
-    <!--  <div class="container">-->
-    <!--    <h2 class="mb-4 h1">Testimonials</h2>-->
-    <!--    <p>-->
-    <!--      Explore the experiences of individuals who have contributed to-->
-    <!--      open-source projects within the F# community.-->
-    <!--    </p>-->
-    <!--    <div id="testimonialCarousel" class="carousel carousel-dark slide mt-6">-->
-    <!--      <div class="carousel-inner">-->
-    <!--        {-->
-    <!--          testimonials.map((testimonial, idx) => {-->
-    <!--            {-->
-    <!--              const href = `/testimonials/${testimonial.slug}`;-->
-    <!--              return (-->
-    <!--                <a-->
-    <!--                  href={href}-->
-    <!--                  class:list={[-->
-    <!--                    "carousel-item text-dark text-decoration-none bg-light border-start border-5 border-black",-->
-    <!--                    { active: idx === 0 },-->
-    <!--                  ]}-->
-    <!--                >-->
-    <!--                  <figure class="text-center">-->
-    <!--                    <blockquote class="blockquote">-->
-    <!--                      <p>{testimonial.data.preview}</p>-->
-    <!--                    </blockquote>-->
-    <!--                    <figcaption class="blockquote-footer">-->
-    <!--                      {testimonial.data.author}-->
-    <!--                    </figcaption>-->
-    <!--                    <small class="text-link mt-4">Read more 📖</small>-->
-    <!--                  </figure>-->
-    <!--                </a>-->
-    <!--              );-->
-    <!--            }-->
-    <!--          })-->
-    <!--        }-->
-    <!--      </div>-->
-    <!--      <button-->
-    <!--        class="carousel-control-prev"-->
-    <!--        type="button"-->
-    <!--        data-bs-target="#testimonialCarousel"-->
-    <!--        data-bs-slide="prev"-->
-    <!--      >-->
-    <!--        <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-    <!--        <span class="visually-hidden">Previous</span>-->
-    <!--      </button>-->
-    <!--      <button-->
-    <!--        class="carousel-control-next"-->
-    <!--        type="button"-->
-    <!--        data-bs-target="#testimonialCarousel"-->
-    <!--        data-bs-slide="next"-->
-    <!--      >-->
-    <!--        <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-    <!--        <span class="visually-hidden">Next</span>-->
-    <!--      </button>-->
-    <!--    </div>-->
-    <!--  </div>-->
-    <!--</section>-->
-    <section id="cat" class="d-flex justify-content-center">
-      <a href="/join-us" class="btn btn-lg btn-primary m-6">Join us today! 🚀</a
-      >
+    <section id="cta">
+      <a href="/join-us">
+        <button> Join us today! 🚀</button>
+      </a>
     </section>
   </main>
 </Layout>
@@ -377,6 +321,21 @@ import Testimonials from "../components/Testimonials";
 
     div {
       margin-inline: auto;
+    }
+  }
+
+  #cta {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding-bottom: var(--spacing-900);
+
+    > a button {
+      font-size: var(--font-700);
+      font-weight: 800;
+      padding: var(--spacing-200) var(--spacing-400);
+      background-color: var(--cyan-950);
+      color: var(--white);
     }
   }
 </style>

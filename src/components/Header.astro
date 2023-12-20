@@ -83,5 +83,28 @@ const { color = "cyan", mainTitle, author, src }: HeaderProps = Astro.props;
       }
       line-height: 1;
     }
+
+    #author {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: var(--spacing-300);
+
+      strong {
+        margin-top: var(--spacing-200);
+        background-color: var(--key-950);
+        padding: var(--spacing-50) var(--spacing-100);
+        color: var(--white);
+      }
+
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+      }
+    }
   }
 </style>

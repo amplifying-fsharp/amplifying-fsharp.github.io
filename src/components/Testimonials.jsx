@@ -10,8 +10,14 @@ const StyledDiv = styled.div`
   max-width: var(--container-md);
 
   blockquote {
-    font-size: var(--font-800);
+    font-size: var(--font-700);
     padding-inline: var(--spacing-200);
+    &::before {
+      content: "“ ";
+    }
+    &::after {
+      content: " „";
+    }
   }
 
   figcaption {
