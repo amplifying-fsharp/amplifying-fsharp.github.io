@@ -10,25 +10,39 @@ const currentPath = pathname.replaceAll("/", "");
   <a href="/">
     <Image src={logo} alt="Amplifying F# logo" height="30px" />
   </a>
-  <Icon pack="ri" name="menu-fill" width="30px" height="30px" />
-  <input type="checkbox" name="mobile-menu" />
+
   <ul>
     <li>
       <a
         href="/blog"
-        id="blog-link"
-        class={currentPath === "blog" ? "active" : ""}>Blog</a
+        class={currentPath === "blog" ? "active blog-link" : "blog-link"}
+        >Blog</a
       >
     </li>
-    <li>
-      <a href="/incitation"> Incitation</a>
+    <li class="hide-tablet">
+      <a
+        href="/incitation"
+        class={currentPath === "incitation" ? "active" : ""}
+      >
+        Incitation</a
+      >
     </li>
     <li>
       <a
         href="/sessions"
-        id="sessions-link"
-        class={currentPath === "sessions" ? "active" : ""}>Sessions</a
+        class={currentPath === "sessions"
+          ? "active sessions-link"
+          : "sessions-link"}>Sessions</a
       >
+    </li>
+    <li class="hide-tablet">
+      <a
+        href="/fsharp-essentials"
+        class={currentPath === "fsharp-essentials" ? "active" : ""}
+      >
+        F# Essentials</a
+      >
+      <span class="new">new</span>
     </li>
     <li>
       <a href="/faq" class={currentPath === "faq" ? "active" : ""}>FAQ</a>
@@ -36,11 +50,56 @@ const currentPath = pathname.replaceAll("/", "");
     <li>
       <a
         href="/join-us"
-        id="join-us-link"
-        class={currentPath === "join-us" ? "active" : ""}>Join us!</a
+        class={currentPath === "join-us"
+          ? "active join-us-link"
+          : "join-us-link"}>Join us!</a
       >
     </li>
   </ul>
+  <ul id="tablet">
+    <li>
+      <a
+        href="/blog"
+        class={currentPath === "blog" ? "active blog-link" : "blog-link"}
+        >Blog</a
+      >
+    </li>
+    <li>
+      <a
+        href="/sessions"
+        class={currentPath === "sessions"
+          ? "active sessions-link"
+          : "sessions-link"}>Sessions</a
+      >
+    </li>
+    <li>
+      <a
+        href="/join-us"
+        class={currentPath === "join-us"
+          ? "active join-us-link"
+          : "join-us-link"}>Join us!</a
+      >
+    </li>
+  </ul>
+  <ul id="more">
+    <li>
+      <a href="/incitation"> Incitation</a>
+    </li>
+    <li>
+      <a
+        href="/fsharp-essentials"
+        class={currentPath === "fsharp-essentials" ? "active" : ""}
+      >
+        F# Essentials</a
+      >
+      <span class="new">new</span>
+    </li>
+    <li>
+      <a href="/faq" class={currentPath === "faq" ? "active" : ""}>FAQ</a>
+    </li>
+  </ul>
+  <Icon pack="ri" name="menu-fill" width="30px" height="30px" />
+  <input type="checkbox" name="mobile-menu" />
 </nav>
 <style>
   nav {
@@ -54,15 +113,23 @@ const currentPath = pathname.replaceAll("/", "");
     grid-row-gap: 0;
     position: relative;
     transition: grid-template-rows 250ms;
+    --link-height: 30px;
+
+    #tablet,
+    #more {
+      display: none;
+    }
 
     > a {
       display: block;
-      height: 30px;
+      height: var(--link-height);
+      flex: 1;
 
       img {
         filter: invert(100%);
-        height: 30px;
+        height: var(--link-height);
         grid-area: 1 / 1 / 2 / 2;
+        object-fit: contain;
       }
     }
 
@@ -93,6 +160,19 @@ const currentPath = pathname.replaceAll("/", "");
 
       li {
         margin: 0;
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-300);
+
+        .new {
+          background-color: var(--cyan-500);
+          text-transform: uppercase;
+          z-index: 10;
+          font-size: calc(var(--spacing-400) / 2);
+          padding: 2px 4px;
+          transform: translateY(-2px);
+          font-weight: 600;
+        }
       }
 
       a {
@@ -143,22 +223,25 @@ const currentPath = pathname.replaceAll("/", "");
         }
       }
 
-      #blog-link {
+      .blog-link {
         color: var(--magenta-300);
+
         &::after {
           background-color: var(--magenta-200);
         }
       }
 
-      #join-us-link {
+      .join-us-link {
         color: var(--cyan-200);
+
         &::after {
           background-color: var(--cyan-100);
         }
       }
 
-      #sessions-link {
+      .sessions-link {
         color: var(--yellow-300);
+
         &::after {
           background-color: var(--yellow-200);
         }
@@ -181,13 +264,38 @@ const currentPath = pathname.replaceAll("/", "");
       justify-content: space-between;
       padding: var(--spacing-200) var(--spacing-400);
 
-      > svg,
-      input[type="checkbox"] {
-        display: none;
+      > a {
+        flex: initial;
+      }
+
+      &:has(input[type="checkbox"]:checked) {
+        ul {
+          margin-top: 0;
+        }
+
+        #more {
+          display: block;
+          position: fixed;
+          right: 0;
+          top: calc(2 * var(--link-height) + 4px);
+          background-color: var(--key-950);
+          border-top: 1px solid var(--key-300);
+          padding: var(--spacing-100) var(--spacing-200);
+
+          li {
+            margin-block: var(--spacing-200);
+
+            &::after {
+              display: none;
+            }
+          }
+        }
       }
 
       ul {
         display: flex;
+        flex: 1;
+        justify-content: center;
         visibility: visible;
         max-height: initial;
         margin: 0;
@@ -201,10 +309,57 @@ const currentPath = pathname.replaceAll("/", "");
         li:last-child::after {
           content: none;
         }
+
+        li {
+          gap: 0;
+
+          &:has(.new) {
+            gap: var(--spacing-200);
+
+            &::after {
+              margin-left: var(--spacing-200);
+            }
+          }
+
+          &.hide-tablet {
+            display: none;
+          }
+
+          a {
+            font-size: var(--font-200);
+          }
+        }
+      }
+    }
+    @media screen and (min-width: 960px) {
+      > svg,
+      input[type="checkbox"] {
+        display: none;
       }
 
-      &:has(input[type="checkbox"]:checked) ul {
-        margin-top: 0;
+      &:has(input[type="checkbox"]:checked) {
+        #more {
+          display: none;
+        }
+      }
+
+      ul {
+        justify-content: right;
+
+        li.hide-tablet {
+          display: block;
+        }
+
+        li {
+          .new {
+            transform: rotate(30deg);
+            font-size: calc(var(--spacing-400) / 3);
+            align-self: flex-start;
+            margin-top: var(--spacing-100);
+            margin-left: var(--spacing-100);
+            display: inline-block;
+          }
+        }
       }
     }
   }

@@ -1,0 +1,529 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon";
+import { Image } from "astro:assets";
+import fsharpLogo from "../images/fsharp-logo.svg";
+import Ian from "../images/authors/IanRussell.jpg";
+import Edgar from "../images/authors/EdgarGonzalez.jpg";
+import Ronald from "../images/authors/RonaldSchlenker.jpg";
+---
+
+<Layout title="F# The Essentials Lectures">
+  <main>
+    <section id="intro">
+      <div class="container">
+        <div>
+          <h1>F# The Essentials Lectures</h1>
+          <iframe
+            src="https://www.youtube.com/embed/tIb98KzgaRQ?si=AezTWqNW2e79rC8q&controls=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <div>
+          <p>
+            This online course is designed for people who already have some
+            experience in other languages, and now want to become a better
+            programmer by learning F#. All you need is your computer and your
+            editor of choice, and two hours of time, that will change the way
+            you develop software forever.
+          </p>
+          <hr />
+          <ul>
+            <li>
+              <Icon
+                pack="healthicons"
+                name="i-schedule-school-date-time-outline"
+                height="24"
+                width="24"
+              />
+              <span>Start in early 2024</span>
+            </li>
+            <li>
+              <Icon pack="ion" name="calendar-outline" height="24" width="24" />
+              <span>Weekly basis</span>
+            </li>
+            <li>
+              <Icon pack="uiw" name="smile-o" height="24" width="24" />
+              <span>Beginner friendly</span>
+            </li>
+            <li>
+              <Icon
+                pack="fluent"
+                name="video-24-regular"
+                height="24"
+                width="24"
+              />
+              <span>Live</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <style>
+      #intro {
+        padding: var(--spacing-200);
+        background-color: var(--key-50);
+
+        h1 {
+          font-size: var(--font-800);
+        }
+
+        iframe {
+          width: 100%;
+          aspect-ratio: 16 / 9;
+        }
+
+        p {
+          font-size: var(--font-400);
+          margin-bottom: var(--spacing-400);
+        }
+
+        hr {
+          border-bottom: 1px solid var(--key-100);
+          box-shadow: 0 1px 1px 0 var(--shadow-color);
+          margin-bottom: var(--spacing-400);
+        }
+
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          li {
+            display: inline-flex;
+            gap: var(--spacing-200);
+            margin-bottom: var(--spacing-300);
+            margin-right: var(--spacing-300);
+          }
+        }
+
+        @media screen and (min-width: 768px) {
+          padding-block: var(--spacing-700);
+
+          .container {
+            display: flex;
+            gap: var(--spacing-500);
+
+            > div {
+              flex: 1;
+            }
+
+            h1 {
+              height: var(--spacing-700);
+              font-size: var(--font-500);
+              margin-bottom: 0;
+            }
+
+            p {
+              margin-top: var(--spacing-700);
+            }
+
+            ul {
+              display: flex;
+              flex-wrap: wrap;
+
+              li {
+                flex: 1 1 40%;
+              }
+            }
+          }
+        }
+
+        @media screen and (min-width: 1200px) {
+          .container {
+            h1 {
+              font-size: var(--font-700);
+            }
+          }
+        }
+      }
+    </style>
+    <section id="sign-up">
+      <div class="container">
+        <form>
+          <h2>
+            Tell us your email and we will let you know when the course starts.
+          </h2>
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="youremail@mail.com"
+              required
+            />
+            <input type="submit" value="Notify me!" />
+          </div>
+        </form>
+        <Image src={fsharpLogo} alt="F# logo" />
+      </div>
+    </section>
+    <style>
+      #sign-up {
+        background: radial-gradient(
+          307.22% 226.24% at 50% 50%,
+          rgba(204, 236, 249, 0.5) 30.39%,
+          rgba(2, 136, 204, 0.5) 68.16%
+        );
+
+        padding: var(--spacing-800) var(--spacing-400);
+        position: relative;
+
+        h2 {
+          margin-top: 0;
+        }
+
+        form {
+          div {
+            display: flex;
+            flex-direction: column;
+            @media screen and (min-width: 450px) {
+              flex-direction: row;
+            }
+            margin-top: var(--spacing-400);
+
+            input[type="email"] {
+              background-color: transparent;
+              outline: 2px solid var(--key-950);
+              padding: var(--spacing-100) var(--spacing-400);
+
+              &::placeholder {
+                color: var(--key-200);
+              }
+            }
+
+            input[type="submit"] {
+              background-color: var(--key-950);
+              color: var(--white);
+              font-weight: 600;
+              border: none;
+              border-radius: 0;
+              outline: 2px solid var(--key-950);
+
+              &:hover {
+                transform: none;
+                color: var(--cyan-500);
+              }
+            }
+          }
+        }
+
+        img {
+          position: absolute;
+          right: var(--spacing-200);
+          z-index: -1;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 100px;
+          width: 100px;
+        }
+
+        @media screen and (min-width: 768px) {
+          padding-block: var(--spacing-950);
+
+          form {
+            max-width: 600px;
+            margin-inline: unset;
+          }
+
+          img {
+            height: 200px;
+            width: 200px;
+            right: 25%;
+          }
+        }
+
+        @media screen and (min-width: 1200px) {
+          form {
+            max-width: 960px;
+          }
+        }
+      }
+    </style>
+    <section id="course-overview">
+      <div class="container">
+        <h2>Course overview</h2>
+        <div class="segment">
+          <h3>
+            Introduction
+            <input type="checkbox" checked />
+            <button>
+              <Icon pack="ion" name="chevron-up-sharp" height="16" width="16" />
+            </button>
+          </h3>
+          <ul>
+            <li>
+              <span>Lesson 1</span>
+              <a href="#">View</a>
+            </li>
+            <li>
+              <span>Lesson 2</span>
+              <a href="#">View</a>
+            </li>
+            <li>
+              <span>Lesson 3</span>
+              <a href="#">View</a>
+            </li>
+          </ul>
+        </div>
+        <div class="segment">
+          <h3>
+            The Basics
+            <input type="checkbox" />
+            <button>
+              <Icon pack="ion" name="chevron-up-sharp" height="16" width="16" />
+            </button>
+          </h3>
+          <ul>
+            <li>
+              <span>Lesson 1</span>
+              <a href="#">View</a>
+            </li>
+            <li>
+              <span>Lesson 2</span>
+              <a href="#">View</a>
+            </li>
+            <li>
+              <span>Lesson 3</span>
+              <a href="#">View</a>
+            </li>
+          </ul>
+        </div>
+        <div class="segment">
+          <h3>
+            Object Programming
+            <input type="checkbox" />
+            <button>
+              <Icon pack="ion" name="chevron-up-sharp" height="16" width="16" />
+            </button>
+          </h3>
+          <ul>
+            <li>
+              <span>Lesson 1</span>
+              <a href="#">View</a>
+            </li>
+            <li>
+              <span>Lesson 2</span>
+              <a href="#">View</a>
+            </li>
+            <li>
+              <span>Lesson 3</span>
+              <a href="#">View</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <style>
+      #course-overview {
+        padding: var(--spacing-600) var(--spacing-200);
+
+        h2 {
+          text-align: center;
+          margin-top: 0;
+        }
+
+        .segment {
+          margin-block: var(--spacing-200);
+
+          h3 {
+            font-weight: 600;
+            background-color: var(--key-100);
+            padding: var(--spacing-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--spacing-200);
+            position: relative;
+            margin-block: 0;
+
+            button {
+              border: none;
+              outline: 1px solid var(--key-200);
+              padding: var(--spacing-50);
+              background-color: transparent;
+            }
+
+            input[type="checkbox"] {
+              position: absolute;
+              right: 12px;
+              z-index: 1;
+              width: 24px;
+              height: 24px;
+              appearance: none;
+              cursor: pointer;
+
+              &:checked + button {
+                transform: rotate(180deg);
+              }
+            }
+          }
+
+          ul {
+            visibility: hidden;
+            max-height: 0;
+            padding: 0;
+
+            li {
+              border-bottom: 1px solid var(--key-100);
+              display: flex;
+              padding-block: var(--spacing-200);
+              margin: 0 var(--spacing-200);
+              justify-content: space-between;
+              align-items: center;
+
+              a {
+                outline: 3px solid var(--key-950);
+                padding: var(--spacing-50) var(--spacing-100);
+                text-decoration: none;
+                color: var(--key-950);
+
+                &:hover {
+                  background-color: var(--key-500);
+                  color: var(--white);
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+
+          h3:has(input[type="checkbox"]:checked) + ul {
+            visibility: visible;
+            max-height: unset;
+          }
+        }
+
+        @media screen and (min-width: 768px) {
+          padding-block: var(--spacing-800);
+          h2 {
+            margin-bottom: var(--spacing-600);
+          }
+
+          .segment {
+            ul {
+              li {
+                padding-block: var(--spacing-300);
+              }
+            }
+          }
+        }
+      }
+    </style>
+    <section id="instructors">
+      <h2>Instructors</h2>
+      <div class="container">
+        <div class="instructor">
+          <Image src={Ian} alt="Ian Russel" />
+          <h3>Ian Russell</h3>
+          <h4>.NET Distributed Systems Specialist</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <div class="icons">
+            <a href="https://twitter.com/ijrussell" target="_blank">
+              <Icon pack="bi" name="twitter" height="32" width="32" />
+            </a>
+            <a href="https://github.com/ijrussell" target="_blank">
+              <Icon pack="bi" name="github" height="32" width="32" />
+            </a>
+          </div>
+        </div>
+        <div class="instructor">
+          <Image src={Edgar} alt="Edgar Gonzalez" />
+          <h3>Edgar Gonzalez</h3>
+          <h4>F# Developer</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <div class="icons">
+            <a href="https://twitter.com/edgarfsharp" target="_blank">
+              <Icon pack="bi" name="twitter" height="32" width="32" />
+            </a>
+            <a href="https://github.com/edgarfgp" target="_blank">
+              <Icon pack="bi" name="github" height="32" width="32" />
+            </a>
+          </div>
+        </div>
+        <div class="instructor">
+          <Image src={Ronald} alt="Ronald Schlenker" />
+          <h3>Ronald Schlenker</h3>
+          <h4>F# Developer</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <div class="icons">
+            <a href="https://twitter.com/SchlenkR" target="_blank">
+              <Icon pack="bi" name="twitter" height="32" width="32" />
+            </a>
+            <a href="https://github.com/schlenkr" target="_blank">
+              <Icon pack="bi" name="github" height="32" width="32" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      #instructors {
+        padding: var(--spacing-600) var(--spacing-200);
+        background-color: var(--key-50);
+
+        h2 {
+          text-align: center;
+          margin-top: 0;
+        }
+
+        .instructor {
+          background-color: var(--white);
+          box-shadow: 0 2px 2px var(--shadow-color);
+          padding: var(--spacing-400);
+          margin-bottom: var(--spacing-400);
+          text-align: center;
+          border-radius: var(--radius);
+
+          h3 {
+            font-size: var(--font-700);
+          }
+
+          img {
+            width: 135px;
+            height: 135px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          .icons {
+            display: flex;
+            justify-content: center;
+            margin-block: var(--spacing-400);
+            gap: var(--spacing-300);
+
+            a {
+              color: var(--key-950);
+              transition: color 200ms;
+
+              &:hover {
+                color: var(--cyan-500);
+              }
+            }
+          }
+        }
+
+        @media screen and (min-width: 960px) {
+          padding-block: var(--spacing-800);
+          h2 {
+            margin-bottom: var(--spacing-600);
+          }
+
+          .container {
+            display: flex;
+            gap: var(--spacing-300);
+          }
+        }
+      }
+    </style>
+  </main>
+</Layout>
