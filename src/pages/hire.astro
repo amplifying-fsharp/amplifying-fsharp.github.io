@@ -1,0 +1,537 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon";
+import { Image } from "astro:assets";
+import fsharpLogo from "../images/fsharp-logo.svg";
+import David from "../images/authors/DavidSchaefer.jpg";
+import Edgar from "../images/authors/EdgarGonzalez.jpg";
+import Florian from "../images/authors/FlorianVerdonck.jpg";
+import Ronald from "../images/authors/RonaldSchlenker.jpg";
+import { StaticRedirectNotAvailable } from "astro/dist/core/errors/errors-data";
+---
+
+<Layout title="Hire professional OSS contributors">
+  <main>
+    <header>
+      <div class="container">
+        <h1>Hiring the right people can move the needle in OSS</h1>
+      </div>
+    </header>
+    <style>
+      header {
+        border-top: 1px solid var(--white);
+        padding: var(--spacing-600) var(--spacing-300);
+        background: var(--key-950);
+        color: var(--yellow-300);
+        border-bottom: 1px solid var(--yellow-400);
+
+        h1 {
+          font-size: var(--font-700);
+          text-transform: uppercase;
+          margin: 0;
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        header {
+          padding: var(--spacing-950) 0;
+
+          h1 {
+            font-size: var(--font-900);
+          }
+        }
+      }
+    </style>
+    <section id="lead">
+      <div class="container">
+        <p>
+          Over the years, the core members of <strong class="key"
+            >Amplifying F#</strong
+          > have been at the forefront of many <strong class="cyan"
+            >open-source adventures</strong
+          >.<br />
+           These men are known for their numerous contributions, expertise and
+          <strong class="yellow">dedication to F#</strong>.<br />
+        </p>
+        <p>
+          Today, some of these individuals can be hired for <strong
+            class="magenta">contracting work</strong
+          >.<br />
+           If you have a problem, if no one else can help, and if you can find
+          them...
+        </p>
+      </div>
+    </section>
+    <style>
+      #lead {
+        background: var(--key-950);
+        color: var(--white);
+        font-size: var(--font-500);
+        padding: var(--spacing-600) var(--spacing-300);
+
+        p:first-child {
+          margin-top: 0;
+        }
+
+        strong {
+          font-weight: 200;
+          font-size: var(--font-600);
+        }
+
+        .cyan {
+          color: var(--cyan-500);
+          text-shadow: var(--cyan-400) 2px 0 10px;
+        }
+
+        .magenta {
+          color: var(--magenta-300);
+          text-shadow: var(--magenta-400) 2px 0 10px;
+        }
+
+        .yellow {
+          color: var(--yellow-400);
+          text-shadow: var(--yellow-400) 2px 0 10px;
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        #lead {
+          padding-block: var(--spacing-800);
+        }
+      }
+    </style>
+    <section id="why">
+      <div class="container">
+        <h2>Why hire someone?</h2>
+        <p>
+          In the IT industry, we <strong>take OSS for granted</strong>. We
+          typically assume it is free to use and if there is a problem, someone
+          else will solve it. The downside of course is that <em
+            >nobody cares if something isn't working</em
+          > for you. It was free to begin with, so there is no refund and you
+          should can send a pull request to solve your own problem.
+        </p>
+        <p>
+          Of course sending that <em
+            >PR can require extensive know-how of the OSS project</em
+          >. You might not have that particular skill set and nothing ever comes
+          of it.
+        </p>
+        <p>
+          There can be various reasons why an OSS problem remains unsolved and
+          we encourage you to put the right people on it. <strong
+            >We wish to normalize paying someone to do open-source work.</strong
+          ><br />It really doesn't have to be us, but please open up to the
+          idea.
+        </p>
+      </div>
+    </section>
+    <style>
+      #why {
+        background-color: var(--magenta-950);
+        color: var(--cyan-50);
+
+        h2 {
+          text-align: right;
+          text-transform: uppercase;
+          margin-block: var(--spacing-600);
+        }
+
+        p:first-of-type {
+          margin-top: 0;
+        }
+
+        p {
+          margin-block: var(--spacing-500);
+          font-size: var(--font-500);
+        }
+
+        strong {
+          color: var(--magenta-300);
+        }
+
+        em {
+          text-decoration: underline;
+          text-decoration-color: var(--magenta-500);
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        #why {
+          p {
+          }
+        }
+      }
+    </style>
+    <section id="money">
+      <h2>The secret ingredient is money</h2>
+      <p class="container">
+        Most of the <strong>successful F# open-source projects</strong> have
+        thrived because
+        <strong>companies invested serious money</strong> into it. Some stories
+        are more publicly known than others, but know that only the sun is free.
+        Money often allows <strong
+          >someone to work on the project during broad day light</strong
+        > and that is essential to make projects flourish.
+      </p>
+    </section>
+    <style>
+      #money {
+        background-color: var(--cyan-200);
+        padding-block: var(--spacing-600);
+
+        h2 {
+          text-transform: uppercase;
+          text-align: center;
+          color: var(--cyan-800);
+          margin-top: 0;
+          margin-bottom: var(--spacing-600);
+          padding: 0;
+          border-radius: var(--radius);
+          font-size: var(--font-700);
+        }
+
+        p {
+          font-size: var(--font-600);
+          max-width: 80%;
+          margin-inline: auto;
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        #money {
+          padding-block: var(--spacing-800);
+
+          h2 {
+          }
+
+          p {
+            max-width: 50%;
+            margin-top: 0;
+          }
+        }
+      }
+    </style>
+    <section id="contractors" class="container">
+      <h2>Hire Amplifying FSharp's finest</h2>
+      <p class="intro">
+        Amplifying FSharp is no legal entity and thus cannot take any direct
+        assignments. Most members have are freelance business and can be contact
+        for opportunities. We wish to inform you this is possible. Feel free to
+        reach out, <em>on sait jamais</em>.
+      </p>
+      <div class="contractor">
+        <div class="header">
+          <h3 id="DavidSchaefer">David Schaefer</h3>
+          <Image src={David} alt="David Schaefer" />
+        </div>
+        <div class="body">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque
+            itaque officiis ullam unde? Commodi distinctio eum velit! Ad aliquam
+            aut dicta ea molestias natus possimus praesentium quisquam, rem
+            tempore unde.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
+            architecto dignissimos eaque eum fugit minus nihil, quae sit. Culpa
+            debitis dolorum fuga modi necessitatibus perferendis quod ratione,
+            recusandae sed tenetur.
+          </p>
+        </div>
+        <div class="contact">
+          <a
+            href="mailto:dawedawe@posteo.de?subject=Contracting%20Amplifying%20FSharp"
+            target="_blank"
+          >
+            <Icon pack="mdi-light" name="email" height="32" width="32" />
+          </a>
+          <a href="https://github.com/dawedawe" target="_blank">
+            <Icon pack="bi" name="github" height="32" width="32" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/david-schaefer-a44177a8/"
+            target="_blank"
+          >
+            <Icon pack="bi" name="linkedin" height="32" width="32" />
+          </a>
+          <a href="https://www.function-type.com/" target="_blank">
+            <Icon pack="ph" name="globe-light" height="32" width="32" />
+          </a>
+        </div>
+      </div>
+      <div class="contractor">
+        <div class="header">
+          <h3 id="EdgarGonzalez">Edgar Gonzalez</h3>
+          <Image src={Edgar} alt="Edgar Gonzalez" />
+        </div>
+        <div class="body">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque
+            itaque officiis ullam unde? Commodi distinctio eum velit! Ad aliquam
+            aut dicta ea molestias natus possimus praesentium quisquam, rem
+            tempore unde.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
+            architecto dignissimos eaque eum fugit minus nihil, quae sit. Culpa
+            debitis dolorum fuga modi necessitatibus perferendis quod ratione,
+            recusandae sed tenetur.
+          </p>
+        </div>
+        <div class="contact">
+          <a
+            href="mailto:edgar@mail.to?subject=Contracting%20Amplifying%20FSharp"
+            target="_blank"
+          >
+            <Icon pack="mdi-light" name="email" height="32" width="32" />
+          </a>
+          <a href="https://github.com/edgarfgp" target="_blank">
+            <Icon pack="bi" name="github" height="32" width="32" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/edgargonzalezdev/"
+            target="_blank"
+          >
+            <Icon pack="bi" name="linkedin" height="32" width="32" />
+          </a>
+          <a href="https://devconflicts.com/" target="_blank">
+            <Icon pack="ph" name="globe-light" height="32" width="32" />
+          </a>
+        </div>
+      </div>
+      <div class="contractor nojaf">
+        <div class="header">
+          <h3 id="FlorianVerdonck">Florian Verdonck</h3>
+          <Image src={Florian} alt="Florian Verdonck" />
+        </div>
+        <div class="body">
+          <p>
+            Hi there, I'm Florian, also known as <strong>nojaf</strong> on
+            GitHub! I've had the privilege of contributing to pivotal <strong
+              >F# open-source projects</strong
+            > over the years. This includes working on the F#
+            <strong>compiler and developing essential tooling</strong>.
+          </p>
+          <p>
+            One of my earliest successes was rejuvenating the <a
+              href="https://fsprojects.github.io/fantomas/"
+              target="_blank">Fantomas project</a
+            >, which taught me invaluable lessons in nurturing an open-source
+            project. This experience enhanced not only my technical expertise
+            but also my ability to navigate the open-source community
+            effectively.
+          </p>
+          <p>
+            I've also had the amazing opportunity to collaborate with the
+            <a href="https://opensource.gresearch.com/" target="_blank"
+              >G-Research Open-Source team</a
+            >. There, I made significant contributions to the F# components of
+            the dotnet SDK. At one point, I was even recognized as the Featured
+            <a
+              href="https://devblogs.microsoft.com/dotnet/announcing-dotnet-8-rc2/#community-contributor"
+              >Community Contributor</a
+            >.
+          </p>
+          <p>
+            In addition to this, I have a strong interest in web development. I
+            apply my front-end skills to create tools like the <a
+              href="https://fsprojects.github.io/fantomas-tools"
+              target="_blank">Fantomas online tools</a
+            > and contribute to the <a
+              href="https://github.com/fsprojects/FSharp.Formatting/issues/849"
+              target="_blank">modern theme for F# Formatting</a
+            >.
+          </p>
+        </div>
+        <div class="contact">
+          <a
+            href="mailto:florian@nojaf.com?subject=Contracting%20Amplifying%20FSharp"
+            target="_blank"
+          >
+            <Icon pack="mdi-light" name="email" height="32" width="32" />
+          </a>
+          <a href="https://github.com/nojaf" target="_blank">
+            <Icon pack="bi" name="github" height="32" width="32" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/florian-verdonck/"
+            target="_blank"
+          >
+            <Icon pack="bi" name="linkedin" height="32" width="32" />
+          </a>
+          <a href="https://blog.nojaf.com/about" target="_blank">
+            <Icon pack="ph" name="globe-light" height="32" width="32" />
+          </a>
+        </div>
+      </div>
+      <div class="contractor">
+        <div class="header">
+          <h3 id="RonaldSchlenker">Ronald Schlenker</h3>
+          <Image src={Ronald} alt="Ronald Schlenker" />
+        </div>
+        <div class="body">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque
+            itaque officiis ullam unde? Commodi distinctio eum velit! Ad aliquam
+            aut dicta ea molestias natus possimus praesentium quisquam, rem
+            tempore unde.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
+            architecto dignissimos eaque eum fugit minus nihil, quae sit. Culpa
+            debitis dolorum fuga modi necessitatibus perferendis quod ratione,
+            recusandae sed tenetur.
+          </p>
+        </div>
+        <div class="contact">
+          <a
+            href="mailto:ronald@mail.to?subject=Contracting%20Amplifying%20FSharp"
+            target="_blank"
+          >
+            <Icon pack="mdi-light" name="email" height="32" width="32" />
+          </a>
+          <a href="https://github.com/schlenkR" target="_blank">
+            <Icon pack="bi" name="github" height="32" width="32" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ronald-s-297a675/"
+            target="_blank"
+          >
+            <Icon pack="bi" name="linkedin" height="32" width="32" />
+          </a>
+          <a href="https://devconflicts.com/" target="_blank">
+            <Icon pack="ph" name="globe-light" height="32" width="32" />
+          </a>
+        </div>
+      </div>
+    </section>
+    <style>
+      #contractors {
+        .intro {
+          max-width: 75%;
+          font-style: italic;
+          margin-block: var(--spacing-500);
+        }
+
+        h2 {
+          font-size: var(--font-700);
+        }
+
+        .contractor {
+          box-shadow: 0 1px 1px var(--shadow-color);
+          background-color: var(--key-900);
+          background: linear-gradient(
+            180deg,
+            var(--key-900) 0%,
+            var(--key-950) 100%
+          );
+          padding: var(--spacing-400);
+          color: var(--white);
+          margin-bottom: var(--spacing-400);
+
+          .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            h3 {
+              text-transform: uppercase;
+              margin-top: 0;
+              font-size: var(--font-600);
+              margin-right: var(--spacing-100);
+            }
+
+            img {
+              height: 160px;
+              width: 160px;
+              object-fit: cover;
+            }
+          }
+
+          .body {
+            margin-block: var(--spacing-500);
+          }
+
+          .contact {
+            display: flex;
+            gap: var(--spacing-400);
+            justify-content: space-between;
+
+            a {
+              color: var(--cyan-500);
+              transition: all 200ms;
+            }
+
+            a:hover {
+              color: var(--cyan-200);
+            }
+          }
+
+          &.nojaf {
+            background: #ffe710;
+            color: var(--key-950);
+            @import url("https://fonts.googleapis.com/css2?family=Mohave:wght@600&display=swap");
+
+            .header {
+              h3 {
+                font-family: "Mohave", sans-serif;
+                font-weight: 600;
+                font-size: var(--font-700);
+              }
+            }
+
+            .contact {
+              a {
+                color: var(--key-800);
+                padding-bottom: var(--spacing-100);
+
+                &:hover {
+                  color: var(--key-950);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        #contractors {
+          .intro {
+            max-width: 66%;
+          }
+
+          .contractor {
+            margin-bottom: var(--spacing-600);
+
+            .header {
+              display: inline;
+
+              img {
+                height: 250px;
+                width: 250px;
+                object-fit: cover;
+                float: right;
+              }
+            }
+
+            .body {
+              min-height: 250px;
+              width: calc(100% - 250px - var(--spacing-400));
+            }
+
+            .contact {
+              justify-content: space-evenly;
+              gap: 0;
+            }
+          }
+        }
+      }
+    </style>
+  </main>
+</Layout>
+<style>
+  section {
+    padding: var(--spacing-400);
+  }
+</style>

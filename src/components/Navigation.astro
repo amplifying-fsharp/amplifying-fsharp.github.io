@@ -51,6 +51,10 @@ const currentPath = pathname.replaceAll("/", "");
       <span class="new">new</span>
     </li>
     <li class="hide-tablet">
+      <a href="/hire" class={currentPath === "hire" ? "active" : ""}> Hire</a>
+      <span class="new">new</span>
+    </li>
+    <li class="hide-tablet">
       <a href="/faq" class={currentPath === "faq" ? "active" : ""}>FAQ</a>
     </li>
     <li>
@@ -105,13 +109,17 @@ const currentPath = pathname.replaceAll("/", "");
         Burn out</a
       >
       <span class="new">new</span>
-      <li>
-        <a href="/faq" class={currentPath === "faq" ? "active" : ""}>FAQ</a>
-      </li>
     </li>
-    <Icon pack="ri" name="menu-fill" width="30px" height="30px" />
-    <input type="checkbox" name="mobile-menu" />
+    <li>
+      <a href="/hire" class={currentPath === "hire" ? "active" : ""}> Hire</a>
+      <span class="new">new</span>
+    </li>
+    <li>
+      <a href="/faq" class={currentPath === "faq" ? "active" : ""}>FAQ</a>
+    </li>
   </ul>
+  <Icon pack="ri" name="menu-fill" width="30px" height="30px" />
+  <input type="checkbox" name="mobile-menu" />
   <style>
     nav {
       padding: var(--spacing-200);
