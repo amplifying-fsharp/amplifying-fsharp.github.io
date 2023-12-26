@@ -28,6 +28,7 @@ import sessionHeader3 from "../images/session-header-3.jpg";
 import faqHeader from "../images/faq-header.jpg";
 import joinUsHeader from "../images/join-us-header.jpg";
 import testimonialHeader from "../images/testimonials-header.jpg";
+import burnHeader from "../images/burn-header.jpg";
 
 function getImageSrc(path) {
   if (path.match(/mission/)) {
@@ -52,6 +53,8 @@ function getImageSrc(path) {
     return joinUsHeader.src;
   } else if (path.match(/testimonials/)) {
     return testimonialHeader.src;
+  } else if (path.match(/burn/)) {
+    return burnHeader.src;
   } else {
     return "";
   }
