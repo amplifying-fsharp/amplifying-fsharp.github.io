@@ -31,5 +31,5 @@ We don't expect participants to have any prior knowledge to join a session. You 
 Remember, we all started somewhere, and we believe we can help you get there as well.
 
 <div style="margin-top: var(--spacing-700); text-align: center">
-<a href="https://github.com/amplifying-fsharp/amplifying-fsharp.github.io/issues/new?title=New+question" target="_blank" class="btn btn-yellow center">I have another question!</a>
+<a href="https://github.com/amplifying-fsharp/amplifying-fsharp.github.io/issues/new?title=New+question" target="_blank" class="btn btn-magenta">I have another question!</a>
 </div>

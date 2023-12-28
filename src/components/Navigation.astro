@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import logo from "../images/nav-logo.jpg";
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.replaceAll("/", "");
@@ -118,7 +118,7 @@ const currentPath = pathname.replaceAll("/", "");
       <a href="/faq" class={currentPath === "faq" ? "active" : ""}>FAQ</a>
     </li>
   </ul>
-  <Icon pack="ri" name="menu-fill" width="30px" height="30px" />
+  <Icon name="ri:menu-fill" width="30px" height="30px" />
   <input type="checkbox" name="mobile-menu" />
   <style>
     nav {

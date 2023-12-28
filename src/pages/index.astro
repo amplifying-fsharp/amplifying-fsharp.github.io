@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import { Content as WhoAreWe } from "../homepage/WhoAreWe.md";
@@ -34,29 +34,29 @@ import Testimonials from "../components/Testimonials";
       <div class="container">
         <div>
           <h3>
-            <Icon pack="mdi" name="bullseye-arrow" width="24px" height="24px" />
+            <Icon name="mdi:bullseye-arrow" width="24px" height="24px" />
              Mission statement
           </h3>
           <p>We believe businesses should contribute back to F# OSS.</p>
           <a href="/mission-statement">
-            <Icon pack="bi" name="chevron-right" width="16px" height="16px" />
+            <Icon name="bi:chevron-right" width="16px" height="16px" />
              Read more
           </a>
         </div>
         <div>
           <h3>
-            <Icon pack="cil" name="speech" width="24px" height="24px" />
+            <Icon name="cil:speech" width="24px" height="24px" />
              Testimonials
           </h3>
           <p>Open-source has changed people's professional lives.</p>
           <a href="#testimonials">
-            <Icon pack="bi" name="chevron-right" width="16px" height="16px" />
+            <Icon name="bi:chevron-right" width="16px" height="16px" />
              Read some inspiring stories
           </a>
         </div>
         <div>
           <h3>
-            <Icon pack="ic" name="round-live-tv" width="24px" height="24px" />
+            <Icon name="ic:round-live-tv" width="24px" height="24px" />
              Sessions
           </h3>
           <p>
@@ -64,7 +64,7 @@ import Testimonials from "../components/Testimonials";
             actively contributing during a live stream.
           </p>
           <a href="/sessions">
-            <Icon pack="bi" name="chevron-right" width="16px" height="16px" />
+            <Icon name="bi:chevron-right" width="16px" height="16px" />
              View sessions
           </a>
         </div>

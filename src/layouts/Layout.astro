@@ -1,5 +1,5 @@
 ﻿---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 const { title } = Astro.props;
 import navLogo from "../images/nav-logo.jpg";
@@ -358,6 +358,20 @@ import Navigation from "../components/Navigation.astro";
 
       &:active {
         background-color: var(--cyan-600);
+      }
+    }
+
+    &.btn-magenta {
+      background-color: var(--magenta-500);
+      color: var(--white);
+      outline: 2px solid var(--magenta-200);
+
+      &:hover {
+        background-color: var(--magenta-400);
+      }
+
+      &:active {
+        background-color: var(--magenta-600);
       }
     }
   }
