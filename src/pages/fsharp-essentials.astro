@@ -729,3 +729,86 @@ import Edgar from "../images/authors/EdgarGonzalez.jpg";
     </style>
   </main>
 </Layout>
+<div id="toast">Sample text for styling!</div>
+<style>
+  #toast {
+    background-color: var(--cyan-500);
+    color: var(--white);
+    position: fixed;
+    bottom: var(--spacing-400);
+    right: var(--spacing-400);
+    padding: var(--spacing-200) var(--spacing-400);
+    transition: all 300ms;
+    opacity: 0;
+    visibility: collapse;
+    box-shadow: 0 4px 4px var(--shadow-color);
+    outline: 1px solid var(--cyan-100);
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &.error {
+      background-color: indianred;
+      outline-color: lightcoral;
+    }
+  }
+</style>
+<script>
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "firebase/app";
+  import { getAnalytics } from "firebase/analytics";
+  import { getAuth, signInAnonymously } from "firebase/auth";
+  import { getFirestore, collection, addDoc } from "firebase/firestore";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAEBNgia8kJ1tX4cldBxXh5doNU5dywE2Q",
+    authDomain: "fsharp-essentials-2024.firebaseapp.com",
+    projectId: "fsharp-essentials-2024",
+    storageBucket: "fsharp-essentials-2024.appspot.com",
+    messagingSenderId: "226773413512",
+    appId: "1:226773413512:web:b626e85a8ba7192f15793d",
+    measurementId: "G-X6TX095HR4",
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const auth = getAuth(app);
+  const firestore = getFirestore(app);
+
+  const form = document.querySelector("form");
+  const toast = document.getElementById("toast");
+
+  if (form && toast) {
+    form.addEventListener("submit", (ev) => {
+      ev.preventDefault();
+      const input = form.querySelector("input");
+      const email = input && input.value;
+      if (email) {
+        signInAnonymously(auth)
+          .then(() => {
+            const emails = collection(firestore, "emails");
+            return addDoc(emails, { value: email });
+          })
+          .then(() => {
+            toast.textContent = "Subscribed 💪!";
+            toast.classList.add("show");
+            setTimeout(() => {
+              toast.classList.remove("show");
+              input.value = "";
+            }, 2000);
+          })
+          .catch((err) => {
+            console.error(err);
+            toast.textContent = "Yikes, that didn't work 😓! Try again later";
+            toast.classList.add("show", "error");
+            setTimeout(() => {
+              toast.classList.remove("show", "error");
+            }, 2000);
+          });
+      }
+    });
+  }
+</script>
