@@ -5,7 +5,6 @@ import { Image } from "astro:assets";
 import fsharpLogo from "../images/fsharp-logo.svg";
 import Ian from "../images/authors/IanRussell.jpg";
 import Edgar from "../images/authors/EdgarGonzalez.jpg";
-import Ronald from "../images/authors/RonaldSchlenker.jpg";
 ---
 
 <Layout title="F# The Essentials Lectures">
@@ -141,12 +140,14 @@ import Ronald from "../images/authors/RonaldSchlenker.jpg";
             Tell us your email and we will let you know when the course starts.
           </h2>
           <div>
-            <input
-              type="email"
-              name="email"
-              placeholder="youremail@mail.com"
-              required
-            />
+            <label>
+              <input
+                type="email"
+                name="email"
+                placeholder="youremail@mail.com"
+                required
+              />
+            </label>
             <input type="submit" value="Notify me!" />
           </div>
         </form>
@@ -240,70 +241,294 @@ import Ronald from "../images/authors/RonaldSchlenker.jpg";
         <h2>Course overview</h2>
         <div class="segment">
           <h3>
-            Introduction
-            <input type="checkbox" checked />
+            Core F# Types
+            <label>
+              <input type="checkbox" checked />
+            </label>
             <button>
               <Icon name="ion:chevron-up-sharp" height="16" width="16" />
             </button>
           </h3>
           <ul>
             <li>
-              <span>Lesson 1</span>
-              <a href="#">View</a>
+              <span>Tuple</span>
+              <!--<a href="#">View</a>-->
             </li>
             <li>
-              <span>Lesson 2</span>
-              <a href="#">View</a>
+              <span>Record</span>
+              <!--<a href="#">View</a>-->
             </li>
             <li>
-              <span>Lesson 3</span>
-              <a href="#">View</a>
+              <span>Discriminated Unions</span>
+              <!--<a href="#">View</a>-->
             </li>
           </ul>
         </div>
         <div class="segment">
           <h3>
-            The Basics
-            <input type="checkbox" />
+            Introduction to Pattern Matching and Functions
+            <label>
+              <input type="checkbox" />
+            </label>
             <button>
               <Icon name="ion:chevron-up-sharp" height="16" width="16" />
             </button>
           </h3>
           <ul>
             <li>
-              <span>Lesson 1</span>
-              <a href="#">View</a>
+              <span>Deep dive into Functions</span>
+              <!--<a href="#">View</a>-->
             </li>
             <li>
-              <span>Lesson 2</span>
-              <a href="#">View</a>
+              <span>Pure Functions</span>
+              <!--<a href="#">View</a>-->
             </li>
             <li>
-              <span>Lesson 3</span>
-              <a href="#">View</a>
+              <span>Composition</span>
+              <!--<a href="#">View</a>-->
+            </li>
+            <li>
+              <span>Currying and Partial Application</span>
+              <!--<a href="#">View</a>-->
+            </li>
+            <li>
+              <span>Higher-Order Functions</span>
+              <!--<a href="#">View</a>-->
             </li>
           </ul>
         </div>
         <div class="segment">
           <h3>
-            Object Programming
-            <input type="checkbox" />
+            Function Composition with Effects
+            <label>
+              <input type="checkbox" />
+            </label>
             <button>
               <Icon name="ion:chevron-up-sharp" height="16" width="16" />
             </button>
           </h3>
           <ul>
             <li>
-              <span>Lesson 1</span>
-              <a href="#">View</a>
+              <span>Option</span>
+              <!--<a href="#">View</a>-->
             </li>
             <li>
-              <span>Lesson 2</span>
-              <a href="#">View</a>
+              <span>Result</span>
+              <!--<a href="#">View</a>-->
+            </li>
+          </ul>
+        </div>
+        <div class="segment">
+          <h3>
+            Deep dive into Collections
+            <label>
+              <input type="checkbox" />
+            </label>
+            <button>
+              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+            </button>
+          </h3>
+          <ul>
+            <li>
+              <span>List</span>
+              <!--<a href="#">View</a>-->
             </li>
             <li>
-              <span>Lesson 3</span>
-              <a href="#">View</a>
+              <span>Seq</span>
+              <!--<a href="#">View</a>-->
+            </li>
+            <li>
+              <span>Array</span>
+              <!--<a href="#">View</a>-->
+            </li>
+            <li>
+              <span>Map</span>
+              <!--<a href="#">View</a>-->
+            </li>
+            <li>
+              <span>Set</span>
+              <!--<a href="#">View</a>-->
+            </li>
+          </ul>
+        </div>
+        <div class="segment">
+          <h3>
+            Organising your code
+            <label>
+              <input type="checkbox" />
+            </label>
+            <button>
+              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+            </button>
+          </h3>
+          <ul>
+            <li>
+              <span>Namespaces</span>
+              <!--<a href="#">View</a>-->
+            </li>
+            <li>
+              <span>Modules</span>
+              <!--<a href="#">View</a>-->
+            </li>
+          </ul>
+        </div>
+        <div class="segment">
+          <h3>
+            Processing external data
+            <label>
+              <input type="checkbox" />
+            </label>
+            <button>
+              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+            </button>
+          </h3>
+          <ul>
+            <li>
+              <span>CSV</span>
+              <!--<a href="#">View</a>-->
+            </li>
+            <li>
+              <span>JSON</span>
+              <!--<a href="#">View</a>-->
+            </li>
+          </ul>
+        </div>
+        <div class="segment">
+          <h3>
+            More Pattern Matching
+            <label>
+              <input type="checkbox" />
+            </label>
+            <button>
+              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+            </button>
+          </h3>
+          <ul>
+            <li>
+              <span>Active Patterns</span>
+              <!--<a href="#">View</a>-->
+            </li>
+          </ul>
+        </div>
+        <div class="segment">
+          <h3>
+            Functional validation
+            <label>
+              <input type="checkbox" />
+            </label>
+            <button>
+              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+            </button>
+          </h3>
+          <ul>
+            <li>
+              <span>Applicatives</span>
+              <!--<a href="#">View</a>-->
+            </li>
+          </ul>
+        </div>
+        <div class="segment">
+          <h3>
+            Improving your Domain Models
+            <label>
+              <input type="checkbox" />
+            </label>
+            <button>
+              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+            </button>
+          </h3>
+          <ul>
+            <li>
+              <span>Value Objects</span>
+              <!--<a href="#">View</a>-->
+            </li>
+          </ul>
+        </div>
+        <div class="segment">
+          <h3>
+            Object programming in F#
+            <label>
+              <input type="checkbox" />
+            </label>
+            <button>
+              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+            </button>
+          </h3>
+          <ul>
+            <li>
+              <span>Class Types</span>
+              <!--<a href="#">View</a>-->
+            </li>
+            <li>
+              <span>Interfaces</span>
+              <!--<a href="#">View</a>-->
+            </li>
+            <li>
+              <span>Object Expressions</span>
+              <!--<a href="#">View</a>-->
+            </li>
+          </ul>
+        </div>
+        <div class="segment">
+          <h3>
+            Recursion
+            <label>
+              <input type="checkbox" />
+            </label>
+            <button>
+              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+            </button>
+          </h3>
+          <ul>
+            <li>
+              <span>Fundamentals of recursion</span>
+              <!--<a href="#">View</a>-->
+            </li>
+            <li>
+              <span>Tail call recursion</span>
+              <!--<a href="#">View</a>-->
+            </li>
+          </ul>
+        </div>
+        <div class="segment">
+          <h3>
+            Computation Expressions
+            <label>
+              <input type="checkbox" />
+            </label>
+            <button>
+              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+            </button>
+          </h3>
+          <ul>
+            <li>
+              <span>Fundamentals of computation expressions</span>
+              <!--<a href="#">View</a>-->
+            </li>
+            <li>
+              <span>Compound Effects</span>
+              <!--<a href="#">View</a>-->
+            </li>
+          </ul>
+        </div>
+        <div class="segment">
+          <h3>
+            Using ASP.NET Core
+            <label>
+              <input type="checkbox" />
+            </label>
+            <button>
+              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+            </button>
+          </h3>
+          <ul>
+            <li>
+              <span>Web Pages</span>
+              <!--<a href="#">View</a>-->
+            </li>
+            <li>
+              <span>API</span>
+              <!--<a href="#">View</a>-->
             </li>
           </ul>
         </div>
@@ -410,10 +635,10 @@ import Ronald from "../images/authors/RonaldSchlenker.jpg";
         <div class="instructor">
           <Image src={Ian} alt="Ian Russel" />
           <h3>Ian Russell</h3>
-          <h4>.NET Distributed Systems Specialist</h4>
+          <h4>Instructor</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            .NET Distributed Systems Specialist | C# & F# | DDD Practitioner.
+            Author of Essential F#
           </p>
           <div class="icons">
             <a href="https://twitter.com/ijrussell" target="_blank">
@@ -427,10 +652,10 @@ import Ronald from "../images/authors/RonaldSchlenker.jpg";
         <div class="instructor">
           <Image src={Edgar} alt="Edgar Gonzalez" />
           <h3>Edgar Gonzalez</h3>
-          <h4>F# Developer</h4>
+          <h4>Assistant</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Mobile Developer and OSS contributor. Helping the F# ecosystem
+            through the AmplifyingF# initiative.
           </p>
           <div class="icons">
             <a href="https://twitter.com/edgarfsharp" target="_blank">
