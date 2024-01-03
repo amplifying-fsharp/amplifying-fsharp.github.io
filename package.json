@@ -29,6 +29,6 @@
     "@mermaid-js/mermaid-cli": "10.6.1",
     "prettier": "3.1.1",
     "prettier-plugin-astro": "0.12.2",
-    "sass": "1.69.5"
+    "sass": "1.69.7"
   }
 }
