@@ -11,7 +11,7 @@ Let's not kid ourselves. Open Source can be a miserable place to work in.
 After a full work day random strangers expect you to perform at your best, for free, for them. 
 And if you don't, they will let you know. 
 
-There are many social dynamics unique to Open Source that can drain all energy from you.  
+There are many toxic social dynamics unique to Open Source that can drain all energy from you.  
 
 But it's not just the human factor. It's also the technical challenges that can be overwhelming. 
 Often you find yourselve facing the decision to either go to bed and get a healthy amount of sleep, or to stay up late and fix that bug, to read up on that API change that made your CI crash, to fix that issue that has been open for months, etc. etc. etc.
