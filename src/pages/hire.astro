@@ -2,12 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import fsharpLogo from "../images/fsharp-logo.svg";
 import David from "../images/authors/DavidSchaefer.jpg";
 import Edgar from "../images/authors/EdgarGonzalez.jpg";
 import Florian from "../images/authors/FlorianVerdonck.jpg";
 import Ronald from "../images/authors/RonaldSchlenker.jpg";
-import { StaticRedirectNotAvailable } from "astro/dist/core/errors/errors-data";
 ---
 
 <Layout title="Hire professional OSS contributors">
@@ -259,19 +257,19 @@ import { StaticRedirectNotAvailable } from "astro/dist/core/errors/errors-data";
             href="mailto:dawedawe@posteo.de?subject=Contracting%20Amplifying%20FSharp"
             target="_blank"
           >
-            <Icon name="mdi-light:email" height="32" width="32" />
+            <Icon name="mdi-light:email" height={32} width={32} />
           </a>
           <a href="https://github.com/dawedawe" target="_blank">
-            <Icon name="bi:github" height="32" width="32" />
+            <Icon name="bi:github" height={32} width={32} />
           </a>
           <a
             href="https://www.linkedin.com/in/david-schaefer-a44177a8/"
             target="_blank"
           >
-            <Icon name="bi:linkedin" height="32" width="32" />
+            <Icon name="bi:linkedin" height={32} width={32} />
           </a>
           <a href="https://www.function-type.com/" target="_blank">
-            <Icon name="ph:globe-light" height="32" width="32" />
+            <Icon name="ph:globe-light" height={32} width={32} />
           </a>
         </div>
       </div>
@@ -310,154 +308,153 @@ import { StaticRedirectNotAvailable } from "astro/dist/core/errors/errors-data";
               iOS and Android using UIKit, SwiftUI and .NET.
             </p>
           </p>
-          <div class="contact">
-            <a
-              href="mailto:edgar@mail.to?subject=Contracting%20Amplifying%20FSharp"
-              target="_blank"
-            >
-              <Icon name="mdi-light:email" height="32" width="32" />
-            </a>
-            <a href="https://github.com/edgarfgp" target="_blank">
-              <Icon name="bi:github" height="32" width="32" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/edgargonzalezdev/"
-              target="_blank"
-            >
-              <Icon name="bi:linkedin" height="32" width="32" />
-            </a>
-            <a href="https://devconflicts.com/" target="_blank">
-              <Icon name="ph:globe-light" height="32" width="32" />
-            </a>
-          </div>
         </div>
-        <div class="contractor nojaf">
-          <div class="header">
-            <h3 id="FlorianVerdonck">Florian Verdonck</h3>
-            <Image src={Florian} alt="Florian Verdonck" />
-          </div>
-          <div class="body">
-            <p>
-              Hi there, I'm Florian, also known as <strong>nojaf</strong> on
-              GitHub! I've had the privilege of contributing to pivotal <strong
-                >F# open-source projects</strong
-              > over the years. This includes working on the F#
-              <strong>compiler and developing essential tooling</strong>.
-            </p>
-            <p>
-              One of my earliest successes was rejuvenating the <a
-                href="https://fsprojects.github.io/fantomas/"
-                target="_blank">Fantomas project</a
-              >, which taught me invaluable lessons in nurturing an open-source
-              project. This experience enhanced not only my technical expertise
-              but also my ability to navigate the open-source community
-              effectively.
-            </p>
-            <p>
-              I've also had the amazing opportunity to collaborate with the
-              <a href="https://opensource.gresearch.com/" target="_blank"
-                >G-Research Open-Source team</a
-              >. There, I made significant contributions to the F# components of
-              the dotnet SDK. At one point, I was even recognized as the
-              Featured
-              <a
-                href="https://devblogs.microsoft.com/dotnet/announcing-dotnet-8-rc2/#community-contributor"
-                >Community Contributor</a
-              >.
-            </p>
-            <p>
-              In addition to this, I have a strong interest in web development.
-              I apply my front-end skills to create tools like the <a
-                href="https://fsprojects.github.io/fantomas-tools"
-                target="_blank">Fantomas online tools</a
-              > and contribute to the <a
-                href="https://github.com/fsprojects/FSharp.Formatting/issues/849"
-                target="_blank">modern theme for F# Formatting</a
-              >.
-            </p>
-          </div>
-          <div class="contact">
-            <a
-              href="mailto:florian@nojaf.com?subject=Contracting%20Amplifying%20FSharp"
-              target="_blank"
-            >
-              <Icon name="mdi-light:email" height="32" width="32" />
-            </a>
-            <a href="https://github.com/nojaf" target="_blank">
-              <Icon name="bi:github" height="32" width="32" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/florian-verdonck/"
-              target="_blank"
-            >
-              <Icon name="bi:linkedin" height="32" width="32" />
-            </a>
-            <a href="https://blog.nojaf.com/about" target="_blank">
-              <Icon name="ph:globe-light" height="32" width="32" />
-            </a>
-          </div>
+        <div class="contact">
+          <a
+            href="mailto:edgar@mail.to?subject=Contracting%20Amplifying%20FSharp"
+            target="_blank"
+          >
+            <Icon name="mdi-light:email" height={32} width={32} />
+          </a>
+          <a href="https://github.com/edgarfgp" target="_blank">
+            <Icon name="bi:github" height={32} width={32} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/edgargonzalezdev/"
+            target="_blank"
+          >
+            <Icon name="bi:linkedin" height={32} width={32} />
+          </a>
+          <a href="https://devconflicts.com/" target="_blank">
+            <Icon name="ph:globe-light" height={32} width={32} />
+          </a>
         </div>
-        <div class="contractor">
-          <div class="header">
-            <h3 id="RonaldSchlenker">Ronald Schlenker</h3>
-            <Image src={Ronald} alt="Ronald Schlenker" />
-          </div>
-          <div class="body">
-            <p>
-              Ronald is a Frankfurt/Germany based programmer and software
-              developer with more than 20 years of experience. As an expert in
-              F#, C# .Net as well as in the web environment since day one, he
-              supports his clients in the design and implementation of complex
-              business applications and technically highly sophisticated
-              libraries and frameworks. He is an active and recognized member of
-              the F# community. In addition to his day-to-day work for clients,
-              Ronald consults and coaches teams in progressive fields such as
-              functional software development, and he is involved in many
-              successful open source projects.
-            </p>
-            <p>
-              When developing software systems, mastering complexity - i.e.
-              dividing an unmanageable overall system into individual,
-              comprehensible artifacts with clear dependencies - is one of the
-              greatest challenges of all. For this to succeed, technical skills
-              are just as important as a willingness to communicate, teamwork,
-              the ability to engage in constructive discourse and the
-              recognition of problems and their solutions.
-            </p>
-            <p>
-              I see programming languages as tools that enable the developer to
-              formulate problems with exactly the right degree of expressiveness
-              to achieve maximum comprehensibility. It is therefore necessary to
-              know which language tools exist and, above all, how they can be
-              used sensibly in the respective context. The same applies to
-              principles: It is good to know them. The big challenge is to
-              understand what they mean for everyday programming and how you can
-              incorporate them into your work in a meaningful way.
-            </p>
-          </div>
-          <div class="contact">
+      </div>
+      <div class="contractor nojaf">
+        <div class="header">
+          <h3 id="FlorianVerdonck">Florian Verdonck</h3>
+          <Image src={Florian} alt="Florian Verdonck" />
+        </div>
+        <div class="body">
+          <p>
+            Hi there, I'm Florian, also known as <strong>nojaf</strong> on
+            GitHub! I've had the privilege of contributing to pivotal <strong
+              >F# open-source projects</strong
+            > over the years. This includes working on the F#
+            <strong>compiler and developing essential tooling</strong>.
+          </p>
+          <p>
+            One of my earliest successes was rejuvenating the <a
+              href="https://fsprojects.github.io/fantomas/"
+              target="_blank">Fantomas project</a
+            >, which taught me invaluable lessons in nurturing an open-source
+            project. This experience enhanced not only my technical expertise
+            but also my ability to navigate the open-source community
+            effectively.
+          </p>
+          <p>
+            I've also had the amazing opportunity to collaborate with the
+            <a href="https://opensource.gresearch.com/" target="_blank"
+              >G-Research Open-Source team</a
+            >. There, I made significant contributions to the F# components of
+            the dotnet SDK. At one point, I was even recognized as the Featured
             <a
-              href="mailto:schlenkr@screen9.de?subject=Contracting%20Amplifying%20FSharp"
-              target="_blank"
-            >
-              <Icon name="mdi-light:email" height="32" width="32" />
-            </a>
-            <a href="https://github.com/schlenkR" target="_blank">
-              <Icon name="bi:github" height="32" width="32" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/ronald-s-297a675/"
-              target="_blank"
-            >
-              <Icon name="bi:linkedin" height="32" width="32" />
-            </a>
-            <a
-              href="https://www.xing.com/profile/Ronald_Schlenker"
-              target="_blank"
-            >
-              <Icon name="ph:globe-light" height="32" width="32" />
-            </a>
-          </div>
+              href="https://devblogs.microsoft.com/dotnet/announcing-dotnet-8-rc2/#community-contributor"
+              >Community Contributor</a
+            >.
+          </p>
+          <p>
+            In addition to this, I have a strong interest in web development. I
+            apply my front-end skills to create tools like the <a
+              href="https://fsprojects.github.io/fantomas-tools"
+              target="_blank">Fantomas online tools</a
+            > and contribute to the <a
+              href="https://github.com/fsprojects/FSharp.Formatting/issues/849"
+              target="_blank">modern theme for F# Formatting</a
+            >.
+          </p>
+        </div>
+        <div class="contact">
+          <a
+            href="mailto:florian@nojaf.com?subject=Contracting%20Amplifying%20FSharp"
+            target="_blank"
+          >
+            <Icon name="mdi-light:email" height={32} width={32} />
+          </a>
+          <a href="https://github.com/nojaf" target="_blank">
+            <Icon name="bi:github" height={32} width={32} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/florian-verdonck/"
+            target="_blank"
+          >
+            <Icon name="bi:linkedin" height={32} width={32} />
+          </a>
+          <a href="https://blog.nojaf.com/about" target="_blank">
+            <Icon name="ph:globe-light" height={32} width={32} />
+          </a>
+        </div>
+      </div>
+      <div class="contractor">
+        <div class="header">
+          <h3 id="RonaldSchlenker">Ronald Schlenker</h3>
+          <Image src={Ronald} alt="Ronald Schlenker" />
+        </div>
+        <div class="body">
+          <p>
+            Ronald is a Frankfurt/Germany based programmer and software
+            developer with more than 20 years of experience. As an expert in F#,
+            C# .Net as well as in the web environment since day one, he supports
+            his clients in the design and implementation of complex business
+            applications and technically highly sophisticated libraries and
+            frameworks. He is an active and recognized member of the F#
+            community. In addition to his day-to-day work for clients, Ronald
+            consults and coaches teams in progressive fields such as functional
+            software development, and he is involved in many successful open
+            source projects.
+          </p>
+          <p>
+            When developing software systems, mastering complexity - i.e.
+            dividing an unmanageable overall system into individual,
+            comprehensible artifacts with clear dependencies - is one of the
+            greatest challenges of all. For this to succeed, technical skills
+            are just as important as a willingness to communicate, teamwork, the
+            ability to engage in constructive discourse and the recognition of
+            problems and their solutions.
+          </p>
+          <p>
+            I see programming languages as tools that enable the developer to
+            formulate problems with exactly the right degree of expressiveness
+            to achieve maximum comprehensibility. It is therefore necessary to
+            know which language tools exist and, above all, how they can be used
+            sensibly in the respective context. The same applies to principles:
+            It is good to know them. The big challenge is to understand what
+            they mean for everyday programming and how you can incorporate them
+            into your work in a meaningful way.
+          </p>
+        </div>
+        <div class="contact">
+          <a
+            href="mailto:schlenkr@screen9.de?subject=Contracting%20Amplifying%20FSharp"
+            target="_blank"
+          >
+            <Icon name="mdi-light:email" height={32} width={32} />
+          </a>
+          <a href="https://github.com/schlenkR" target="_blank">
+            <Icon name="bi:github" height={32} width={32} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ronald-s-297a675/"
+            target="_blank"
+          >
+            <Icon name="bi:linkedin" height={32} width={32} />
+          </a>
+          <a
+            href="https://www.xing.com/profile/Ronald_Schlenker"
+            target="_blank"
+          >
+            <Icon name="ph:globe-light" height={32} width={32} />
+          </a>
         </div>
       </div>
       <style>

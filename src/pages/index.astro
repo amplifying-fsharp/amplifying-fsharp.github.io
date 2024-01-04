@@ -5,8 +5,6 @@ import Layout from "../layouts/Layout.astro";
 import { Content as WhoAreWe } from "../homepage/WhoAreWe.md";
 import { Content as WhatToContribute } from "../homepage/WhatToContribute.md";
 import { Content as ConvincingYourBoss } from "../homepage/ConvincingYourBoss.md";
-import who from "../images/who.jpg";
-import what from "../images/what.jpg";
 import convincing from "../images/convincing-diagram.svg";
 
 import { getCollection } from "astro:content";
@@ -34,29 +32,29 @@ import Testimonials from "../components/Testimonials";
       <div class="container">
         <div>
           <h3>
-            <Icon name="mdi:bullseye-arrow" width="24px" height="24px" />
+            <Icon name="mdi:bullseye-arrow" width={24} height={24} />
              Mission statement
           </h3>
           <p>We believe businesses should contribute back to F# OSS.</p>
           <a href="/mission-statement">
-            <Icon name="bi:chevron-right" width="16px" height="16px" />
+            <Icon name="bi:chevron-right" width={16} height={16} />
              Read more
           </a>
         </div>
         <div>
           <h3>
-            <Icon name="cil:speech" width="24px" height="24px" />
+            <Icon name="cil:speech" width={24} height={24} />
              Testimonials
           </h3>
           <p>Open-source has changed people's professional lives.</p>
           <a href="#testimonials">
-            <Icon name="bi:chevron-right" width="16px" height="16px" />
+            <Icon name="bi:chevron-right" width={16} height={16} />
              Read some inspiring stories
           </a>
         </div>
         <div>
           <h3>
-            <Icon name="ic:round-live-tv" width="24px" height="24px" />
+            <Icon name="ic:round-live-tv" width={24} height={24} />
              Sessions
           </h3>
           <p>
@@ -64,7 +62,7 @@ import Testimonials from "../components/Testimonials";
             actively contributing during a live stream.
           </p>
           <a href="/sessions">
-            <Icon name="bi:chevron-right" width="16px" height="16px" />
+            <Icon name="bi:chevron-right" width={16} height={16} />
              View sessions
           </a>
         </div>
