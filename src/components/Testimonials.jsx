@@ -8,6 +8,7 @@ const StyledDiv = styled.div`
   padding: var(--spacing-500);
   text-align: center;
   max-width: var(--container-md);
+  margin-inline: auto;
 
   blockquote {
     font-size: var(--font-700);
