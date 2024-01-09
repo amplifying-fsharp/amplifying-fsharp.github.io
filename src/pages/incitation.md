@@ -3,19 +3,20 @@ layout: "../layouts/PageLayout.astro"
 backgroundImage: "../images/incitation-header.jpg"
 mainTitle: "Provoking the Muse: An Incitement to Action"
 title: "Incitation"
+color: "cyan"
 ---
 
 ## Why take the leap?
 
-Contributing to open-source software, such as F#, is a way to reduce risk in using the language. By actively participating in the community and gaining knowledge about the dependencies you rely on, you can ensure that any potential issues or vulnerabilities are caught and addressed quickly. This not only increases the safety and reliability of your own projects but also benefits the broader community.
+Contributing to open-source software, such as F#, is a way to reduce risk in using the language. By **actively participating** in the community and **gaining knowledge** about the dependencies you rely on, you can ensure that any potential issues or vulnerabilities are caught and addressed quickly. This not only increases the safety and reliability of your own projects but also benefits the broader community.
 
-Furthermore, contributing to F# can increase the longevity of the language itself. By actively developing and maintaining a mature ecosystem around F#, it becomes more attractive to developers and more widely adopted. This, in turn, creates a positive feedback loop where a larger and more engaged community leads to even more contributions and improvements.
+Furthermore, contributing to F# can increase the **longevity of the language** itself. By actively developing and maintaining a **mature ecosystem around F#**, it becomes more attractive to developers and more widely adopted. This, in turn, creates a positive feedback loop where a larger and more engaged community leads to even more contributions and improvements.
 
-Another benefit of contributing to F# is the potential for gaining publicity by solving a problem in the community. By identifying and addressing a particular issue or challenge faced by F# developers, you can send a powerful marketing message about your skills and expertise. This can lead to increased visibility and opportunities for collaboration and networking.
+Another benefit of contributing to F# is the potential for **gaining publicity** by solving a problem in the community. By identifying and addressing a particular issue or challenge faced by F# developers, you can send a **powerful marketing message** about your skills and expertise. This can lead to increased visibility and opportunities for collaboration and networking.
 
-In addition to the external benefits, contributing to F# can also be personally rewarding. By committing to fixing your own problems and taking an active role in the community, you can learn from a vast pool of developers with different backgrounds and perspectives. This can lead to new insights and approaches to problem-solving and provide valuable opportunities for mentoring and professional growth.
+In addition to the external benefits, contributing to F# can also be **personally rewarding**. By committing to fixing your own problems and taking an active role in the community, you can learn from a vast pool of developers with different backgrounds and perspectives. This can lead to new insights and approaches to problem-solving and provide valuable opportunities for **mentoring and professional growth**.
 
-In summary, contributing to open-source software like F# offers numerous benefits, including reduced risk, increased longevity and attractiveness, improved publicity, and personal growth and development. So why wait? See it, say it, sort it, and start contributing to F# today.
+In summary, contributing to open-source software like F# offers numerous benefits, including reduced risk, increased longevity and attractiveness, improved publicity, and personal growth and development. So why wait? **See it, say it, sort it**, and start contributing to F# today.
 
 ## What to expect?
 

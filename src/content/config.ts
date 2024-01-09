@@ -13,20 +13,22 @@ const testimonialCollection = defineCollection({
 });
 
 const sessionCollection = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    preview: z.string(),
-    isDraft: z.boolean(),
-    date: z.date().transform((str) => new Date(str)),
-    champion: z.string(),
-    company: z.string().optional(),
-    repository: z.string().optional(),
-    issueLink: z.string().optional(),
-    youtubeId: z.string().optional(),
-    thumbnail: z.string().optional(),
-    zoomLink: z.string().optional(),
-    zoomPasscode: z.string().optional(),
-  }),
+  schema: ({ image }) => {
+    return z.object({
+      title: z.string(),
+      preview: z.string(),
+      isDraft: z.boolean(),
+      date: z.date().transform((str) => new Date(str)),
+      champion: z.string(),
+      company: z.string().optional(),
+      repository: z.string().optional(),
+      issueLink: z.string().optional(),
+      youtubeId: z.string().optional(),
+      thumbnail: image().optional(),
+      zoomLink: z.string().optional(),
+      zoomPasscode: z.string().optional(),
+    });
+  },
 });
 
 // 3. Export a single `collections` object to register your collection(s)

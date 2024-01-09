@@ -1,6 +1,6 @@
 ﻿---
 title: Florian Verdonck
-preview: Open-source heavily influenced my career.
+preview: Open-source heavily influenced my career
 isDraft: true
 author: Florian Verdonck
 slug: florian-verdonck

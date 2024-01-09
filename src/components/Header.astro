@@ -1,0 +1,110 @@
+---
+import { Image } from "astro:assets";
+type HeaderProps = {
+  color?: "cyan" | "yellow" | "magenta";
+  mainTitle: string;
+  author?: { picture: string; name: string };
+};
+const { color = "cyan", mainTitle, author, src }: HeaderProps = Astro.props;
+---
+
+<header class={`container ${color}`}>
+  <div class="overlay" style={{ backgroundImage: `url(${src})` }}></div>
+  <h1>{mainTitle}</h1>
+  {
+    author && (
+      <div id="author">
+        <Image
+          src={author.picture}
+          alt={`Profile picture of ${author.name}`}
+          width={100}
+          height={100}
+          class="img-thumbnail"
+        />
+        <strong>{author.name}</strong>
+      </div>
+    )
+  }
+</header>
+<style>
+  header {
+    color: var(--white);
+    position: relative;
+    box-shadow: 0 1px 1px var(--shadow-color);
+    border-right: 10px solid var(--cyan-200);
+    border-bottom: 10px solid var(--cyan-200);
+
+    .overlay {
+      background-size: cover;
+      background-repeat: no-repeat;
+      filter: grayscale(100%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+
+    &::before {
+      content: "";
+      background-color: var(--cyan-700);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    &.yellow {
+      color: var(--key-950);
+      border-color: var(--yellow-200);
+      &::before {
+        background-color: var(--yellow-300);
+        opacity: 0.75;
+      }
+    }
+
+    &.magenta {
+      border-color: var(--magenta-200);
+
+      &::before {
+        background-color: var(--magenta-700);
+      }
+    }
+
+    h1 {
+      margin: 0;
+      padding: var(--spacing-900) var(--spacing-600);
+      @media screen and (min-width: 768px) {
+        padding: var(--spacing-900);
+      }
+      line-height: 1;
+    }
+
+    #author {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: var(--spacing-300);
+
+      strong {
+        margin-top: var(--spacing-200);
+        background-color: var(--key-950);
+        padding: var(--spacing-50) var(--spacing-100);
+        color: var(--white);
+      }
+
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+      }
+    }
+  }
+</style>

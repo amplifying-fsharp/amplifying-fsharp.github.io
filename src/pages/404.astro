@@ -1,5 +1,5 @@
 ---
-import "../styles/style.sass";
+
 ---
 
 <!doctype html>
@@ -14,11 +14,34 @@ import "../styles/style.sass";
     <title>Lost in Space</title>
     <link rel="icon" href="/favicon.ico?v2" />
   </head>
-  <body class="p-8">
+  <body>
     <h1>Ah shuck 🙄</h1>
-    <p class="lead">Looks like this page is no longer with us.</p>
+    <p>Looks like this page is no longer with us.</p>
     <a href="/">
       <button class="btn btn-primary"> Go back home</button>
     </a>
   </body>
 </html>
+<style>
+  body {
+    padding: 96px;
+    font-family: system-ui, sans-serif;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  p {
+    font-weight: 300;
+    padding: 16px 0;
+    font-size: 20px;
+  }
+
+  button {
+    background-color: black;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+</style>

@@ -13,7 +13,7 @@ import JoinUsForm from "../components/JoinUsForm";
     ><br />
      Great, let us know what that itch is and we can schedule a session 🚀!
   </p>
-  <h2 class="mt-4">Wait, is this free?</h2>
+  <h2 id="free">Wait, is this free?</h2>
   <p>
     No, it's not. You <strong>pay</strong> with your <strong>time</strong>. Or
     more specifically, your company grants you the time to work on this. That is
@@ -21,12 +21,33 @@ import JoinUsForm from "../components/JoinUsForm";
      We won't solve any problems for you. Your participation is expected and
     thus there is no escape that you will need to invest time into this.
   </p>
-  <h2 class="mt-4">See it. Say it. Sorted!</h2>
-  <p class="mb-4">
-    Please submit the following form so we can provide the best means of
-    collaborating with you.
-  </p>
-  <div id="formWrapper" class="col-md-6">
-    <JoinUsForm client:load />
+  <div class="center">
+    <h2>See it. Say it. Sorted!</h2>
+    <p>
+      Please submit the following form so we can provide the best means of
+      collaborating with you.
+    </p>
+  </div>
+  <div id="formWrapper">
+    <JoinUsForm client:only="react" />
   </div>
 </PageLayout>
+<style>
+  #free {
+    margin-top: var(--spacing-600);
+    @media screen and (min-width: 768px) {
+      text-align: right;
+    }
+  }
+  .center {
+    text-align: center;
+    margin-top: var(--spacing-800);
+    margin-bottom: var(--spacing-400);
+  }
+
+  #formWrapper {
+    padding-block: var(--spacing-400);
+    display: flex;
+    justify-content: center;
+  }
+</style>

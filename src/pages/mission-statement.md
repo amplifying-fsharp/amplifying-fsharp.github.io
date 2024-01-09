@@ -1,4 +1,13 @@
-﻿F# is a programming language that runs predominantly on `dotnet`.
+﻿---
+layout: "../layouts/PageLayout.astro"
+mainTitle: "Mission Statement"
+title: "Mission Statement"
+color: "magenta"
+---
+
+## Raison d'être
+
+F# is a programming language that runs predominantly on `dotnet`.
 The larger F# ecosystem (compiler/tooling/frameworks) consists out of open-source software.
 When dealing with open-source software it is important that it is sustainable and future-proof.
 Otherwise, as an enterprise, you cannot justify choosing F# over any other language

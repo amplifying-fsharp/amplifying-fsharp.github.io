@@ -1,17 +1,78 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
-import Blog from "../components/Blog.jsx";
+import TimeAgo from "../components/Timeago";
 
 import { getCollection } from "astro:content";
 const blogEntries = await getCollection("blog");
 ---
 
-<PageLayout title="Blog" mainTitle="Blog" containerClass="container-fluid">
-  <Blog client:load blogEntries={blogEntries} />
+<PageLayout title="Blog" mainTitle="Blog" color="magenta">
+  {
+    blogEntries
+      .sort((a, b) => b.data.date - a.data.date)
+      .map((blogEntry) => {
+        const { title, author, date } = blogEntry.data;
+        return (
+          <a href={`/blog/${blogEntry.slug}`}>
+            <h2>{title}</h2>
+            <h3>
+              <TimeAgo client:only="react" date={date} />
+              <span>by {author}</span>
+            </h3>
+          </a>
+        );
+      })
+  }
 </PageLayout>
+<style>
+  a {
+    display: block;
+    text-decoration: none;
+    color: var(--white);
+    padding: var(--spacing-400);
+    margin-bottom: var(--spacing-400);
+    box-shadow: 0 1px 1px var(--shadow-color);
 
-<style lang="sass" is:global>
-  #blog
-    padding-inline: 2rem
-    text-align: center
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin-bottom: var(--spacing-400);
+    }
+
+    h3 {
+      margin-top: var(--spacing-400);
+      font-size: var(--font-300);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &:nth-child(3n + 1) {
+      background-color: var(--cyan-500);
+
+      &:hover {
+        color: var(--cyan-950);
+        background-color: var(--cyan-300);
+      }
+    }
+
+    &:nth-child(3n + 2) {
+      background-color: var(--magenta-500);
+
+      &:hover {
+        background-color: var(--magenta-300);
+        color: var(--magenta-950);
+      }
+    }
+
+    &:nth-child(3n + 3) {
+      background-color: var(--yellow-500);
+
+      &:hover {
+        background-color: var(--yellow-200);
+        color: var(--yellow-950);
+      }
+    }
+  }
 </style>

@@ -1,36 +1,10 @@
 ﻿---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import "../styles/style.sass";
-
 const { title } = Astro.props;
-const footerIcons = [
-  {
-    link: "https://twitter.com/amplifyfsharp",
-    text: "amplifyfsharp",
-    icon: "ion:logo-twitter",
-    color: "#1DA1F2",
-  },
-  {
-    link: "https://mastodon.social/@amplifyingfsharp",
-    text: "@amplifyingfsharp",
-    icon: "simple-icons:mastodon",
-    color: "#6364ff",
-  },
-  {
-    link: "https://www.youtube.com/@amplifyingfsharp",
-    text: "@amplifyingfsharp",
-    icon: "uil:youtube",
-    color: "#ff0000",
-  },
-  {
-    link: "https://github.com/amplifying-fsharp/",
-    text: "amplifying-fsharp",
-    icon: "uil:github",
-  },
-];
-
 import navLogo from "../images/nav-logo.jpg";
+import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
 ---
 
 <!doctype html>
@@ -41,9 +15,11 @@ import navLogo from "../images/nav-logo.jpg";
     ></script>
     <script type="text/javascript">
       window.dataLayer = window.dataLayer || [];
+
       function gtag() {
         dataLayer.push(arguments);
       }
+
       gtag("js", new Date());
 
       gtag("config", "G-3D96369PRB");
@@ -64,60 +40,341 @@ import navLogo from "../images/nav-logo.jpg";
     />
   </head>
   <body>
-    <nav class="navbar navbar-expand-md bg-transparent">
-      <div class="container-fluid">
-        <a class="navbar-brand mb-0 h1" href="/">
-          <Image
-            src={navLogo}
-            height="40"
-            alt="Amplifying F# logo inside the navigation menu"
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarToggler"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarToggler"
-        >
-          <div class="navbar-nav">
-            <a class="nav-link" aria-current="page" href="/blog">Blog</a>
-            <a class="nav-link" aria-current="page" href="/incitation"
-              >Incitation</a
-            >
-            <a class="nav-link" aria-current="page" href="/sessions">Sessions</a
-            >
-            <a class="nav-link" aria-current="page" href="/faq">FAQ</a>
-            <a class="nav-link" href="/join-us">Join us!</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <slot />
-    <footer class="bg-dark text-white py-2">
-      <div class="container d-flex justify-content-between align-items-center">
-        {
-          footerIcons.map(({ link, text, icon, color }) => (
-            <a
-              href={link}
-              target="_blank"
-              class="text-white text-decoration-none"
-            >
-              <Icon name={icon} width="24" height="24" color={color} />
-              <span class="d-none d-md-inline-block">{text}</span>
-            </a>
-          ))
-        }
-      </div>
-    </footer>
+    <Navigation />
+    <div id="content">
+      <slot />
+    </div>
+    <Footer />
   </body>
 </html>
-<script type="module">
-  import { Collapse } from "https://esm.sh/bootstrap@5.3.2";
-  new Collapse("#navbarToggler", { toggle: false });
-</script>
+<style is:global>
+  :root {
+    --monospace-font: "Fira Code", monospace;
+    --system-font: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
+      sans-serif;
+
+    --spacing-50: 4px;
+    --spacing-100: 8px;
+    --spacing-200: 12px;
+    --spacing-300: 16px;
+    --spacing-400: 24px;
+    --spacing-500: 32px;
+    --spacing-600: 48px;
+    --spacing-700: 64px;
+    --spacing-800: 96px;
+    --spacing-900: 128px;
+    --spacing-950: 192px;
+
+    --font-50: 12x;
+    --font-100: 14px;
+    --font-200: 16px;
+    --font-300: 18px;
+    --font-400: 20px;
+    --font-500: 24px;
+    --font-600: 30px;
+    --font-700: 36px;
+    --font-800: 48px;
+    --font-900: 60px;
+    --font-950: 72px;
+
+    --line-height: 1.5;
+    --heading-line-height: 1.25;
+    --radius: 6px;
+    --container-sm: 768px;
+    --container-md: 960px;
+    --container-lg: 1024px;
+    --container-xl: 1200px;
+    --container-xxl: 1400px;
+    --container-xxxl: 1800px;
+
+    --cyan-50: #eafffd;
+    --cyan-100: #cffefb;
+    --cyan-200: #a5fcf8;
+    --cyan-300: #67f9f4;
+    --cyan-400: #22eeeb;
+    --cyan-500: #06d4d4;
+    --cyan-600: #08aab2;
+    --cyan-700: #0e8790;
+    --cyan-800: #156c75;
+    --cyan-900: #165963;
+    --cyan-950: #083c44;
+
+    --yellow-50: #fefee8;
+    --yellow-100: #fefec3;
+    --yellow-200: #fff989;
+    --yellow-300: #fef160;
+    --yellow-400: #fbdf14;
+    --yellow-500: #ebc607;
+    --yellow-600: #cb9903;
+    --yellow-700: #a26e06;
+    --yellow-800: #86560d;
+    --yellow-900: #714612;
+    --yellow-950: #422506;
+
+    --magenta-50: #fbf8fb;
+    --magenta-100: #f6f0f7;
+    --magenta-200: #eddfef;
+    --magenta-300: #dfc6e1;
+    --magenta-400: #cca4ce;
+    --magenta-500: #a96dad;
+    --magenta-600: #976099;
+    --magenta-700: #7d4d7e;
+    --magenta-800: #684068;
+    --magenta-900: #573857;
+    --magenta-950: #351d34;
+
+    --key-50: #f6f6f6;
+    --key-100: #e7e7e7;
+    --key-200: #d1d1d1;
+    --key-300: #b0b0b0;
+    --key-400: #888888;
+    --key-500: #6d6d6d;
+    --key-600: #5d5d5d;
+    --key-700: #4f4f4f;
+    --key-800: #454545;
+    --key-900: #3d3d3d;
+    --key-950: #000;
+
+    --white: #fcfbfc;
+    --shadow-color: hsla(0, 0%, 0%, 0.1);
+    --scrollbar-track-background: #424242;
+    --scrollbar-track-border: #4a4a4a;
+    --scrollbar-thumb-background: #686868;
+  }
+
+  /* CSS reset */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--system-font);
+    font-weight: normal;
+    display: flex;
+    flex-direction: column;
+    font-size: var(--font-300);
+
+    #content {
+      flex: 1;
+    }
+  }
+
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  /* Headings */
+  h1 {
+    font-size: var(--font-600);
+    line-height: var(--heading-line-height);
+    margin-bottom: var(--spacing-400);
+    margin-top: var(--spacing-50);
+  }
+
+  h2 {
+    font-size: var(--font-500);
+    line-height: var(--heading-line-height);
+    margin-top: var(--spacing-400);
+    margin-bottom: var(--spacing-300);
+  }
+
+  h3 {
+    font-size: var(--font-400);
+    line-height: var(--heading-line-height);
+    margin-top: var(--spacing-300);
+    margin-bottom: var(--spacing-200);
+  }
+
+  h4 {
+    font-weight: bold;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: var(--font-300);
+    margin-top: var(--spacing-200);
+    margin-bottom: var(--spacing-200);
+  }
+
+  @media screen and (min-width: 768px) {
+    h1 {
+      font-size: var(--font-800);
+      margin-bottom: var(--spacing-400);
+      line-height: var(--heading-line-height);
+    }
+
+    h2 {
+      font-size: var(--font-700);
+      margin-top: var(--spacing-500);
+      margin-bottom: var(--spacing-400);
+    }
+
+    h3 {
+      font-size: var(--font-600);
+      margin-top: var(--spacing-500);
+      margin-bottom: var(--spacing-200);
+    }
+
+    h4 {
+      font-size: var(--font-500);
+    }
+
+    h4,
+    h5,
+    h6 {
+      margin-top: var(--spacing-300);
+    }
+  }
+
+  /* Common items */
+  a {
+    color: var(--cyan-600);
+  }
+
+  p {
+    line-height: 1.8;
+    margin-top: var(--spacing-300);
+  }
+
+  ul {
+    list-style: square;
+  }
+
+  ol,
+  ul {
+    padding-left: var(--spacing-400);
+  }
+
+  ol li,
+  ul li {
+    margin: var(--spacing-200) 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* For those wondering why the min-width in the media query isn't using the variable
+    Not all browsers support this.
+     */
+  .container {
+    @media screen and (min-width: 768px) {
+      max-width: var(--container-sm);
+      margin-left: auto;
+      margin-right: auto;
+      padding-inline: var(--spacing-400);
+    }
+
+    @media screen and (min-width: 960px) {
+      max-width: var(--container-md);
+    }
+
+    @media screen and (min-width: 1024px) {
+      max-width: var(--container-lg);
+    }
+
+    @media screen and (min-width: 1200px) {
+      max-width: var(--container-xl);
+    }
+
+    @media screen and (min-width: 1400px) {
+      max-width: var(--container-xxl);
+    }
+  }
+
+  .btn,
+  button,
+  input[type="submit"] {
+    display: inline-block;
+    text-decoration: none;
+    padding: var(--spacing-100) var(--spacing-300);
+    outline: 2px solid var(--key-950);
+    border-radius: var(--radius);
+    transition: 100ms all;
+    cursor: pointer;
+    box-shadow: 0 1px 1px var(--shadow-color);
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    &.btn-yellow {
+      background-color: var(--yellow-300);
+      color: var(--key-950);
+      outline: 2px solid var(--yellow-200);
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--yellow-400);
+      }
+
+      &:active {
+        background-color: var(--yellow-500);
+      }
+    }
+
+    &.btn-cyan {
+      background-color: var(--cyan-500);
+      outline: 2px solid var(--cyan-200);
+      color: var(--white);
+
+      &:hover {
+        background-color: var(--cyan-400);
+      }
+
+      &:active {
+        background-color: var(--cyan-600);
+      }
+    }
+
+    &.btn-magenta {
+      background-color: var(--magenta-500);
+      color: var(--white);
+      outline: 2px solid var(--magenta-200);
+
+      &:hover {
+        background-color: var(--magenta-400);
+      }
+
+      &:active {
+        background-color: var(--magenta-600);
+      }
+    }
+  }
+</style>

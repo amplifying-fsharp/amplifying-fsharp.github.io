@@ -4,28 +4,51 @@ import PageLayout from "../../layouts/PageLayout.astro";
 
 export async function getStaticPaths() {
   const blogs = await getCollection("blog");
-  return blogs.map((entry) => ({
+  const colors = ["magenta", "cyan", "yellow"];
+
+  return blogs.map((entry, idx) => ({
     params: { slug: entry.slug },
-    props: { entry },
+    props: { entry, color: colors[idx % colors.length] },
   }));
 }
 
-const { entry } = Astro.props;
+const { entry, color } = Astro.props;
 const { Content } = await entry.render();
 const { title, date, author } = entry.data;
 ---
 
-<PageLayout title={title} mainTitle={title} containerClass="container blog">
-  <Content />
+<PageLayout title={title} mainTitle={title} color={color}>
+  <div class="blog">
+    <Content />
+  </div>
 </PageLayout>
 
 <style is:global>
+  .blog h2 + h5 {
+    text-align: right;
+  }
+
   .blog img {
-    display: block;
-    margin: 2rem auto;
-    width: 100%;
-    max-width: 960px;
-    height: initial;
-    aspect-ratio: 16 / 9;
+    max-width: var(--container-md);
+    margin-top: var(--spacing-600);
+  }
+
+  .blog pre.astro-code {
+    margin-block: var(--spacing-400);
+    padding: var(--spacing-100);
+
+    &::-webkit-scrollbar {
+      height: var(--spacing-100);
+      width: var(--spacing-100);
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: var(--scrollbar-track-background);
+      border: 1px solid var(--scrollbar-track-border);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--scrollbar-thumb-background);
+    }
   }
 </style>

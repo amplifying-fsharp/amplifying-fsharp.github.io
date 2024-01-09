@@ -1,0 +1,92 @@
+---
+import { Icon } from "astro-icon/components";
+const footerIcons = [
+  {
+    link: "https://twitter.com/amplifyfsharp",
+    text: "amplifyfsharp",
+    icon: "ion:logo-twitter",
+    color: "#1DA1F2",
+  },
+  {
+    link: "https://mastodon.social/@amplifyingfsharp",
+    text: "@amplifyingfsharp",
+    icon: "simple-icons:mastodon",
+    color: "#6364ff",
+  },
+  {
+    link: "https://www.youtube.com/@amplifyingfsharp",
+    text: "@amplifyingfsharp",
+    icon: "uil:youtube",
+    color: "#ff0000",
+  },
+  {
+    link: "https://github.com/amplifying-fsharp/",
+    text: "amplifying-fsharp",
+    icon: "uil:github",
+  },
+];
+---
+
+<footer>
+  <div class="container">
+    {
+      footerIcons.map(({ link, text, icon, color }) => (
+        <a href={link} target="_blank">
+          <Icon name={icon} width="24" height="24" color={color} />
+          <span>{text}</span>
+        </a>
+      ))
+    }
+  </div>
+</footer>
+<style>
+  footer {
+    background-color: var(--key-950);
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      padding-block: var(--spacing-100);
+
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+        & a {
+          font-size: var(--font-100);
+        }
+      }
+
+      @media screen and (min-width: 960px) {
+        & a {
+          font-size: var(--font-200);
+        }
+      }
+
+      & a {
+        display: flex;
+        text-decoration: none;
+        white-space: nowrap;
+        margin: var(--spacing-100);
+        padding: var(--spacing-50);
+        color: var(--white);
+        transition:
+          border-color 200ms,
+          color 250ms;
+        outline: 2px solid var(--key-950);
+        border-radius: var(--radius);
+        font-size: var(--font-200);
+
+        & svg {
+          margin-right: var(--spacing-200);
+        }
+
+        &:hover {
+          outline-color: var(--cyan-500);
+          background-color: var(--cyan-50);
+          color: var(--key-950);
+        }
+      }
+    }
+  }
+</style>
