@@ -20,12 +20,17 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action@v1.0.6
-        # with:
-        # path: . # The root location of your Astro project inside the repository. (optional)
-        # node-version: 16 # The specific version of Node that should be used to build your site. Defaults to 16. (optional)
-        # package-manager: yarn # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./dist
 
   deploy:
     needs: build
