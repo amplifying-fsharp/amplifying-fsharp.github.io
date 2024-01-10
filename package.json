@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@astrojs/react": "3.0.7",
-    "@iconify-json/bi": "^1.1.22",
+    "@iconify-json/bi": "^1.1.23",
     "@iconify-json/cil": "^1.1.8",
     "@iconify-json/fluent": "^1.1.45",
     "@iconify-json/healthicons": "^1.1.17",
