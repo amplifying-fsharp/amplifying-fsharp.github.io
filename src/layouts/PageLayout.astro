@@ -65,7 +65,7 @@ const src = getImageSrc(Astro.url.pathname);
 
 <Layout {...props}>
   <Header mainTitle={mainTitle} src={src} author={author} color={color} />
-  <main class="container">
+  <main class={`container ${color}`}>
     <slot />
   </main>
 </Layout>

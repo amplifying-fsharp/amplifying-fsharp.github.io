@@ -190,11 +190,11 @@ const StyledDiv = styled.div`
 function SessionsGrid({ sessions }) {
   const pastSessions = sessions
     .filter((session) => {
-      return session.date < addTwoHours(new Date());
+      return addTwoHours(session.date) < new Date();
     })
     .sort((a, b) => b.date - a.date);
   const upcomingSessions = sessions
-    .filter((session) => session.date > addTwoHours(new Date()))
+    .filter((session) => addTwoHours(session.date) > new Date())
     .sort((a, b) => b.date - a.date);
   return (
     <StyledDiv>
