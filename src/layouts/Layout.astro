@@ -377,4 +377,26 @@ import Navigation from "../components/Navigation.astro";
       }
     }
   }
+
+  blockquote {
+    padding: var(--spacing-200) var(--spacing-400);
+    margin-block: var(--spacing-300);
+    display: inline-block;
+
+    > p {
+      margin: 0;
+      font-style: italic;
+      &::before {
+        content: "“ ";
+      }
+      &::after {
+        content: " „";
+      }
+    }
+  }
+
+  .yellow blockquote {
+    background-color: var(--yellow-300);
+    border-left: var(--spacing-100) solid var(--key-900);
+  }
 </style>
