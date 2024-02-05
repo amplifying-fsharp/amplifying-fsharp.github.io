@@ -29,7 +29,7 @@
     "@types/react": "^18.2.51",
     "@types/react-dom": "^18.2.17",
     "astro": "4.3.2",
-    "astro-icon": "1.0.4",
+    "astro-icon": "1.1.0",
     "astro-purgecss": "4.1.0",
     "autoprefixer": "^10.4.17",
     "date-fns": "^3.3.1",
