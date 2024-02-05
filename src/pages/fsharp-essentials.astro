@@ -161,6 +161,14 @@ import Edgar from "../images/authors/EdgarGonzalez.jpg";
           The inaugural session is scheduled for February 7th at 18:30 UK time.
         </h2>
 
+        <section id="cta">
+          <a
+            href="https://us06web.zoom.us/j/81661134066?pwd=uOD7vWWiUSu8anYcXBSYe6s7KzQEk8.1"
+          >
+            <button> Join the Zoom meeting </button>
+          </a>
+        </section>
+
         <Image src={fsharpLogo} alt="F# logo" />
       </div>
     </section>
@@ -243,6 +251,17 @@ import Edgar from "../images/authors/EdgarGonzalez.jpg";
           form {
             max-width: 960px;
           }
+        }
+      }
+      #cta {
+        display: flex;
+        justify-content: center;
+        > a button {
+          font-size: var(--font-700);
+          font-weight: 800;
+          padding: var(--spacing-200) var(--spacing-400);
+          background-color: var(--cyan-950);
+          color: var(--white);
         }
       }
     </style>
