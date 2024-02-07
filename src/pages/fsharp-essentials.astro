@@ -5,6 +5,7 @@ import { Image } from "astro:assets";
 import fsharpLogo from "../images/fsharp-logo.svg";
 import Ian from "../images/authors/IanRussell.jpg";
 import Edgar from "../images/authors/EdgarGonzalez.jpg";
+import LocalTime from "../components/LocalTime";
 ---
 
 <Layout title="F# The Essentials Lectures">
@@ -152,13 +153,16 @@ import Edgar from "../images/authors/EdgarGonzalez.jpg";
         <!--    <input type="submit" value="Notify me!" />-->
         <!--  </div>-->
         <!--</form>-->
-        <h2 style="text-align: center">Registration Closed</h2>
-        <h3 style="text-align: center">
+        <h2>Registration Closed</h2>
+        <h3>
           The enrollment for this course has ended. Please refer to your email
           for further details.
         </h3>
-        <h2 style="text-align: center; margin-top: 32px">
-          The inaugural session is scheduled for 7 February 2024 18:30 UK time.
+        <h2>
+          The inaugural session is scheduled for <LocalTime
+            client:only="react"
+            utcDate={new Date("2024-02-07T18:30:00.000Z")}
+          />.
         </h2>
 
         <section id="cta">
@@ -169,7 +173,7 @@ import Edgar from "../images/authors/EdgarGonzalez.jpg";
           </a>
         </section>
 
-        <h3 style="text-align: center">Passcode: fsharp</h3>
+        <h3>Passcode: fsharp</h3>
 
         <Image src={fsharpLogo} alt="F# logo" />
       </div>
@@ -185,8 +189,18 @@ import Edgar from "../images/authors/EdgarGonzalez.jpg";
         padding: var(--spacing-800) var(--spacing-400);
         position: relative;
 
-        h2 {
+        h2,
+        h3 {
+          text-align: center;
+        }
+
+        h2:first-child {
           margin-top: 0;
+        }
+
+        h3,
+        h2:last-of-type {
+          margin-block: var(--spacing-600);
         }
 
         form {
@@ -252,6 +266,10 @@ import Edgar from "../images/authors/EdgarGonzalez.jpg";
         @media screen and (min-width: 1200px) {
           form {
             max-width: 960px;
+          }
+
+          h3 {
+            font-size: var(--font-500);
           }
         }
       }
