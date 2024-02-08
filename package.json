@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "10.8.0",
-    "prettier": "3.2.4",
+    "prettier": "3.2.5",
     "prettier-plugin-astro": "0.13.0"
   }
 }
