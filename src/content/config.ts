@@ -31,9 +31,21 @@ const sessionCollection = defineCollection({
   },
 });
 
+const blogCollection = defineCollection({
+  schema: ({ image }) => {
+    return z.object({
+      title: z.string(),
+      date: z.date().transform((str) => new Date(str)),
+      author: z.string(),
+      profilePicture: image(),
+    });
+  },
+});
+
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
 export const collections = {
   testimonials: testimonialCollection,
   sessions: sessionCollection,
+  blog: blogCollection,
 };
