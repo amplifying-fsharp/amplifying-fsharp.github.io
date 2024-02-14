@@ -3,11 +3,8 @@ title: H-ing gracefully
 date: 2023-12-25
 author: "dawe"
 slug: "2023/12/25"
+profilePicture: "../../images/authors/DavidSchaefer.jpg"
 ---
-
-## H-ing gracefully - 2023-12-25
-
-##### by dawe
 
 For various reaons I have been looking into other FP languages and communities recently.  
 One of the languages was [Elixir](https://elixir-lang.org/), which is a functional language on top of the [BEAM VM](<https://en.wikipedia.org/wiki/BEAM_(Erlang_virtual_machine)>). A piece of technology that has me in total awe.

@@ -3,11 +3,8 @@ title: Seamless switching between Package and Project references
 date: 2023-11-11
 author: "dawe"
 slug: "2023/11/11"
+profilePicture: "../../images/authors/DavidSchaefer.jpg"
 ---
-
-## Switching seamlessly between Package and Project references - 2023-11-11
-
-##### by dawe
 
 While doing open source development on a code base with package dependencies which are crucial to your work, you easily run into a situation where you want to adjust the package code to your needs. Reasons could be a missing feature, a bug, or just a different opinion on how things should be done.  
 Depending on the nature of your work, you might want to do the changes in the upstream code and consume them right away in the consuming project to finish your original work. This has also the benefit that you see the impact of your changes right away and can adjust them if needed.

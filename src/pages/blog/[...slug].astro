@@ -14,23 +14,35 @@ export async function getStaticPaths() {
 
 const { entry, color } = Astro.props;
 const { Content } = await entry.render();
-const { title, date, author } = entry.data;
+const { title, date, author, profilePicture } = entry.data;
+const authorData = { picture: profilePicture, name: author };
+
+function formatDate(date) {
+  let day = date.getDate().toString().padStart(2, "0");
+  let month = (date.getMonth() + 1).toString().padStart(2, "0"); // January is 0!
+  let year = date.getFullYear();
+  return `${day}/${month}/${year}`;
+}
 ---
 
-<PageLayout title={title} mainTitle={title} color={color}>
+<PageLayout title={title} mainTitle={title} color={color} author={authorData}>
   <div class="blog">
+    <time>{formatDate(date)}</time>
     <Content />
   </div>
 </PageLayout>
 
 <style is:global>
-  .blog h2 + h5 {
+  time {
+    display: block;
     text-align: right;
+    font-style: italic;
   }
 
   .blog img {
-    max-width: var(--container-md);
-    margin-top: var(--spacing-600);
+    max-width: min(var(--container-md), 100%);
+    margin: var(--spacing-500) auto;
+    display: block;
   }
 
   .blog pre.astro-code {
