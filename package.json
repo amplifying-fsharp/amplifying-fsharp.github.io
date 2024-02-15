@@ -26,7 +26,7 @@
     "@iconify-json/simple-icons": "^1.1.91",
     "@iconify-json/uil": "^1.1.8",
     "@iconify-json/uiw": "^1.1.11",
-    "@types/react": "^18.2.53",
+    "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "astro": "4.4.0",
     "astro-icon": "1.1.0",
