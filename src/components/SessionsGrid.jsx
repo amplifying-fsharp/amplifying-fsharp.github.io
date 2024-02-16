@@ -226,7 +226,7 @@ function SessionsGrid({ sessions }) {
         </>
       )}
       <>
-        <h2>Past sessions</h2>
+        <h2>Past sessions ({pastSessions && pastSessions.length})</h2>
         <div id="past-sessions" className={"grid-container"}>
           {pastSessions.map((session) => {
             const thumbnail = session.youtubeId
