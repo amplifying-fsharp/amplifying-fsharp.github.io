@@ -2,7 +2,7 @@
 
 Guiding us in our day-to-day interactions and decision-making are the values of trust, respect, collaboration and transparency. Our community welcomes participants from around the world with different experiences, personalities, unique perspectives, and great ideas to share.
 
-We expect this code of conduct to be honored by everyone who participates in the Fantomas community formally or informally.
+We expect this code of conduct to be honored by everyone who participates in the Amplifying FSharp community formally or informally.
 
 This code is not exhaustive or complete, and is a living document. It serves to distill our common understanding of a collaborative, shared environment and goals. We expect it to be followed in spirit as much as in the letter, so that it can enrich all of us and the technical communities in which we participate.
 
