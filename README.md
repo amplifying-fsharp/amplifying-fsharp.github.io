@@ -7,9 +7,9 @@ If you are looking to submit a session you can visit [this page](https://amplify
 
 [![Open Collective donate button](https://opencollective.com/amplifying-fsharp/donate/button.png?color=blue)](https://opencollective.com/amplifying-fsharp/donate)
 
-We have an [Open Collective](https://opencollective.com/amplifying-fsharp#category-ABOUT) and thank 
+We have an [Open Collective](https://opencollective.com/amplifying-fsharp#category-ABOUT) and thank
 
-![Florian Verdonck](https://www.gravatar.com/avatar/7700b17da33f36e69154d8585afbe768?default=404&s=50)[Florian Verdonck, Nojaf BV](https://opencollective.com/florian-verdonck)
+![Florian Verdonck](https://www.gravatar.com/avatar/7700b17da33f36e69154d8585afbe768?default=404&s=50) [Florian Verdonck, Nojaf BV](https://opencollective.com/florian-verdonck)
 
 [Timothé Larivière (Kanoya Tech B.V.), Kanoya Tech B.V.](https://opencollective.com/timothelariviere)
 
