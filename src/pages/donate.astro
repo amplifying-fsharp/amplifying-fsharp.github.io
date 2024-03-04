@@ -1,0 +1,44 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+---
+
+<PageLayout title="Donate" mainTitle="Join Our Open Collective!">
+  <a href="https://opencollective.com/amplifying-fsharp/donate" target="_blank">
+    <img
+      src="https://opencollective.com/amplifying-fsharp/donate/button@2x.png?color=blue"
+      width="300"
+    />
+  </a>
+  <p>
+    🚀 Boom! We've kicked off an open collective, hunting down some fuel (aka
+    funding) for our epic F# adventures ahead. Dive into the heart of our
+    mission in our <a
+      href="https://opencollective.com/amplifying-fsharp#category-ABOUT"
+      target="_blank">about section</a
+    > over at our Open Collective spaceship. Every contribution? It's like rocket
+    fuel to us. We're beyond thankful! Let's light this up!
+  </p>
+  <h2>Current sponsors</h2>
+  <style>
+    a:has(img) {
+      display: block;
+      text-align: center;
+    }
+
+    p {
+      margin-block: var(--spacing-600);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: var(--spacing-400);
+    }
+  </style>
+  <script is:inline src="https://opencollective.com/amplifying-fsharp/banner.js"
+  ></script>
+  <style is:global>
+    .opencollective-banner {
+      margin-top: var(--spacing-400);
+    }
+  </style>
+</PageLayout>
