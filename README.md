@@ -13,6 +13,8 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 [Timothé Larivière (Kanoya Tech B.V.), Kanoya Tech B.V.](https://opencollective.com/timothelariviere)
 
+[dawe](https://opencollective.com/guest-44f16fd5)
+
 ## The website source code
 
 ### Requirements

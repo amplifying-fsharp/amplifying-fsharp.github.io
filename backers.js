@@ -9,5 +9,6 @@ Array.from(json)
   .forEach((b) => {
     const { name, profile, image, company } = b;
     const markdownImage = !image ? "" : `![${name}](${image}&s=50) `;
-    console.log(`${markdownImage}[${name}, ${company}](${profile})\n`);
+    const andCompany = company ? `, ${company}` : "";
+    console.log(`${markdownImage}[${name}${andCompany}](${profile})\n`);
   });
