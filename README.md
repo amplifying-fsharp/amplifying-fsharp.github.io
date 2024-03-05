@@ -15,6 +15,8 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 [dawe](https://opencollective.com/guest-44f16fd5)
 
+[Jimmy Byrd](https://opencollective.com/jimmy-byrd1)
+
 ## The website source code
 
 ### Requirements
