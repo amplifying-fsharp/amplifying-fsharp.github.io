@@ -10,6 +10,7 @@ import convincing from "../images/convincing-diagram.svg";
 import { getCollection } from "astro:content";
 const testimonials = await getCollection("testimonials");
 import Testimonials from "../components/Testimonials";
+import SessionsGrid from "../components/SessionsGrid.fs";
 ---
 
 <Layout title="Home">
@@ -36,6 +37,7 @@ import Testimonials from "../components/Testimonials";
       </a>
     </div>
   </header>
+  <SessionsGrid client:only="react" foo="bar top zeg!" />
   <main>
     <section id="foundation">
       <div class="container">
