@@ -19,6 +19,10 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 ![Maxime Mangel](https://www.gravatar.com/avatar/ebc3bbcbf88293a971c346e1406f08a8?default=404&s=50) [Maxime Mangel](https://opencollective.com/maxime-mangel)
 
+[Kai Ito](https://opencollective.com/guest-234c4a61)
+
+[Maxwell Paige](https://opencollective.com/maxwell-paige)
+
 ## The website source code
 
 ### Requirements
