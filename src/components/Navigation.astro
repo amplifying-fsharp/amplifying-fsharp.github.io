@@ -8,7 +8,7 @@ const currentPath = pathname.replaceAll("/", "");
 
 <nav>
   <a href="/">
-    <Image src={logo} alt="Amplifying F# logo" height="30px" />
+    <Image src={logo} alt="Amplifying F# logo" height={30} />
   </a>
 
   <ul>
@@ -47,6 +47,12 @@ const currentPath = pathname.replaceAll("/", "");
     <li class="hide-tablet">
       <a href="/burn-out" class={currentPath === "burn-out" ? "active" : ""}>
         Burn out</a
+      >
+      <span class="new">new</span>
+    </li>
+    <li class="hide-tablet">
+      <a href="/donate" class={currentPath === "donate" ? "active" : ""}>
+        Donate</a
       >
       <span class="new">new</span>
     </li>
@@ -111,6 +117,12 @@ const currentPath = pathname.replaceAll("/", "");
       <span class="new">new</span>
     </li>
     <li>
+      <a href="/donate" class={currentPath === "donate" ? "active" : ""}>
+        Donate</a
+      >
+      <span class="new">new</span>
+    </li>
+    <li>
       <a href="/hire" class={currentPath === "hire" ? "active" : ""}> Hire</a>
       <span class="new">new</span>
     </li>
@@ -118,7 +130,7 @@ const currentPath = pathname.replaceAll("/", "");
       <a href="/faq" class={currentPath === "faq" ? "active" : ""}>FAQ</a>
     </li>
   </ul>
-  <Icon name="ri:menu-fill" width="30px" height="30px" />
+  <Icon name="ri:menu-fill" width={30} height={30} />
   <input type="checkbox" name="mobile-menu" />
   <style>
     nav {

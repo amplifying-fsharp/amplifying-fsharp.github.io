@@ -29,6 +29,7 @@ import faqHeader from "../images/faq-header.jpg";
 import joinUsHeader from "../images/join-us-header.jpg";
 import testimonialHeader from "../images/testimonials-header.jpg";
 import burnHeader from "../images/burn-header.jpg";
+import donateHeader from "../images/donate.jpg";
 
 function getImageSrc(path) {
   if (path.match(/mission/)) {
@@ -55,6 +56,8 @@ function getImageSrc(path) {
     return testimonialHeader.src;
   } else if (path.match(/burn/)) {
     return burnHeader.src;
+  } else if (path.match(/donate/)) {
+    return donateHeader.src;
   } else {
     return "";
   }
