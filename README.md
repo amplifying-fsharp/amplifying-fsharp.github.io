@@ -17,6 +17,8 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 [Jimmy Byrd](https://opencollective.com/jimmy-byrd1)
 
+![Maxime Mangel](https://www.gravatar.com/avatar/ebc3bbcbf88293a971c346e1406f08a8?default=404&s=50) [Maxime Mangel](https://opencollective.com/maxime-mangel)
+
 ## The website source code
 
 ### Requirements
