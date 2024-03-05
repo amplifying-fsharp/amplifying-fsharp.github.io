@@ -10,18 +10,18 @@ export default defineConfig({
     gfm: true,
   },
   integrations: [
-    purgecss(), 
-    react(), 
+    purgecss(),
+    react(),
     icon({
       include: {
-        "bi": ["github", "linkedin", "twitter", "chevron-right"],
-        "cil": ["speech"],
-        "ic": ["round-live-tv"],
-        "mdi": ["bullseye-arrow"],
+        bi: ["github", "linkedin", "twitter", "chevron-right"],
+        cil: ["speech"],
+        ic: ["round-live-tv"],
+        mdi: ["bullseye-arrow"],
         "mdi-light": ["email"],
-        "ph": ["globe-light"]
-      }
-    })
+        ph: ["globe-light"],
+      },
+    }),
   ],
   vite: {
     server: {

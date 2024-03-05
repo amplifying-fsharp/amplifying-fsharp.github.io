@@ -47,5 +47,7 @@
     "prettier": "3.2.5",
     "prettier-plugin-astro": "0.13.0"
   },
-  "trustedDependencies": ["sharp"]
+  "trustedDependencies": [
+    "sharp"
+  ]
 }
