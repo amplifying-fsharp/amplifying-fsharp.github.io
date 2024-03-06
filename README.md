@@ -23,6 +23,18 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 [Maxwell Paige](https://opencollective.com/maxwell-paige)
 
+![Ionide](https://opencollective-production.s3.us-west-1.amazonaws.com/1dc76620-24ad-11e9-b372-6b1a73f011d0.png&s=50) [Ionide](https://opencollective.com/ionide)
+
+[Michal Nebes](https://opencollective.com/michal-nebes)
+
+[Kevin Scully](https://opencollective.com/guest-869ff6be)
+
+![Chester Husk](https://www.gravatar.com/avatar/d2f117e84eb4380996e3bce3e7850f33?default=404&s=50) [Chester Husk](https://opencollective.com/chester-husk)
+
+[jkone27](https://opencollective.com/jkone27)
+
+[Greg H](https://opencollective.com/guest-e96f59f1)
+
 ## The website source code
 
 ### Requirements
