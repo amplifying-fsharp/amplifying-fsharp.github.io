@@ -212,8 +212,10 @@ let convertJsDateToDateTimeSimple (jsDate : JS.Date) : DateTime =
     let day = int (jsDate.getDate ())
     let hour = int (jsDate.getHours ())
     let minute = int (jsDate.getMinutes ())
+    let seconds = int (jsDate.getSeconds ())
+    let milliseconds = int (jsDate.getMilliseconds ())
     // Construct a .NET DateTime
-    System.DateTime (year, month, day, hour, minute, 0, DateTimeKind.Local)
+    System.DateTime (year, month, day, hour, minute, 0, seconds, milliseconds, DateTimeKind.Local)
 
 [<ExportDefault>]
 let SessionsGrid (props : SessionsGridProps) : JSX.Element =
