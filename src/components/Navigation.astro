@@ -142,7 +142,10 @@ const currentPath = pathname.replaceAll("/", "");
       grid-template-rows: auto 0fr;
       grid-column-gap: 0;
       grid-row-gap: 0;
-      position: relative;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 1px var(--shadow-color);
       transition: grid-template-rows 250ms;
       --link-height: 30px;
 
