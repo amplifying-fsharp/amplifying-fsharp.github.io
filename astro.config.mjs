@@ -7,7 +7,7 @@ import icon from "astro-icon";
 import fable from "vite-plugin-fable";
 
 const currentDir = path.dirname(fileURLToPath(import.meta.url));
-const fsproj = path.join(currentDir, "src/App.fsproj");
+const fsproj = path.join(currentDir, "src/src.fsproj");
 
 function fsharpMiddlewarePlugin() {
   return {

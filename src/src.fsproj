@@ -9,6 +9,8 @@
     <Compile Include="bindings/StyledComponents.fs" />
     <Compile Include="components\SessionsGrid.fsi" />
     <Compile Include="components\SessionsGrid.fs" />
+    <Compile Include="components\JoinUsForm.fsi" />
+    <Compile Include="components\JoinUsForm.fs" />
   </ItemGroup>
 
   <ItemGroup>
