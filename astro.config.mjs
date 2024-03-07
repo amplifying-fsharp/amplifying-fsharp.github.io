@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, squooshImageService } from "astro/config";
 import purgecss from "astro-purgecss";
 import react from "@astrojs/react";
 import icon from "astro-icon";
@@ -6,6 +6,9 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: "https://amplifying-fsharp.github.io",
+  image: {
+    service: squooshImageService(),
+  },
   markdown: {
     gfm: true,
   },
