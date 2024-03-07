@@ -3,7 +3,10 @@ import PageLayout from "../layouts/PageLayout.astro";
 ---
 
 <PageLayout title="Donate" mainTitle="Join Our Open Collective!">
-  <a href="https://opencollective.com/amplifying-fsharp/donate" target="_blank">
+  <a
+    href="https://opencollective.com/amplifying-fsharp/donate?interval=oneTime&amount=1&contributeAs=me"
+    target="_blank"
+  >
     <img
       src="https://opencollective.com/amplifying-fsharp/donate/button@2x.png?color=blue"
       width="300"
@@ -18,6 +21,77 @@ import PageLayout from "../layouts/PageLayout.astro";
     > over at our Open Collective spaceship. Every contribution? It's like rocket
     fuel to us. We're beyond thankful! Let's light this up!
   </p>
+  <h2 id="goals">Goals</h2>
+  <p>
+    We value transparency and wish to share our thoughts regarding the
+    allocation of the funds received. <br />
+    Since some of our ideas are more feasible than others, we categorize them into
+    tiers. <br />
+    Regardless of the tier achieved, our goal is to allocate the funds appropriately
+    without hoarding.
+  </p>
+  <div class="tier" style="background: var(--cyan-200);">
+    <h3>Cottage tier (0 - 5K)</h3>
+    <p>This is the lowest tier, enabling us to cover our existing costs:</p>
+    <ul>
+      <li>Services for our online sessions, such as our Zoom subscription.</li>
+      <li>Travel expenses for in-person engagements with the F# community.</li>
+      <li>
+        Purchasing and distributing swag, such as coffee mugs and t-shirts.
+      </li>
+      <li>
+        Treating an open-source maintainer to lunch following a significant
+        release.
+      </li>
+      <li>Funding advertisements for our sessions and F# essentials.</li>
+    </ul>
+  </div>
+  <div class="tier" style="background: var(--cyan-400); color: var(--cyan-950)">
+    <h3>Villa tier (5K - 15K)</h3>
+    <p>
+      This tier enables us to begin compensating F# contributors for working on
+      narrowly defined projects:
+    </p>
+    <ul>
+      <li>
+        Developing comprehensive 'getting started' documentation for popular
+        projects.
+      </li>
+      <li>Adding new features to the F# compiler or tooling.</li>
+      <li>
+        Performing essential maintenance work that cannot be completed outside
+        of regular hours.
+      </li>
+    </ul>
+  </div>
+  <div class="tier" style="background: var(--cyan-700); color: var(--cyan-50)">
+    <h3>Mansion tier (15K - 50K)</h3>
+    <p>
+      Now we are making significant progress. With this level of funding, we
+      could organize a small conference:
+    </p>
+    <ul>
+      <li>Host an in-person conference, workshop, or hackathon.</li>
+      <li>Support long-term, paid open-source F# projects.</li>
+    </ul>
+  </div>
+  <div class="tier" style="background: var(--cyan-900); color: var(--white)">
+    <h3>Castle tier (50K - ...)</h3>
+    <p>
+      This is the ultimate tier, a level we aspire to reach. Achieving this
+      would enable us to consider employing someone to work on community
+      projects part-time, or possibly even full-time.
+    </p>
+    <ul>
+      <li>
+        We can start a legal entity and conduct business on a more professional
+        level.
+      </li>
+      <li>Work on anything we need fixing for in the F# community.</li>
+      <li>Turn Ionide into an unmatched editing experience.</li>
+      <li>Produce professional education content.</li>
+    </ul>
+  </div>
   <h2>Current sponsors</h2>
   <style>
     a:has(img) {
@@ -25,13 +99,36 @@ import PageLayout from "../layouts/PageLayout.astro";
       text-align: center;
     }
 
-    p {
+    :root p {
       margin-block: var(--spacing-600);
     }
 
     h2 {
       text-align: center;
       margin-bottom: var(--spacing-400);
+    }
+
+    #goals {
+      scroll-margin-top: var(--spacing-800);
+    }
+
+    .tier {
+      max-width: 960px;
+      margin-inline: auto;
+      margin-block: var(--spacing-600);
+      padding: var(--spacing-500) var(--spacing-400);
+
+      h3 {
+        margin-block: 0;
+      }
+
+      p {
+        margin-block: var(--spacing-500);
+      }
+
+      ul li:last-of-type {
+        margin-bottom: 0;
+      }
     }
   </style>
   <script is:inline src="https://opencollective.com/amplifying-fsharp/banner.js"

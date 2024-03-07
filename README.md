@@ -37,6 +37,8 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 ![Kyle McMaster](https://opencollective-production.s3.us-west-1.amazonaws.com/3ed94f00-586a-11ed-8cfe-775d08dfbc28.png&s=50) [Kyle McMaster](https://opencollective.com/kyle-mcmaster)
 
+[Bent Rasmussen](https://opencollective.com/guest-1006fa5b)
+
 ## The website source code
 
 ### Requirements
