@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import PageLayout from "../../layouts/PageLayout.astro";
 import LocalTime from "../../components/LocalTime.jsx";
+import YouTubeVideo from "../../components/YouTubeVideo.astro";
 
 export async function getStaticPaths() {
   const sessionEntries = await getCollection("sessions");
@@ -51,15 +52,7 @@ linkText =
     youtubeId && (
       <>
         <h2>Watch this session</h2>
-        <div class="youtube">
-          <iframe
-            src={`https://www.youtube.com/embed/${youtubeId}`}
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          />
-        </div>
+        <YouTubeVideo youtubeId={youtubeId} />
       </>
     )
   }
@@ -109,14 +102,6 @@ linkText =
 
     &.cyan {
       background-color: var(--cyan-500);
-    }
-  }
-
-  .youtube {
-    aspect-ratio: 16 / 9;
-    iframe {
-      width: 100%;
-      height: 100%;
     }
   }
 </style>

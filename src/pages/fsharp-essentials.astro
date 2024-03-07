@@ -6,6 +6,7 @@ import fsharpLogo from "../images/fsharp-logo.svg";
 import Ian from "../images/authors/IanRussell.jpg";
 import Edgar from "../images/authors/EdgarGonzalez.jpg";
 import LocalTime from "../components/LocalTime";
+import YouTubeVideo from "../components/YouTubeVideo.astro";
 ---
 
 <Layout title="F# The Essentials Lectures">
@@ -315,6 +316,10 @@ import LocalTime from "../components/LocalTime";
                 >View</a
               >
             </li>
+            <li>
+              <span>Video</span>
+              <YouTubeVideo youtubeId="60oaa1o8Qpw" />
+            </li>
           </ul>
         </div>
         <div class="segment">
@@ -373,6 +378,10 @@ import LocalTime from "../components/LocalTime";
               <span>Higher-Order Functions</span>
               <!--<a href="#">View</a>-->
             </li>
+            <li>
+              <span>Video</span>
+              <YouTubeVideo youtubeId="TogBdE354w8" />
+            </li>
           </ul>
         </div>
         <div class="segment">
@@ -393,6 +402,10 @@ import LocalTime from "../components/LocalTime";
             <li>
               <span>Result</span>
               <!--<a href="#">View</a>-->
+            </li>
+            <li>
+              <span>Video</span>
+              <YouTubeVideo youtubeId="DjTmteADMAM" />
             </li>
           </ul>
         </div>
@@ -426,6 +439,10 @@ import LocalTime from "../components/LocalTime";
             <li>
               <span>Set</span>
               <!--<a href="#">View</a>-->
+            </li>
+            <li>
+              <span>Video</span>
+              <YouTubeVideo youtubeId="F3PWLSMU9lA" />
             </li>
           </ul>
         </div>
@@ -650,10 +667,10 @@ import LocalTime from "../components/LocalTime";
               height: 24px;
               appearance: none;
               cursor: pointer;
+            }
 
-              &:checked + button {
-                transform: rotate(180deg);
-              }
+            label:has(input:checked) + button {
+              transform: rotate(180deg);
             }
           }
 
@@ -705,6 +722,13 @@ import LocalTime from "../components/LocalTime";
             }
           }
         }
+      }
+    </style>
+    <style is:global>
+      .youtube {
+        margin-block: var(--spacing-500);
+        margin-left: var(--spacing-800);
+        flex: 1;
       }
     </style>
     <section id="instructors">
