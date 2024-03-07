@@ -39,6 +39,10 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 [Bent Rasmussen](https://opencollective.com/guest-1006fa5b)
 
+[Don Syme](https://opencollective.com/don-syme1)
+
+[Guy](https://opencollective.com/guest-2abe9028)
+
 ## The website source code
 
 ### Requirements
