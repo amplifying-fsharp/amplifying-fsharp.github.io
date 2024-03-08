@@ -43,6 +43,14 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 [Guy](https://opencollective.com/guest-2abe9028)
 
+[Richard Webb](https://opencollective.com/richard-webb)
+
+[Lanayx](https://opencollective.com/guest-3f6e0f58)
+
+[Jeremy Abbott](https://opencollective.com/jeremy-abbott)
+
+[Anton](https://opencollective.com/guest-949aaeee)
+
 ## The website source code
 
 ### Requirements
