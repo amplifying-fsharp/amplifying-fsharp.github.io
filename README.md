@@ -51,6 +51,10 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 [Anton](https://opencollective.com/guest-949aaeee)
 
+[Faisal](https://opencollective.com/anonymous2703)
+
+[Łukasz Krzywizna](https://opencollective.com/guest-127c1447)
+
 ## The website source code
 
 ### Requirements
