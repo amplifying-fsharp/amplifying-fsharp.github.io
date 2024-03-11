@@ -55,6 +55,18 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 [Łukasz Krzywizna](https://opencollective.com/guest-127c1447)
 
+[Owen Madden](https://opencollective.com/guest-156a0a3f)
+
+![Daryl Hendricks](https://opencollective-production.s3.us-west-1.amazonaws.com/87c157a0-37c9-11e9-a5f0-5f950ca71086.jpg&s=50) [Daryl Hendricks](https://opencollective.com/daryl-hendricks)
+
+![Texl](https://www.gravatar.com/avatar/2e6082d51b5311da403c348d5084ae6f?default=404&s=50) [Texl](https://opencollective.com/texl)
+
+![Mike Rore](https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/069f8ab7-887f-4765-b828-5786c52f237f/mike.jpg&s=50) [Mike Rore](https://opencollective.com/mike-rore)
+
+[Guest](https://opencollective.com/guest-21539c16)
+
+[Incognito](https://opencollective.com/user-cf759da5)
+
 ## The website source code
 
 ### Requirements
