@@ -67,6 +67,8 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 [Incognito](https://opencollective.com/user-cf759da5)
 
+![Onur Gumus](https://www.gravatar.com/avatar/f796e26947aecb04600f92622539554f?default=404&s=50) [Onur Gumus](https://opencollective.com/onur-gumus)
+
 ## The website source code
 
 ### Requirements
