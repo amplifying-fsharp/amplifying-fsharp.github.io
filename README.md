@@ -69,6 +69,12 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 ![Onur Gumus](https://www.gravatar.com/avatar/f796e26947aecb04600f92622539554f?default=404&s=50) [Onur Gumus](https://opencollective.com/onur-gumus)
 
+[Alberto De Pena](https://opencollective.com/guest-1a3ba5c2)
+
+![Nat Elkins](https://www.gravatar.com/avatar/a864e67a649b1490463af5192e50c18b?default=404&s=50) [Nat Elkins](https://opencollective.com/nat-elkins)
+
+![Vagif Abilov](https://www.gravatar.com/avatar/822d40ce216f2d64bcc2c59f0ded1e4d?default=404&s=50) [Vagif Abilov](https://opencollective.com/vagif-abilov)
+
 ## The website source code
 
 ### Requirements
