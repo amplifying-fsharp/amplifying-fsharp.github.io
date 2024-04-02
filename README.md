@@ -75,6 +75,24 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 ![Vagif Abilov](https://www.gravatar.com/avatar/822d40ce216f2d64bcc2c59f0ded1e4d?default=404&s=50) [Vagif Abilov](https://opencollective.com/vagif-abilov)
 
+![Scott Wlaschin](https://www.gravatar.com/avatar/26743454d396b65db61e38ccc833ecdb?default=404&s=50) [Scott Wlaschin](https://opencollective.com/scott-wlaschin)
+
+[Damian Reeves](https://opencollective.com/damian-reeves)
+
+![kirisky](https://www.gravatar.com/avatar/16cb215a8bf14b907f749b3da88efe83?default=404&s=50) [kirisky](https://opencollective.com/kirisky)
+
+[Houston](https://opencollective.com/guest-6db0f329)
+
+[Seven Past Nine](https://opencollective.com/seven-past-nine)
+
+[Tuomas](https://opencollective.com/guest-5aeab86a)
+
+[fsharprocks](https://opencollective.com/guest-aec8ca1f)
+
+[Casper Bollen](https://opencollective.com/casper-bollen)
+
+![Mickael Metesreau](https://www.gravatar.com/avatar/733ee99f3e519fec98ab11d2a517a13e?default=404&s=50) [Mickael Metesreau, Softcraft](https://opencollective.com/mmetesreau)
+
 ### Blue hair
 
 ```shell
