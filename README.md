@@ -75,6 +75,12 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 ![Vagif Abilov](https://www.gravatar.com/avatar/822d40ce216f2d64bcc2c59f0ded1e4d?default=404&s=50) [Vagif Abilov](https://opencollective.com/vagif-abilov)
 
+### Blue hair
+
+```shell
+dotnet fsi blue-hair.fsx
+```
+
 ## The website source code
 
 ### Requirements
