@@ -2,7 +2,7 @@
 title: BOBKonf 2024
 date: 2024-03-16
 author: "dawe"
-slug: "2024/02/16"
+slug: "2024/03/16"
 profilePicture: "../../images/authors/DavidSchaefer.jpg"
 ---
 
