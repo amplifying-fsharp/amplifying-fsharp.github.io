@@ -93,6 +93,14 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 ![Mickael Metesreau](https://www.gravatar.com/avatar/733ee99f3e519fec98ab11d2a517a13e?default=404&s=50) [Mickael Metesreau, Softcraft](https://opencollective.com/mmetesreau)
 
+[Nicholas Hirschey](https://opencollective.com/nicholas-hirschey)
+
+[Kuba](https://opencollective.com/guest-a58751ea)
+
+#### Generate backers
+
+Run `bun run backers.js` to generate the list of backers above.
+
 ### Blue hair
 
 ```shell
@@ -103,7 +111,7 @@ dotnet fsi blue-hair.fsx
 
 ### Requirements
 
-You need Node.JS 20 LTS or equivalent (like Bun) to run this project.
+You need [Bun](https://bun.sh/docs/installation) 1.1.1 to run this project.
 
 ### 🧞 Commands
 
@@ -111,8 +119,8 @@ All commands are run from the root of the project, from a terminal:
 
 | Command           | Action                                       |
 | :---------------- | :------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:3000`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
-| `npm run format`  | Formats the code using prettier              |
+| `bun install`     | Installs dependencies                        |
+| `bun run dev`     | Starts local dev server at `localhost:3000`  |
+| `bun run build`   | Build your production site to `./dist/`      |
+| `bun run preview` | Preview your build locally, before deploying |
+| `bun run format`  | Formats the code using prettier              |
