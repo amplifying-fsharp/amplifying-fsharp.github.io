@@ -227,7 +227,7 @@ let SessionsGrid (props : SessionsGridProps) : JSX.Element =
             date < DateTime.Now.AddHours 2
         )
 
-    styleComponent StyledDiv [
+    styledComponent StyledDiv [
         if Array.isEmpty upcomingSessions then
             p [ Key "no-upcoming-sessions" ; Id "no-new-sessions" ] [
                 str "No news sessions in sight 😔."

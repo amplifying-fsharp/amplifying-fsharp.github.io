@@ -5,4 +5,4 @@ open Fable.Core
 type JoinUsFormProps = {| propName : string |}
 
 [<ExportDefault>]
-val JoinUsForm : props : JoinUsFormProps -> JSX.Element
+val JoinUsForm : props : unit -> JSX.Element
