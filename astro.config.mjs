@@ -15,9 +15,9 @@ function fsharpMiddlewarePlugin() {
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         const isFSharpUrl = /\.fs/.test(req.url);
-        console.log(req.url, isFSharpUrl);
 
         if (isFSharpUrl && req.url.indexOf("?import") === -1) {
+          console.log(req.url);
           req.url += "?import";
           res.setHeader("Content-Type", "application/javascript");
         }
