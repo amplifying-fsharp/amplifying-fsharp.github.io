@@ -108,26 +108,26 @@ let JoinUsForm () : JSX.Element =
     let linkRef = useRef ()
 
     styledComponent StyledElement [
-        div [] [
+        div [ Key "name" ] [
             label [] [ str "Your name?" ; strong [] [ str "&nbsp;&#x2a;" ] ]
             input [ Type "text" ; Placeholder "John Doe" ; Required true ]
         ]
-        div [] [
+        div [ Key "company" ] [
             label [] [ str "Company name?" ]
             input [ Type "text" ; Placeholder "Contoso Inc" ; Required true ]
             div [ ClassName "form-text" ] [
                 str "Don't worry this field is optional, you are also most welcome as an individual contributor."
             ]
         ]
-        div [] [
+        div [ Key "timezone" ] [
             label [] [ str "Your timezone?" ; strong [] [ str "&nbsp;&#x2a;" ] ]
             input [ Type "text" ; Placeholder "CET" ; Required true ]
         ]
-        div [] [
+        div [ Key "topic" ] [
             label [] [ str "Your topic?" ; strong [] [ str "&nbsp;&#x2a;" ] ]
             input [ Type "text" ; Placeholder "Working on Ionide" ; Required true ]
         ]
-        div [] [
+        div [ Key "itch" ] [
             label [] [
                 str "What kind of itch do you have?"
                 strong [] [ str "&nbsp;&#x2a;" ]
@@ -161,12 +161,12 @@ let JoinUsForm () : JSX.Element =
             ]
         ]
         // if "issue"
-        div [] [
+        div [ Key "issue" ] [
             label [] [ str "Issue link" ]
             input [ Type "text" ; Placeholder "A link to a specific OSS issue" ; Required false ]
         ]
         // if "project"
-        div [] [
+        div [ Key "project" ] [
             label [] [ str "Project link" ]
             input [
                 Type "text"
@@ -185,7 +185,7 @@ let JoinUsForm () : JSX.Element =
             ]
         ]
         // if "unknown"
-        div [] [
+        div [ Key "unknown" ] [
             label [] [ str "Tell us about your quest?" ]
             textarea [
                 Placeholder "Describe the change you want to see in the world."
@@ -193,11 +193,11 @@ let JoinUsForm () : JSX.Element =
                 Required false
             ] []
         ]
-        div [] [
+        div [ Key "anything-else" ] [
             label [] [ str "Is there anything else we need to know?" ]
             textarea [ Placeholder "Tell us what motivates you!" ; Rows 3 ] []
         ]
-        button [ Type "submit" ] [ str "Submit" ]
-        a [ Href "#" ; "ref", linkRef ; Target "_blank" ] []
+        button [ Key "submit" ; Type "submit" ] [ str "Submit" ]
+        a [ Key "link" ; Href "#" ; "ref", linkRef ; Target "_blank" ] []
 
     ]
