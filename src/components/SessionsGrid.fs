@@ -224,7 +224,7 @@ let SessionsGrid (props : SessionsGridProps) : JSX.Element =
         |> Array.sortByDescending (fun session -> convertJsDateToDateTimeSimple session.date)
         |> Array.partition (fun session ->
             let date = convertJsDateToDateTimeSimple session.date
-            date < DateTime.Now.AddHours 2
+            date < DateTime.Now.AddHours -2
         )
 
     styledComponent StyledDiv [

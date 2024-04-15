@@ -103,101 +103,243 @@ float: right;
 }
 """
 
+type Itch =
+    | SpecificIssue of string
+    | SpecificProject of string
+    | Unknown of string
+
+    member this.IsSpecificIssueX =
+        match this with
+        | SpecificIssue _ -> true
+        | SpecificProject _
+        | Unknown (_) -> false
+
+    member this.IsSpecificProjectX =
+        match this with
+        | SpecificIssue _
+        | Unknown _ -> false
+        | SpecificProject _ -> true
+
+    member this.IsUnknownX =
+        match this with
+        | Unknown _ -> true
+        | SpecificIssue (_)
+        | SpecificProject (_) -> false
+
+type Model =
+    {
+        Name : string
+        Company : string
+        Timezone : string
+        Topic : string
+        Itch : Itch
+        AnythingElse : string
+    }
+
+    static member Zero : Model =
+        {
+            Name = "a"
+            Company = "a"
+            Timezone = "a"
+            Topic = "Good stuff"
+            Itch = SpecificIssue ""
+            AnythingElse = "."
+        }
+
+type Foo =
+    [<Emit "ref">]
+
+    static member Ref (value : obj) = "ref", box value
+
+let submitForm (model : Model) (linkElement : Browser.Types.HTMLElement) (ev : Browser.Types.Event) =
+    ev.preventDefault ()
+
+    let body =
+        $"""
+### Session on %s{model.Topic}
+
+Good stuff"""
+
+    let _ = JS.encodeURIComponent
+
+    let href =
+        $"https://github.com/amplifying-fsharp/sessions/issues/new?title=%s{JS.encodeURIComponent (model.Topic)}&body=%s{JS.encodeURIComponent (body)}"
+
+    linkElement.setAttribute ("href", href)
+    JS.console.log href
+    linkElement.click ()
+
 [<ExportDefault>]
 let JoinUsForm () : JSX.Element =
     let linkRef = useRef ()
+    let model, setModel = useStateByFunction (Model.Zero)
 
-    styledComponent StyledElement [
-        div [ Key "name" ] [
-            label [] [ str "Your name?" ; strong [] [ str "&nbsp;&#x2a;" ] ]
-            input [ Type "text" ; Placeholder "John Doe" ; Required true ]
-        ]
-        div [ Key "company" ] [
-            label [] [ str "Company name?" ]
-            input [ Type "text" ; Placeholder "Contoso Inc" ; Required true ]
-            div [ ClassName "form-text" ] [
-                str "Don't worry this field is optional, you are also most welcome as an individual contributor."
-            ]
-        ]
-        div [ Key "timezone" ] [
-            label [] [ str "Your timezone?" ; strong [] [ str "&nbsp;&#x2a;" ] ]
-            input [ Type "text" ; Placeholder "CET" ; Required true ]
-        ]
-        div [ Key "topic" ] [
-            label [] [ str "Your topic?" ; strong [] [ str "&nbsp;&#x2a;" ] ]
-            input [ Type "text" ; Placeholder "Working on Ionide" ; Required true ]
-        ]
-        div [ Key "itch" ] [
-            label [] [
-                str "What kind of itch do you have?"
-                strong [] [ str "&nbsp;&#x2a;" ]
-                div [ Id "itch-container" ] [
-                    input [
-                        Type "radio"
-                        Name "itch"
-                        AutoComplete "off"
-                        Required true
-                        Value "issue"
-                        Checked true
-                    ]
-                    label [ "for", "issue" ] [ str "Fix a specific issue" ]
-                    input [
-                        Type "radio"
-                        Name "itch"
-                        AutoComplete "off"
-                        Required true
-                        Value "project"
-                    ]
-                    label [ "for", "project" ] [ str "Work on a specific project" ]
-                    input [
-                        Type "radio"
-                        Name "itch"
-                        AutoComplete "off"
-                        Required true
-                        Value "unknown"
-                    ]
-                    label [ "for", "unknown" ] [ str "Still trying to figure it out." ]
+    JS.console.log (linkRef)
+
+    //  OnSubmit (submitForm model linkRef.current)
+    JSX.create StyledElement [
+        "onSubmit", (submitForm model linkRef.current)
+        "children",
+        [
+            div [ Key "name" ] [
+                label [] [ str "Your name?" ; strong [] [ str "&nbsp;&#x2a;" ] ]
+                input [
+                    Type "text"
+                    Placeholder "John Doe"
+                    Required true
+                    DefaultValue model.Name
+                    OnChange (fun ev -> setModel (fun m -> { m with Name = ev.Value }))
                 ]
             ]
-        ]
-        // if "issue"
-        div [ Key "issue" ] [
-            label [] [ str "Issue link" ]
-            input [ Type "text" ; Placeholder "A link to a specific OSS issue" ; Required false ]
-        ]
-        // if "project"
-        div [ Key "project" ] [
-            label [] [ str "Project link" ]
-            input [
-                Type "text"
-                Placeholder "A link to your favorite OSS project."
-                List "projects"
-                Required false
+            div [ Key "company" ] [
+                label [] [ str "Company name?" ]
+                input [
+                    Type "text"
+                    Placeholder "Contoso Inc"
+                    Required true
+                    DefaultValue model.Company
+                    OnChange (fun ev -> setModel (fun m -> { m with Company = ev.Value }))
+                ]
+                div [ ClassName "form-text" ] [
+                    str "Don't worry this field is optional, you are also most welcome as an individual contributor."
+                ]
             ]
-            datalist [ Id "projects" ] [
-                option [] [ str "https://github.com/dotnet/fsharp" ]
-                option [] [ str "https://github.com/fsharp/fsautoComplete" ]
-                option [] [ str "https://github.com/JetBrains/resharper-fsharp" ]
-                option [] [ str "https://github.com/ionide/proj-info" ]
-                option [] [ str "https://github.com/ionide/ionide-vscode-fsharp" ]
-                option [] [ str "https://github.com/fsprojects/fantomas" ]
-                option [] [ str "https://github.com/fsprojects/FSharp.Formatting" ]
+            div [ Key "timezone" ] [
+                label [] [ str "Your timezone?" ; strong [] [ str "&nbsp;&#x2a;" ] ]
+                input [
+                    Type "text"
+                    Placeholder "CET"
+                    Required true
+                    DefaultValue model.Timezone
+                ]
             ]
-        ]
-        // if "unknown"
-        div [ Key "unknown" ] [
-            label [] [ str "Tell us about your quest?" ]
-            textarea [
-                Placeholder "Describe the change you want to see in the world."
-                Rows 3
-                Required false
-            ] []
-        ]
-        div [ Key "anything-else" ] [
-            label [] [ str "Is there anything else we need to know?" ]
-            textarea [ Placeholder "Tell us what motivates you!" ; Rows 3 ] []
-        ]
-        button [ Key "submit" ; Type "submit" ] [ str "Submit" ]
-        a [ Key "link" ; Href "#" ; "ref", linkRef ; Target "_blank" ] []
+            div [ Key "topic" ] [
+                label [] [ str "Your topic?" ; strong [] [ str "&nbsp;&#x2a;" ] ]
+                input [
+                    Type "text"
+                    Placeholder "Working on Ionide"
+                    Required true
+                    DefaultValue model.Topic
+                ]
+            ]
+            div [ Key "itch" ] [
+                label [] [
+                    str "What kind of itch do you have?"
+                    strong [] [ str "&nbsp;&#x2a;" ]
+                    div [ Id "itch-container" ] [
+                        input [
+                            Type "radio"
+                            Name "itch"
+                            AutoComplete "off"
+                            Required true
+                            Value "issue"
+                            Checked (model.Itch.IsSpecificIssueX)
 
+                        ]
+                        label [
+                            "for", "issue"
+                            OnClick (fun ev ->
+                                ev.preventDefault ()
+                                setModel (fun m -> { m with Itch = Itch.SpecificIssue "" })
+                            )
+                        ] [ str "Fix a specific issue" ]
+                        input [
+                            Type "radio"
+                            Name "itch"
+                            AutoComplete "off"
+                            Required true
+                            Value "project"
+                            Checked (model.Itch.IsSpecificProjectX)
+
+                        ]
+                        label [
+                            "for", "project"
+                            OnClick (fun ev ->
+                                ev.preventDefault ()
+
+                                setModel (fun m ->
+                                    { m with
+                                        Itch = Itch.SpecificProject ""
+                                    }
+                                )
+                            )
+                        ] [ str "Work on a specific project" ]
+                        input [
+                            Type "radio"
+                            Name "itch"
+                            AutoComplete "off"
+                            Required true
+                            Value "unknown"
+                            Checked (model.Itch.IsUnknownX)
+
+                        ]
+                        label [
+                            "for", "unknown"
+                            OnClick (fun ev ->
+                                ev.preventDefault ()
+                                setModel (fun m -> { m with Itch = Itch.Unknown "" })
+                            )
+                        ] [ str "Still trying to figure it out." ]
+                    ]
+                ]
+            ]
+            match model.Itch with
+            | SpecificIssue issueText ->
+                div [ Key "issue" ] [
+                    label [] [ str "Issue link" ]
+                    input [
+                        Type "text"
+                        Placeholder "A link to a specific OSS issue"
+                        DefaultValue issueText
+                        OnChange (fun ev -> setModel (fun m -> { m with Itch = SpecificIssue ev.Value }))
+                        Required false
+                    ]
+                ]
+            | SpecificProject projectText ->
+                div [ Key "project" ] [
+                    label [] [ str "Project link" ]
+                    input [
+                        Type "text"
+                        Placeholder "A link to your favorite OSS project."
+                        List "projects"
+                        Required false
+                        DefaultValue projectText
+                        OnChange (fun ev ->
+                            setModel (fun m ->
+                                { m with
+                                    Itch = Itch.SpecificProject ev.Value
+                                }
+                            )
+                        )
+                    ]
+                    datalist [ Id "projects" ] [
+                        option [] [ str "https://github.com/dotnet/fsharp" ]
+                        option [] [ str "https://github.com/fsharp/fsautoComplete" ]
+                        option [] [ str "https://github.com/JetBrains/resharper-fsharp" ]
+                        option [] [ str "https://github.com/ionide/proj-info" ]
+                        option [] [ str "https://github.com/ionide/ionide-vscode-fsharp" ]
+                        option [] [ str "https://github.com/fsprojects/fantomas" ]
+                        option [] [ str "https://github.com/fsprojects/FSharp.Formatting" ]
+                    ]
+                ]
+            | Unknown text ->
+                div [ Key "unknown" ] [
+                    label [] [ str "Tell us about your quest?" ]
+                    textarea [
+                        Placeholder "Describe the change you want to see in the world."
+                        Rows 3
+                        Required false
+                        DefaultValue text
+                        OnChange (fun ev -> setModel (fun m -> { m with Itch = Itch.Unknown ev.Value }))
+                    ] []
+                ]
+
+            div [ Key "anything-else" ] [
+                label [] [ str "Is there anything else we need to know?" ]
+                textarea [ Placeholder "Tell us what motivates you!" ; Rows 3 ] []
+            ]
+            button [ Key "submit" ; Type "submit" ] [ str "Submit" ]
+            a [ Key "link" ; Href "#" ; Foo.Ref linkRef ; Target "_blank" ] []
+
+        ]
     ]

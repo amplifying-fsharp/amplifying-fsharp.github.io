@@ -19,4 +19,4 @@ let Time () : JSX.Element =
         , Array.empty
     )
 
-    h5 [] [ str $"Time: %s{time.ToShortTimeString ()}" ]
+    h5 [] [ str $"Time: %s{time.ToLongTimeString ()}" ]
