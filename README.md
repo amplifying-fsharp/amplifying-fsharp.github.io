@@ -97,6 +97,10 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 [Kuba](https://opencollective.com/guest-a58751ea)
 
+[Guillaume](https://opencollective.com/guest-66a90ad0)
+
+[Dennis Grimminck](https://opencollective.com/dgrimmin)
+
 #### Generate backers
 
 Run `bun run backers.js` to generate the list of backers above.
