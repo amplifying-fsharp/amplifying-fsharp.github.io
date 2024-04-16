@@ -10,7 +10,6 @@ import convincing from "../images/convincing-diagram.svg";
 import { getCollection } from "astro:content";
 const testimonials = await getCollection("testimonials");
 import Testimonials from "../components/Testimonials";
-import Time from "../components/Time.fs";
 ---
 
 <Layout title="Home">
@@ -37,7 +36,6 @@ import Time from "../components/Time.fs";
       </a>
     </div>
   </header>
-  <Time client:only="react" />
   <main>
     <section id="foundation">
       <div class="container">

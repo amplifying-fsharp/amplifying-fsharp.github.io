@@ -146,11 +146,6 @@ type Model =
             AnythingElse = "."
         }
 
-type Foo =
-    [<Emit "ref">]
-
-    static member Ref (value : obj) = "ref", box value
-
 let submitForm (model : Model) (linkElement : Browser.Types.HTMLElement) (ev : Browser.Types.Event) =
     ev.preventDefault ()
 
@@ -176,7 +171,6 @@ let JoinUsForm () : JSX.Element =
 
     JS.console.log (linkRef)
 
-    //  OnSubmit (submitForm model linkRef.current)
     JSX.create StyledElement [
         "onSubmit", (submitForm model linkRef.current)
         "children",
@@ -211,6 +205,7 @@ let JoinUsForm () : JSX.Element =
                     Placeholder "CET"
                     Required true
                     DefaultValue model.Timezone
+                    OnChange (fun ev -> setModel (fun m -> { m with Timezone = ev.Value }))
                 ]
             ]
             div [ Key "topic" ] [
@@ -220,6 +215,7 @@ let JoinUsForm () : JSX.Element =
                     Placeholder "Working on Ionide"
                     Required true
                     DefaultValue model.Topic
+                    OnChange (fun ev -> setModel (fun m -> { m with Topic = ev.Value }))
                 ]
             ]
             div [ Key "itch" ] [
@@ -234,7 +230,6 @@ let JoinUsForm () : JSX.Element =
                             Required true
                             Value "issue"
                             Checked (model.Itch.IsSpecificIssueX)
-
                         ]
                         label [
                             "for", "issue"
@@ -250,7 +245,6 @@ let JoinUsForm () : JSX.Element =
                             Required true
                             Value "project"
                             Checked (model.Itch.IsSpecificProjectX)
-
                         ]
                         label [
                             "for", "project"
@@ -339,7 +333,7 @@ let JoinUsForm () : JSX.Element =
                 textarea [ Placeholder "Tell us what motivates you!" ; Rows 3 ] []
             ]
             button [ Key "submit" ; Type "submit" ] [ str "Submit" ]
-            a [ Key "link" ; Href "#" ; Foo.Ref linkRef ; Target "_blank" ] []
+            a [ Key "link" ; Href "#" ; Ref linkRef ; Target "_blank" ] []
 
         ]
     ]

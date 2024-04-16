@@ -7,16 +7,14 @@
   
   <ItemGroup>
     <Compile Include="bindings/StyledComponents.fs" />
-    <Compile Include="components/Time.fsi" />
-    <Compile Include="components/Time.fs" />
-    <Compile Include="components\SessionsGrid.fsi" />
-    <Compile Include="components\SessionsGrid.fs" />
-    <Compile Include="components\JoinUsForm.fsi" />
-    <Compile Include="components\JoinUsForm.fs" />
+    <Compile Include="components/SessionsGrid.fsi" />
+    <Compile Include="components/SessionsGrid.fs" />
+    <Compile Include="components/JoinUsForm.fsi" />
+    <Compile Include="components/JoinUsForm.fs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Nojaf.Fable.React" Version="0.0.1" />
+    <PackageReference Include="Nojaf.Fable.React" Version="0.0.2" />
   </ItemGroup>
 
 </Project>
