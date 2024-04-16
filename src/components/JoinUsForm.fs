@@ -138,30 +138,45 @@ type Model =
 
     static member Zero : Model =
         {
-            Name = "a"
-            Company = "a"
-            Timezone = "a"
-            Topic = "Good stuff"
+            Name = ""
+            Company = ""
+            Timezone = ""
+            Topic = ""
             Itch = SpecificIssue ""
-            AnythingElse = "."
+            AnythingElse = ""
         }
 
 let submitForm (model : Model) (linkElement : Browser.Types.HTMLElement) (ev : Browser.Types.Event) =
     ev.preventDefault ()
 
+    let fromCompany =
+        if System.String.IsNullOrWhiteSpace model.Company then
+            ""
+        else
+            $", from %s{model.Company}"
+
+    let tackle =
+        match model.Itch with
+        | Itch.SpecificIssue issue -> issue
+        | Itch.SpecificProject project -> project
+        | Itch.Unknown description -> description
+
     let body =
         $"""
 ### Session on %s{model.Topic}
 
-Good stuff"""
+%s{model.Name}%s{fromCompany} in %s{model.Timezone} would like to tackle:
+%s{tackle}
 
-    let _ = JS.encodeURIComponent
+#### Extra
+
+%s{model.AnythingElse}
+"""
 
     let href =
         $"https://github.com/amplifying-fsharp/sessions/issues/new?title=%s{JS.encodeURIComponent (model.Topic)}&body=%s{JS.encodeURIComponent (body)}"
 
     linkElement.setAttribute ("href", href)
-    JS.console.log href
     linkElement.click ()
 
 [<ExportDefault>]
@@ -327,13 +342,11 @@ let JoinUsForm () : JSX.Element =
                         OnChange (fun ev -> setModel (fun m -> { m with Itch = Itch.Unknown ev.Value }))
                     ] []
                 ]
-
             div [ Key "anything-else" ] [
                 label [] [ str "Is there anything else we need to know?" ]
                 textarea [ Placeholder "Tell us what motivates you!" ; Rows 3 ] []
             ]
             button [ Key "submit" ; Type "submit" ] [ str "Submit" ]
             a [ Key "link" ; Href "#" ; Ref linkRef ; Target "_blank" ] []
-
         ]
     ]
