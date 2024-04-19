@@ -17,7 +17,6 @@ function fsharpMiddlewarePlugin() {
         const isFSharpUrl = /\.fs/.test(req.url);
 
         if (isFSharpUrl && req.url.indexOf("?import") === -1) {
-          console.log(req.url);
           req.url += "?import";
           res.setHeader("Content-Type", "application/javascript");
         }
@@ -69,6 +68,5 @@ export default defineConfig({
       },
     },
     plugins: [fsharpMiddlewarePlugin(), fable({ fsproj, jsx: "automatic" })],
-    // plugins: [fable({ fsproj, jsx: "automatic" })],
   },
 });
