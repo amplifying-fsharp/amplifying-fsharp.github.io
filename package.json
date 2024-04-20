@@ -44,9 +44,11 @@
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "10.8.0",
     "prettier": "3.2.5",
-    "prettier-plugin-astro": "0.13.0"
+    "prettier-plugin-astro": "0.13.0",
+    "vite-plugin-fable": "^0.0.26"
   },
   "trustedDependencies": [
-    "sharp"
+    "sharp",
+    "vite-plugin-fable"
   ]
 }
