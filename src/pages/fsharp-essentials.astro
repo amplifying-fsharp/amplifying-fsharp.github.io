@@ -136,28 +136,6 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
         }
       }
     </style>
-    <section id="sign-up">
-      <div class="container">
-        <h2>
-          Using ASP.NET Core session is scheduled for <LocalTime
-            client:only="react"
-            utcDate={new Date("2024-04-24T17:30:00.000Z")}
-          />.
-        </h2>
-
-        <section id="cta">
-          <a
-            href="https://us06web.zoom.us/j/84537085625?pwd=ce5Yy3G6j4EbGBCKbAxPGzl5a9OMq4.1"
-          >
-            <button>Zoom meeting</button>
-          </a>
-        </section>
-
-        <h3>Passcode: fsharp</h3>
-
-        <Image src={fsharpLogo} alt="F# logo" />
-      </div>
-    </section>
     <style>
       #sign-up {
         background: radial-gradient(
@@ -267,7 +245,7 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
     </style>
     <section id="course-overview">
       <div class="container">
-        <h2>Course overview</h2>
+        <h2>Table of contents</h2>
         <div class="segment">
           <h3>
             Introduction and Setup
@@ -636,6 +614,10 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
             <li>
               <span>API</span>
               <!--<a href="#">View</a>-->
+            </li>
+            <li>
+              <span>Video</span>
+              <YouTubeVideo youtubeId="neUuO1Xcpeg" />
             </li>
           </ul>
         </div>
