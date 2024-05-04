@@ -344,7 +344,12 @@ let JoinUsForm () : JSX.Element =
                 ]
             div [ Key "anything-else" ] [
                 label [] [ str "Is there anything else we need to know?" ]
-                textarea [ Placeholder "Tell us what motivates you!" ; Rows 3 ] []
+                textarea [
+                    Placeholder "Tell us what motivates you!"
+                    Rows 3
+                    Required false
+                    OnChange (fun ev -> setModel (fun m -> { m with AnythingElse = ev.Value }))
+                ] []
             ]
             button [ Key "submit" ; Type "submit" ] [ str "Submit" ]
             a [ Key "link" ; Href "#" ; Ref linkRef ; Target "_blank" ] []
