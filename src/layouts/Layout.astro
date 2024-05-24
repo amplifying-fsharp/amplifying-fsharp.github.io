@@ -3,6 +3,7 @@ import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 const { title } = Astro.props;
 import navLogo from "../images/nav-logo.jpg";
+import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
 import Navigation from "../components/Navigation.astro";
 ---
@@ -40,6 +41,7 @@ import Navigation from "../components/Navigation.astro";
     />
   </head>
   <body>
+    <Banner />
     <Navigation />
     <div id="content">
       <slot />
@@ -167,6 +169,27 @@ import Navigation from "../components/Navigation.astro";
     }
 
     min-height: 100vh;
+
+    &::-webkit-scrollbar {
+      height: var(--spacing-100);
+      width: var(--spacing-100);
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: var(--scrollbar-track-background);
+      border: 1px solid var(--scrollbar-track-border);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--scrollbar-thumb-background);
+    }
+
+    @media screen and (min-width: 768px) {
+        &::-webkit-scrollbar {
+            height: var(--spacing-200);
+            width: var(--spacing-300);
+        }
+    }
   }
 
   picture,
@@ -395,5 +418,10 @@ import Navigation from "../components/Navigation.astro";
   .yellow blockquote {
     background-color: var(--yellow-300);
     border-left: var(--spacing-100) solid var(--key-900);
+  }
+
+  .cyan blockquote {
+    background-color: var(--cyan-300);
+    border-left: var(--spacing-100) solid var(--cyan-900);
   }
 </style>
