@@ -12,11 +12,11 @@ The feedback I got was very encouraging, I released the package and blogged abou
 The obvious thing to do was, of course, porting it to fsi itself to remove the hassle of referencing the package in every fsi session.
 The first try was made during an Amplifying F# [session](https://amplifyingfsharp.io/sessions/2024/01/26/) back in January. For various reasons I wasn't able to finish it at that time. A second attempt was started last May, this time with the financial backing of the [Amplifying F# Open Collective](https://opencollective.com/amplifying-fsharp).
 
-The [PR](https://github.com/dotnet/fsharp/pull/17140) sparked a good discussion how to make the functionality available to fsi users. My initial port used a new hash directive called `#h`. But as hash directives in fsi are parsed with the normal F# parser, that meant we had to wrap the expression in parentheses like `#h "List.map"`.
+The [PR](https://github.com/dotnet/fsharp/pull/17140) sparked a good discussion how to make the functionality available to fsi users. My initial port used a new hash directive called `#h`. But as hash directives in fsi are parsed with the normal F# parser, that meant we had to wrap the expression in quotation marks, like `#h "List.map"`.
 
-Brian proposed the idea of using a method in the `fsi` object that is available in every fsi session. This would allow us to use the method without the need for parentheses, e.g. `fsi.h List.map`.
-I liked the idea and made the necessary changes to the PR. In parallel, Kevin started to [work on the parser](https://github.com/dotnet/fsharp/pull/17206) to remove the need for parentheses because he was in favor of reusing the existing `#help` hash directive for the new functionality. And as the main maintainer of fsi, his opinion was the most important one. So I adapted the PR again to use the `#help` directive. To my great joy, the PR was merged last week and will be available in a future release of the F# compiler.
-For the time being, parentheses are still needed while Kevins parser PR is not yet merged. But I'm confident that will happen soon.
+Brian proposed the idea of using a method in the `fsi` object that is available in every fsi session. This would allow us to use the method without the need for quotation marks, e.g. `fsi.h List.map`.
+I liked the idea and made the necessary changes to the PR. In parallel, Kevin started to [work on the parser](https://github.com/dotnet/fsharp/pull/17206) to remove the need for quotation marks because he was in favor of reusing the existing `#help` hash directive for the new functionality. And as the main maintainer of fsi, his opinion was the most important one. So I adapted the PR again to use the `#help` directive. To my great joy, the PR was merged last week and will be available in a future release of the F# compiler.
+For the time being, quotation marks are still needed while Kevins parser PR is not yet merged. But I'm confident that will happen soon.
 
 So where does this leave us? In the future, when you invoke the `#help` directive in fsi, you will see a new entry `#help "idn"`:
 ![fsi #help output](../../images/blog/fsi_hashhelplist_screenshot.png)
