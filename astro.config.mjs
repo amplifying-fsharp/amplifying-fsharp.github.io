@@ -46,7 +46,6 @@ export default defineConfig({
     gfm: true,
   },
   integrations: [
-    purgecss(),
     // Include fs extension for react-refresh
     react({ include: /\.(fs|js|jsx|ts|tsx)$/ }),
     icon({
