@@ -1,9 +1,9 @@
 ﻿---
+id: florian-verdonck
 title: Florian Verdonck
 preview: Open-source heavily influenced my career
-isDraft: true
 author: Florian Verdonck
-slug: florian-verdonck
+isDraft: true
 profilePicture: "../../images/authors/FlorianVerdonck.jpg"
 ---
 
