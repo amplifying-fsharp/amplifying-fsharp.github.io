@@ -1,9 +1,9 @@
 ﻿---
+id: edgar-gonzalez
 title: Edgar Gonzalez
 preview: I went from zero to hero in no time
-isDraft: true
 author: Edgar Gonzalez
-slug: edgar-gonzalez
+isDraft: true
 profilePicture: "../../images/authors/EdgarGonzalez.jpg"
 ---
 

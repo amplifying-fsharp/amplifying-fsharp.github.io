@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import PageLayout from "../../layouts/PageLayout.astro";
 
 export async function getStaticPaths() {
@@ -9,14 +9,14 @@ export async function getStaticPaths() {
     const prevTestimonial = testimonialsEntries.at(
       (index - 1) % testimonialsEntries.length,
     );
-    const prevLink = prevTestimonial && prevTestimonial.slug;
+    const prevLink = prevTestimonial && prevTestimonial.id;
     const nextTestimonial = testimonialsEntries.at(
       (index + 1) % testimonialsEntries.length,
     );
-    const nextLink = nextTestimonial && nextTestimonial.slug;
+    const nextLink = nextTestimonial && nextTestimonial.id;
 
     return {
-      params: { slug: entry.slug },
+      params: { id: entry.id },
       props: {
         entry,
         prevLink,
@@ -28,7 +28,8 @@ export async function getStaticPaths() {
 }
 
 const { entry, prevLink, nextLink, color } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
+console.log(entry);
 const { title, author, profilePicture } = entry.data;
 const pageTitle = `Testimonial of ${title}`;
 const mainTitle = pageTitle;
