@@ -1,10 +1,10 @@
 ---
+id: david-schaefer
 title: David Schaefer
 preview: Each one, teach one
-isDraft: true
 author: David Schaefer
-slug: david-schaefer
-profilePicture: "../../images/authors/DavidSchaefer.jpg"
+isDraft: true
+profilePicture: "../images/authors/DavidSchaefer.jpg"
 ---
 
 ## Each one, teach one

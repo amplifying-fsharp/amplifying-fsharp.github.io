@@ -2,6 +2,7 @@
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "strictNullChecks": true,
+    "allowJs": true, // required, and included with all Astro templates
     "types": ["astro/client"],
     "jsx": "react-jsx",
     "jsxImportSource": "react"

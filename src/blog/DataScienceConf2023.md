@@ -3,7 +3,7 @@ title: Data Science in F#
 date: 2023-09-30
 author: "dawe"
 slug: "2023/09/30"
-profilePicture: "../../images/authors/DavidSchaefer.jpg"
+profilePicture: "../images/authors/DavidSchaefer.jpg"
 ---
 
 The Europe-based part of us made the trip to Berlin to attend the [Data Science in F#](https://datascienceinfsharp.com/) conference.  
@@ -18,4 +18,4 @@ A great buddy and a great F# developer known for his work on [FsHttp](https://gi
 
 Fueled by coffee and ice cream, many ideas to take the next steps in our initiative and to lift Amplifying F# to the next level came up during the conference.  
 Stay tuned for more news in the coming weeks.
-![The Amplifying F# team and friends.](../../images/blog/datascience2023.jpg)
+![The Amplifying F# team and friends.](../images/blog/datascience2023.jpg)

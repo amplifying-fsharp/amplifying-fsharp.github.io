@@ -12,7 +12,7 @@
     "lint": "bunx --bun prettier . --check"
   },
   "dependencies": {
-    "@astrojs/react": "3.6.2",
+    "@astrojs/react": "4.0.0",
     "@iconify-json/bi": "^1.2.1",
     "@iconify-json/cil": "^1.2.1",
     "@iconify-json/fluent": "^1.2.7",
@@ -28,14 +28,14 @@
     "@iconify-json/uiw": "^1.2.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "astro": "4.16.13",
-    "astro-icon": "1.1.2",
-    "astro-purgecss": "4.8.0",
+    "astro": "5.0.4",
+    "astro-icon": "1.1.4",
+    "astro-purgecss": "5.0.0",
     "autoprefixer": "^10.4.20",
     "date-fns": "^4.1.0",
     "mermaid": "11.4.0",
     "postcss-nested": "^7.0.2",
-    "purgecss": "^6.0.0",
+    "purgecss": "^7.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sharp": "^0.33.5",
@@ -43,11 +43,12 @@
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "11.4.0",
-    "prettier": "3.3.3",
+    "prettier": "3.4.2",
     "prettier-plugin-astro": "0.14.1",
-    "vite-plugin-fable": "^0.0.31"
+    "vite-plugin-fable": "^0.0.32"
   },
   "trustedDependencies": [
+    "astro",
     "sharp",
     "vite-plugin-fable"
   ]

@@ -1,10 +1,10 @@
 ﻿---
+id: florian-verdonck
 title: Florian Verdonck
 preview: Open-source heavily influenced my career
-isDraft: true
 author: Florian Verdonck
-slug: florian-verdonck
-profilePicture: "../../images/authors/FlorianVerdonck.jpg"
+isDraft: true
+profilePicture: "../images/authors/FlorianVerdonck.jpg"
 ---
 
 ## This crazy little thing called Fantomas
