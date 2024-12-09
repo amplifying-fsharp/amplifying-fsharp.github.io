@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import PageLayout from "../../layouts/PageLayout.astro";
 
 export async function getStaticPaths() {
@@ -7,13 +7,13 @@ export async function getStaticPaths() {
   const colors = ["magenta", "cyan", "yellow"];
 
   return blogs.map((entry, idx) => ({
-    params: { slug: entry.slug },
+    params: { id: entry.id },
     props: { entry, color: colors[idx % colors.length] },
   }));
 }
 
 const { entry, color } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 const { title, date, author, profilePicture } = entry.data;
 const authorData = { picture: profilePicture, name: author };
 

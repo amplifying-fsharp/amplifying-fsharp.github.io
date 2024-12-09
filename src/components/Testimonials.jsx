@@ -150,7 +150,7 @@ function Testimonials({ testimonials }) {
     <StyledDiv>
       <blockquote>{current.data.preview}</blockquote>
       <figcaption>{current.data.author}</figcaption>
-      <a className={"btn btn-cyan"} href={`/testimonials/${current.slug}`}>
+      <a className={"btn btn-cyan"} href={`/testimonials/${current.id}`}>
         <BookIcon />
         Read more!
       </a>

@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import PageLayout from "../../layouts/PageLayout.astro";
 import LocalTime from "../../components/LocalTime.jsx";
 import YouTubeVideo from "../../components/YouTubeVideo.astro";
@@ -9,13 +9,13 @@ export async function getStaticPaths() {
   const colors = ["magenta", "yellow", "cyan"];
 
   return sessionEntries.map((entry, idx) => ({
-    params: { slug: entry.slug },
+    params: { id: entry.id },
     props: { entry, color: colors[idx % colors.length] },
   }));
 }
 
 const { entry, color } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 const {
   title,
   company,
