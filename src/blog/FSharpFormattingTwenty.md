@@ -3,7 +3,7 @@ title: Documentation's Fresh Coat of Paint
 date: 2024-02-14
 author: "Florian"
 slug: "2024/02/14"
-profilePicture: "../../images/authors/FlorianVerdonck.jpg"
+profilePicture: "../images/authors/FlorianVerdonck.jpg"
 ---
 
 Stumbling upon new software can either be a moment of revelation or a cool find. Whether it's a solution to a lingering issue or just something that catches your eye, a positive initial impression sparks an urge to dive deeper. The immediate follow-up question usually is, _"Alright, how do I get this thing to work?"_ And that's when you cross your fingers, hoping for a treasure trove of documentation.
@@ -16,11 +16,11 @@ The conversation in [issue #849](https://github.com/fsprojects/FSharp.Formatting
 
 Before:
 
-![Old FSharp.Formatting](../../images/blog/old-fsdocs.png)
+![Old FSharp.Formatting](../images/blog/old-fsdocs.png)
 
 After:
 
-![New FSharp.Formatting](../../images/blog/new-fsdocs.png)
+![New FSharp.Formatting](../images/blog/new-fsdocs.png)
 
 ### Embracing Modern Web Standards
 

@@ -3,7 +3,7 @@ title: Porting fsih to fsi
 date: 2024-06-16
 author: "dawe"
 slug: "2024/06/16"
-profilePicture: "../../images/authors/DavidSchaefer.jpg"
+profilePicture: "../images/authors/DavidSchaefer.jpg"
 ---
 
 Some of you might remember our [Unlocking F# Potential](https://amplifyingfsharp.io/sessions/2023/11/24/) session from last November when I showed the first prototype of [fsih](https://github.com/dawedawe/fsih). A small package modelled after the `h` function of the Elixir [IEx](https://hexdocs.pm/iex/1.16.0/IEx.html) REPL to have documentation availabe at your finger tips without the need to context switch to a browser.
@@ -19,21 +19,21 @@ I liked the idea and made the necessary changes to the PR. In parallel, Kevin st
 For the time being, quotation marks are still needed while Kevins parser PR is not yet merged. But I'm confident that will happen soon.
 
 So where does this leave us? In the future, when you invoke the `#help` directive in fsi, you will see a new entry `#help "idn"`:
-![fsi #help output](../../images/blog/fsi_hashhelplist_screenshot.png)
+![fsi #help output](../images/blog/fsi_hashhelplist_screenshot.png)
 
 And just as the screenshot suggests, you can use it like this:
-![fsi #help List.map output](../../images/blog/fsi_hashhelplistmap_screenshot.png)
+![fsi #help List.map output](../images/blog/fsi_hashhelplistmap_screenshot.png)
 
 Et voilà, the functionality you know from the fsih package in fsi without any additional dependencies. To keep things simple and to avoid bloating F#, the dependency of fsih on `Spectre.Console` was not ported over. The output is just uncolored plain text. A follow up PR might add some coloring with the built-in coloring capabilities.
 
 It's possible to run into a type constraint issues when using the functionality with functions like `List.sum`:
-![fsi #help List.sum output](../../images/blog/fsi_hashhelplistsum_screenshot1.png)
+![fsi #help List.sum output](../images/blog/fsi_hashhelplistsum_screenshot1.png)
 
 You will see something similar when you just type `List.sum` to get the signature of the function:
-![fsi List.sum output](../../images/blog/fsi_listsum_screenshot.png)
+![fsi List.sum output](../images/blog/fsi_listsum_screenshot.png)
 
 You can still get the documentation by lending F# a helping hand to infer the type:
-![fsi #help List.sum output](../../images/blog/fsi_hashhelplistsum_screenshot2.png)
+![fsi #help List.sum output](../images/blog/fsi_hashhelplistsum_screenshot2.png)
 
 All in all, I'm quite happy with the result of the porting effort. It would not have been possible without the genorous supporters of the [Amplifying F# Open Collective](https://opencollective.com/amplifying-fsharp). So once again, I want to express my gratitude to all of you and to all reviewers of the PR.
 

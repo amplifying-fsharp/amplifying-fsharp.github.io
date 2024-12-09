@@ -3,7 +3,7 @@ title: BOBKonf 2024
 date: 2024-03-16
 author: "dawe"
 slug: "2024/03/16"
-profilePicture: "../../images/authors/DavidSchaefer.jpg"
+profilePicture: "../images/authors/DavidSchaefer.jpg"
 ---
 
 [BOBKonf](https://bobkonf.de/2024/en/) is a yearly conference in Berlin, Germany. It's target audience is more on the functional programming side of things, but it's not limited to that.
@@ -21,4 +21,4 @@ We had a long conversation with [Sabine](https://twitter.com/sabine_s_) and [Lea
 
 A spectial thank-you goes out to all contributors to our [collective](https://opencollective.com/amplifying-fsharp). Your money helped to make this trip possible. A big thank-you for the BOBKonf organizers is also in order. We decided to be regulars at this conference from now on.
 
-![The Amplifying F# team and friends.](../../images/blog/bobkonf2024.jpg)
+![The Amplifying F# team and friends.](../images/blog/bobkonf2024.jpg)

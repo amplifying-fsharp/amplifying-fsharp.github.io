@@ -3,7 +3,7 @@ title: H-ing gracefully
 date: 2023-12-25
 author: "dawe"
 slug: "2023/12/25"
-profilePicture: "../../images/authors/DavidSchaefer.jpg"
+profilePicture: "../images/authors/DavidSchaefer.jpg"
 ---
 
 For various reaons I have been looking into other FP languages and communities recently.  
@@ -11,7 +11,7 @@ One of the languages was [Elixir](https://elixir-lang.org/), which is a function
 As shown in one of our previous [sessions](https://www.youtube.com/live/8aBmGUNFBQI?si=JD-exm6rO_J38mG_&t=893), I noticed that the Elixir REPL (iex) has a very nice feature, the `h` function.
 Want to know more about a function? For example, `Enum.map`? Just type `h` followed by the function name and you get a nicely formatted help text:
 
-![iex](../../images/blog/iex.png)
+![iex](../images/blog/iex.png)
 
 That's a really cool feature, especially for beginners. You can stay in the REPL and get help on the fly. No need to switch to a browser and search for the function. No context switch for your brain. No interruption of your flow.
 
@@ -28,7 +28,7 @@ But how do we identify the assembly containing the function we are interested in
 For this, I settled with [Quotations](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/code-quotations). There are active patterns available in FSharp.Core that let us extract the information we need from a quotation.  
 Using quotations, some more doors suddenly open to us. More on that later. So with the path to the dll in hand, we can load the XML documentation file next to it, parse it and extract the information we need:
 
-![fsi_h_seq_map](../../images/blog/fsi_h_seq_map.png)
+![fsi_h_seq_map](../images/blog/fsi_h_seq_map.png)
 
 As you see, `h` gives you direct access to
 

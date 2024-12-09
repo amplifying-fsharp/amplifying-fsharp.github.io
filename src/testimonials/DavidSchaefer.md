@@ -4,7 +4,7 @@ title: David Schaefer
 preview: Each one, teach one
 author: David Schaefer
 isDraft: true
-profilePicture: "../../images/authors/DavidSchaefer.jpg"
+profilePicture: "../images/authors/DavidSchaefer.jpg"
 ---
 
 ## Each one, teach one

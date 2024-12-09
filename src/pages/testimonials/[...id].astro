@@ -29,7 +29,6 @@ export async function getStaticPaths() {
 
 const { entry, prevLink, nextLink, color } = Astro.props;
 const { Content } = await render(entry);
-console.log(entry);
 const { title, author, profilePicture } = entry.data;
 const pageTitle = `Testimonial of ${title}`;
 const mainTitle = pageTitle;
