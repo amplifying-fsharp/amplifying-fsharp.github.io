@@ -2,7 +2,7 @@
 title: Documentation's Fresh Coat of Paint
 date: 2024-02-14
 author: "Florian"
-slug: "2024/02/14"
+id: "2024/02/14"
 profilePicture: "../images/authors/FlorianVerdonck.jpg"
 ---
 

@@ -12,7 +12,6 @@ const sessions = await getCollection("sessions").then((sessions) => {
       title: session.data.title,
       date: session.data.date,
       champion: session.data.champion,
-      slug: session.id,
     };
   });
 });

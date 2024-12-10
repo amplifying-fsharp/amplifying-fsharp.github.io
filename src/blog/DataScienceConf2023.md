@@ -2,7 +2,7 @@
 title: Data Science in F#
 date: 2023-09-30
 author: "dawe"
-slug: "2023/09/30"
+id: "2023/09/30"
 profilePicture: "../images/authors/DavidSchaefer.jpg"
 ---
 

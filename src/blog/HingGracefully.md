@@ -2,7 +2,7 @@
 title: H-ing gracefully
 date: 2023-12-25
 author: "dawe"
-slug: "2023/12/25"
+id: "2023/12/25"
 profilePicture: "../images/authors/DavidSchaefer.jpg"
 ---
 

@@ -2,7 +2,7 @@
 title: Seamless switching between Package and Project references
 date: 2023-11-11
 author: "dawe"
-slug: "2023/11/11"
+id: "2023/11/11"
 profilePicture: "../images/authors/DavidSchaefer.jpg"
 ---
 

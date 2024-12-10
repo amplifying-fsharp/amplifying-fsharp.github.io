@@ -2,7 +2,7 @@
 title: Porting fsih to fsi
 date: 2024-06-16
 author: "dawe"
-slug: "2024/06/16"
+id: "2024/06/16"
 profilePicture: "../images/authors/DavidSchaefer.jpg"
 ---
 

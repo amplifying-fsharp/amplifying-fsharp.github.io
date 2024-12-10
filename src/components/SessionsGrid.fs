@@ -200,7 +200,6 @@ type Session =
         title : string
         date : JS.Date
         champion : string
-        slug : string
     |}
 
 type SessionsGridProps = {| sessions : Session array |}
@@ -241,7 +240,7 @@ let SessionsGrid (props : SessionsGridProps) : JSX.Element =
                 h2 [] [ str "On the next Amplifying F#!" ]
                 div [ Id "upcoming-sessions" ; ClassName "grid-container" ] [
                     for session in upcomingSessions do
-                        a [ Href $"/sessions/%s{session.slug}" ; Key session.id ] [
+                        a [ Href $"/sessions/%s{session.id}" ; Key session.id ] [
                             h3 [] [ str session.title ]
                             div [] [
                                 time [] [ str (session.date.toLocaleDateString ()) ]
@@ -261,7 +260,7 @@ let SessionsGrid (props : SessionsGridProps) : JSX.Element =
                             $"url('https://img.youtube.com/vi/%s{session.youtubeId}/mqdefault.jpg')"
 
                     a [
-                        Href $"/sessions/%s{session.slug}"
+                        Href $"/sessions/%s{session.id}"
                         Key session.id
                         Style
                             {|

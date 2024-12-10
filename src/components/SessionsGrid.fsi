@@ -11,7 +11,6 @@ type Session =
         title : string
         date : Date
         champion : string
-        slug : string
     |}
 
 type SessionsGridProps = {| sessions : Session array |}
