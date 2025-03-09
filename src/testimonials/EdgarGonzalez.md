@@ -4,7 +4,7 @@ title: Edgar Gonzalez
 preview: I went from zero to hero in no time
 author: Edgar Gonzalez
 isDraft: true
-profilePicture: "../images/authors/EdgarGonzalez.jpg"
+profilePicture: "../images/authors/EdgarGonzalez.png"
 ---
 
 ## My journey from a soldier to an F# OSS contributor
