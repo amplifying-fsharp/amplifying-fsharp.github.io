@@ -21,7 +21,7 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v5
       - name: Setup .NET Core
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
       - uses: oven-sh/setup-bun@v2
       - run: bun install
       - run: bun run lint
