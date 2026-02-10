@@ -27,7 +27,7 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 [Michal Nebes](https://opencollective.com/michal-nebes)
 
-[Kevin Scully](https://opencollective.com/guest-869ff6be)
+[Kevin Scully](https://opencollective.com/kevin-scully)
 
 ![Chester Husk](https://www.gravatar.com/avatar/d2f117e84eb4380996e3bce3e7850f33?default=404&s=50) [Chester Husk](https://opencollective.com/chester-husk)
 
@@ -53,7 +53,7 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 [Faisal](https://opencollective.com/anonymous2703)
 
-[Łukasz Krzywizna](https://opencollective.com/guest-127c1447)
+[Łukasz Krzywizna](https://opencollective.com/lukasz-krzywizna)
 
 [Owen Madden](https://opencollective.com/guest-156a0a3f)
 
@@ -87,7 +87,7 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 
 [Tuomas](https://opencollective.com/guest-5aeab86a)
 
-[fsharprocks](https://opencollective.com/guest-aec8ca1f)
+[ned13](https://opencollective.com/guest-aec8ca1f)
 
 [Casper Bollen](https://opencollective.com/casper-bollen)
 
@@ -100,6 +100,30 @@ We have an [Open Collective](https://opencollective.com/amplifying-fsharp#catego
 [Guillaume](https://opencollective.com/guest-66a90ad0)
 
 [Dennis Grimminck](https://opencollective.com/dgrimmin)
+
+[Kevin Hannen](https://opencollective.com/kevin-hannen)
+
+[Halil Ibrahim Özcan](https://opencollective.com/halil-ibrahim-ozcan)
+
+![Samuel Berger](https://opencollective-production.s3.us-west-1.amazonaws.com/8bc888a0-265d-11e9-b72b-d3a820720e76.jpg&s=50) [Samuel Berger](https://opencollective.com/samuel-berger)
+
+[FsharpWorks](https://opencollective.com/fsharpworks)
+
+[Ondrej Pinka](https://opencollective.com/ondrej-pinka)
+
+![Alf Kåre Lefdal](https://www.gravatar.com/avatar/b86093a8c3c18571b86c2f588515a5c7?default=404&s=50) [Alf Kåre Lefdal](https://opencollective.com/aklefdal)
+
+![David](https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/94004683-6fc7-46a5-b25d-543b6c843087/avatar_small.png&s=50) [David](https://opencollective.com/david158)
+
+![psfinaki](https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/1ed84250-40bf-4e26-8ab8-29aa6cccfb83/shaun-the-sheep-image.jpg&s=50) [psfinaki](https://opencollective.com/psfinaki)
+
+[Guillaume Dechambre](https://opencollective.com/guest-0515b5bc)
+
+[Incognito](https://opencollective.com/incognito-83745acf)
+
+[A. David Giagnocavo](https://opencollective.com/guest-a2a0a1d2)
+
+[Matt Watt](https://opencollective.com/matt83)
 
 #### Generate backers
 
