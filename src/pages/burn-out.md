@@ -31,5 +31,5 @@ To make expectations clear: We don't offer help maintaining your project. We don
 All we offer is a place to talk about your situation with people who have the experience to really understand what you're going through.
 We stand by our word that we will not share anything you tell us with anyone else.
 
-So if this offer sounds interesting to you, please reach out to us as a [group](mailto:amplifyingfsharp@gmail.com), or to David, Edgar, Florian, Jimmy individually.
+So if this offer sounds interesting to you, please reach out to us as a [group](mailto:amplifyingfsharp@gmail.com), or to Edgar, Florian, Jimmy individually.
 Whatever you feel most comfortable with.
