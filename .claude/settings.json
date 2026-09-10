@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=$(jq -r '.tool_input.file_path'); case \"$f\" in *.fs|*.fsi|*.fsx) dotnet fantomas \"$f\" ;; *.astro|*.js|*.jsx|*.mjs|*.ts|*.tsx|*.md|*.mdx|*.css|*.json|*.yml|*.yaml) bunx --bun prettier --log-level warn --write \"$f\" ;; esac >/dev/null 2>&1 || true",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}
