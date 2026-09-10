@@ -1,3 +1,4 @@
+#!/usr/bin/env -S dotnet fsi --
 #r "nuget: FsHttp"
 
 open System.Collections.Generic
@@ -5,13 +6,13 @@ open FsHttp
 
 Fsi.disableDebugLogs ()
 
-type Transaction = {| createdByUser: obj; amount: int |}
-type OpenCollectiveResponse = {| result: Transaction array |}
+type Transaction = {| createdByUser : obj ; amount : int |}
+type OpenCollectiveResponse = {| result : Transaction array |}
 
 let openCollectiveResponse =
     http {
         GET
-            "https://opencollective.com/v1/collectives/amplifying-fsharp/transactions?dateFrom=2024-01-01&dateTo=2024-12-31"
+            "https://opencollective.com/v1/collectives/amplifying-fsharp/transactions?dateFrom=2024-01-01&dateTo=2026-12-31"
 
         CacheControl "no-cache"
     }
@@ -26,7 +27,7 @@ let total =
 
 printfn "Total collected: $%i" total
 
-type ExchangeRateResponse = {| rates: Dictionary<string, float> |}
+type ExchangeRateResponse = {| rates : Dictionary<string, float> |}
 
 let exchangeRateResponse =
     http {

@@ -11,20 +11,18 @@ const { color = "cyan", mainTitle, author, src }: HeaderProps = Astro.props;
 <header class={`container ${color}`}>
   <div class="overlay" style={{ backgroundImage: `url(${src})` }}></div>
   <h1>{mainTitle}</h1>
-  {
-    author && (
-      <div id="author">
-        <Image
-          src={author.picture}
-          alt={`Profile picture of ${author.name}`}
-          width={100}
-          height={100}
-          class="img-thumbnail"
-        />
-        <strong>{author.name}</strong>
-      </div>
-    )
-  }
+  {author && (
+    <div id="author">
+      <Image
+        src={author.picture}
+        alt={`Profile picture of ${author.name}`}
+        width={100}
+        height={100}
+        class="img-thumbnail"
+      />
+      <strong>{author.name}</strong>
+    </div>
+  )}
 </header>
 <style>
   header {

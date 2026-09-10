@@ -29,14 +29,12 @@ const footerIcons = [
 
 <footer>
   <div class="container">
-    {
-      footerIcons.map(({ link, text, icon, color }) => (
-        <a href={link} target="_blank">
-          <Icon name={icon} width="24" height="24" color={color} />
-          <span>{text}</span>
-        </a>
-      ))
-    }
+    {footerIcons.map(({ link, text, icon, color }) => (
+      <a href={link} target="_blank">
+        <Icon name={icon} width="24" height="24" color={color} />
+        <span>{text}</span>
+      </a>
+    ))}
   </div>
 </footer>
 <style>

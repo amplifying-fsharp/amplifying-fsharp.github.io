@@ -1,7 +1,6 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "astro/config";
-import purgecss from "astro-purgecss";
 import react from "@astrojs/react";
 import icon from "astro-icon";
 import fable from "vite-plugin-fable";
@@ -42,9 +41,9 @@ function fsharpMiddlewarePlugin() {
 // https://astro.build/config
 export default defineConfig({
   site: "https://amplifying-fsharp.github.io",
-  markdown: {
-    gfm: true,
-  },
+  // Astro 7 changed the default to "jsx", which drops whitespace between inline elements.
+  // Keep the HTML-aware behaviour Astro 5 had.
+  compressHTML: true,
   integrations: [
     // Include fs extension for react-refresh
     react({ include: /\.(fs|js|jsx|ts|tsx)$/ }),

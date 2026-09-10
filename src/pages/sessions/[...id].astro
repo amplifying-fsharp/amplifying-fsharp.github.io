@@ -36,46 +36,40 @@ linkText =
 ---
 
 <PageLayout title={title} mainTitle={title} color={color}>
-  {
-    (repoLink || company) && (
-      <div class="badges">
-        {repoLink && (
-          <a href={repoLink} target="_blank">
-            <span class={`badge ${color}`}>{linkText}</span>
-          </a>
-        )}
-        {company && <span class={`badge ${color}`}>{company}</span>}
-      </div>
-    )
-  }
-  {
-    youtubeId && (
-      <>
-        <h2>Watch this session</h2>
-        <YouTubeVideo youtubeId={youtubeId} />
-      </>
-    )
-  }
+  {(repoLink || company) && (
+    <div class="badges">
+      {repoLink && (
+        <a href={repoLink} target="_blank">
+          <span class={`badge ${color}`}>{linkText}</span>
+        </a>
+      )}
+      {company && <span class={`badge ${color}`}>{company}</span>}
+    </div>
+  )}
+  {youtubeId && (
+    <>
+      <h2>Watch this session</h2>
+      <YouTubeVideo youtubeId={youtubeId} />
+    </>
+  )}
   <Content />
-  {
-    !thumbnail && (
-      <>
-        <h2>Links</h2>
-        <ul>
+  {!thumbnail && (
+    <>
+      <h2>Links</h2>
+      <ul>
+        <li>
+          Date:
+          <LocalTime client:only="react" utcDate={date} />
+        </li>
+        {zoomLink && (
           <li>
-            Date:
-            <LocalTime client:only="react" utcDate={date} />
+            Session link: <a href={zoomLink}>{zoomLink}</a>
           </li>
-          {zoomLink && (
-            <li>
-              Session link: <a href={zoomLink}>{zoomLink}</a>
-            </li>
-          )}
-          {zoomPasscode && <li>Passcode: {zoomPasscode}</li>}
-        </ul>
-      </>
-    )
-  }
+        )}
+        {zoomPasscode && <li>Passcode: {zoomPasscode}</li>}
+      </ul>
+    </>
+  )}
 </PageLayout>
 <style>
   /* TODO: check session with image */
