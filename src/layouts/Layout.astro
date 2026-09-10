@@ -3,7 +3,6 @@ import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 const { title } = Astro.props;
 import navLogo from "../images/nav-logo.jpg";
-import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
 import Navigation from "../components/Navigation.astro";
 ---
@@ -49,7 +48,6 @@ import Navigation from "../components/Navigation.astro";
     />
   </head>
   <body>
-    <Banner />
     <Navigation />
     <div id="content">
       <slot />

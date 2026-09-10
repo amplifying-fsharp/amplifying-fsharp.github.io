@@ -1,0 +1,195 @@
+---
+import { Image } from "astro:assets";
+import forceGhosts from "../images/force-ghosts.png";
+---
+
+<section id="farewell">
+  <div class="backdrop">
+    <div class="frame">
+      <Image
+        src={forceGhosts}
+        alt="The Amplifying F# team as glowing force ghosts in a dark forest"
+        widths={[768, 1200, 1800, 2400]}
+        sizes="100vw"
+        loading="eager"
+      />
+    </div>
+  </div>
+  <div class="content">
+    <h1>May F&#35; be with you</h1>
+    <p>
+      Amplifying F&#35; has come to an end. The people behind it have moved on
+      and are no longer active as an initiative.
+    </p>
+    <p>
+      We are still around in the F&#35; community, and the
+      <a href="/sessions">sessions</a> and <a href="/blog">blog</a> remain online
+      for anyone who wants to look back.
+    </p>
+  </div>
+</section>
+<style>
+  /* Let the section stretch to fill the space between the nav and the footer. */
+  :global(#content) {
+    display: flex;
+    flex-direction: column;
+  }
+  :global(#content > main) {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  /* From tablet width up the artwork is sized with container units, which
+     need a definite height all the way up the tree. */
+  @media screen and (min-width: 768px) {
+    :global(body) {
+      height: 100dvh;
+    }
+  }
+
+  #farewell {
+    --glow: var(--cyan-300);
+    /* The artwork has a band of empty treetops at the top; trim that off. */
+    --trim: 0.18;
+    /* Aspect ratio of the artwork after trimming. */
+    --art-ratio: calc(2752 / (1536 * (1 - var(--trim))));
+
+    background-color: #000;
+    color: var(--key-200);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+
+    /* The four figures span the middle 44% of the artwork, so a box can never
+       be taller than it is wide without cutting someone off. */
+    .backdrop {
+      position: relative;
+      overflow: hidden;
+      /* Phones: a square crop shows exactly the group. */
+      flex: none;
+      aspect-ratio: 1 / 1;
+      /* When the sides get cropped, fade the cut edges into the black. */
+      mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    }
+
+    .frame {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      /* Fade the artwork's own edges and let the figures dissolve at the bottom. */
+      mask-image:
+        radial-gradient(ellipse 55% 85% at 50% 40%, #000 50%, transparent 100%),
+        linear-gradient(180deg, #000 60%, transparent 100%);
+      mask-composite: intersect;
+      -webkit-mask-composite: source-in;
+
+      img {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        /* Oversize the picture and anchor it to the bottom so the top gets cut. */
+        height: calc(100% / (1 - var(--trim)));
+        object-fit: cover;
+        object-position: center bottom;
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: var(--spacing-400) var(--spacing-400) var(--spacing-600);
+      max-width: var(--container-sm);
+      margin-inline: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      margin: 0 0 var(--spacing-400);
+      color: var(--white);
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: var(--font-500);
+      text-shadow:
+        0 0 8px var(--glow),
+        0 0 24px var(--glow),
+        0 0 48px var(--cyan-500);
+    }
+
+    p {
+      font-size: var(--font-400);
+      margin-top: var(--spacing-300);
+    }
+
+    a {
+      color: var(--glow);
+      text-decoration: underline dotted;
+      text-underline-offset: 0.2em;
+
+      &:hover {
+        color: var(--white);
+      }
+    }
+
+    @media screen and (min-width: 480px) {
+      h1 {
+        font-size: var(--font-700);
+      }
+    }
+
+    /* From tablet width up: the artwork is shown at full height in the space
+       left above the text. Wide boxes letterbox it into black, narrow boxes
+       crop the sides, but the figures are never cut off top or bottom and
+       the text never runs over them. */
+    @media screen and (min-width: 768px) {
+      .backdrop {
+        flex: 1;
+        min-height: 0;
+        max-height: 100vw;
+        aspect-ratio: auto;
+        container-type: size;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+
+      .frame {
+        position: relative;
+        inset: auto;
+        flex: none;
+        /* Always full height: wide boxes letterbox the sides into black,
+           narrow boxes crop the sides. */
+        width: calc(100cqh * var(--art-ratio));
+        aspect-ratio: var(--art-ratio);
+      }
+
+      .content {
+        /* Tuck the heading into the faded-out feet of the figures. */
+        margin-top: calc(-1 * clamp(var(--spacing-400), 7vh, var(--spacing-800)));
+        padding-top: 0;
+        padding-bottom: clamp(var(--spacing-400), 6vh, var(--spacing-700));
+      }
+
+      /* Scale the copy with the viewport height. */
+      h1 {
+        font-size: clamp(var(--font-500), 6vh, var(--font-900));
+        margin-bottom: clamp(var(--spacing-200), 3vh, var(--spacing-400));
+      }
+
+      p {
+        font-size: clamp(var(--font-300), 2.5vh, var(--font-500));
+        margin-top: clamp(var(--spacing-100), 1.5vh, var(--spacing-300));
+      }
+    }
+  }
+</style>

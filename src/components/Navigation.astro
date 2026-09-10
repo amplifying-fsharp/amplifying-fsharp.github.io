@@ -20,14 +20,6 @@ const currentPath = pathname.replaceAll("/", "");
         Blog
       </a>
     </li>
-    <li class="hide-tablet">
-      <a
-        href="/incitation"
-        class={currentPath === "incitation" ? "active" : ""}
-      >
-        Incitation
-      </a>
-    </li>
     <li>
       <a
         href="/sessions"
@@ -47,34 +39,8 @@ const currentPath = pathname.replaceAll("/", "");
       </a>
     </li>
     <li class="hide-tablet">
-      <a href="/burn-out" class={currentPath === "burn-out" ? "active" : ""}>
-        Burn out
-      </a>
-    </li>
-    <li class="hide-tablet">
-      <a href="/donate" class={currentPath === "donate" ? "active" : ""}>
-        Donate
-      </a>
-    </li>
-    <li class="hide-tablet">
-      <a href="/hire" class={currentPath === "hire" ? "active" : ""}>
-        {" "}
-        Hire
-      </a>
-    </li>
-    <li class="hide-tablet">
       <a href="/faq" class={currentPath === "faq" ? "active" : ""}>
         FAQ
-      </a>
-    </li>
-    <li>
-      <a
-        href="/join-us"
-        class={
-          currentPath === "join-us" ? "active join-us-link" : "join-us-link"
-        }
-      >
-        Join us!
       </a>
     </li>
   </ul>
@@ -97,43 +63,14 @@ const currentPath = pathname.replaceAll("/", "");
         Sessions
       </a>
     </li>
-    <li>
-      <a
-        href="/join-us"
-        class={
-          currentPath === "join-us" ? "active join-us-link" : "join-us-link"
-        }
-      >
-        Join us!
-      </a>
-    </li>
   </ul>
   <ul id="more">
-    <li>
-      <a href="/incitation"> Incitation</a>
-    </li>
     <li>
       <a
         href="/fsharp-essentials"
         class={currentPath === "fsharp-essentials" ? "active" : ""}
       >
         F# Essentials
-      </a>
-    </li>
-    <li>
-      <a href="/burn-out" class={currentPath === "burn-out" ? "active" : ""}>
-        Burn out
-      </a>
-    </li>
-    <li>
-      <a href="/donate" class={currentPath === "donate" ? "active" : ""}>
-        Donate
-      </a>
-    </li>
-    <li>
-      <a href="/hire" class={currentPath === "hire" ? "active" : ""}>
-        {" "}
-        Hire
       </a>
     </li>
     <li>
@@ -274,14 +211,6 @@ const currentPath = pathname.replaceAll("/", "");
 
           &::after {
             background-color: var(--magenta-200);
-          }
-        }
-
-        .join-us-link {
-          color: var(--cyan-200);
-
-          &::after {
-            background-color: var(--cyan-100);
           }
         }
 
