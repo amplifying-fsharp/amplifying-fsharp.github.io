@@ -23,8 +23,8 @@ import forceGhosts from "../images/force-ghosts.png";
     </p>
     <p>
       We are still around in the F&#35; community, and the
-      <a href="/sessions">sessions</a> and <a href="/blog">blog</a> remain online
-      for anyone who wants to look back.
+      <a href="/sessions">sessions</a> and <a href="/blog">blog</a> remain
+      online for anyone who wants to look back.
     </p>
   </div>
 </section>
@@ -75,7 +75,13 @@ import forceGhosts from "../images/force-ghosts.png";
       flex: none;
       aspect-ratio: 1 / 1;
       /* When the sides get cropped, fade the cut edges into the black. */
-      mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+      mask-image: linear-gradient(
+        90deg,
+        transparent,
+        #000 12%,
+        #000 88%,
+        transparent
+      );
     }
 
     .frame {
@@ -175,7 +181,9 @@ import forceGhosts from "../images/force-ghosts.png";
 
       .content {
         /* Tuck the heading into the faded-out feet of the figures. */
-        margin-top: calc(-1 * clamp(var(--spacing-400), 7vh, var(--spacing-800)));
+        margin-top: calc(
+          -1 * clamp(var(--spacing-400), 7vh, var(--spacing-800))
+        );
         padding-top: 0;
         padding-bottom: clamp(var(--spacing-400), 6vh, var(--spacing-700));
       }

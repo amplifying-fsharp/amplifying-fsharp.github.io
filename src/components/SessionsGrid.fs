@@ -228,9 +228,7 @@ let SessionsGrid (props : SessionsGridProps) : JSX.Element =
 
     styledComponent StyledDiv [
         if Array.isEmpty upcomingSessions then
-            p [ Key "no-upcoming-sessions" ; Id "no-new-sessions" ] [
-                str "No new sessions are planned 😔."
-            ]
+            p [ Key "no-upcoming-sessions" ; Id "no-new-sessions" ] [ str "No new sessions are planned 😔." ]
         else
             fragment [ Key "has-upcoming-sessions" ] [
                 h2 [] [ str "On the next Amplifying F#!" ]

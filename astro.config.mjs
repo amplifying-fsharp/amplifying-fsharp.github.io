@@ -2,7 +2,6 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
-import icon from "astro-icon";
 import fable from "vite-plugin-fable";
 
 const currentDir = path.dirname(fileURLToPath(import.meta.url));
@@ -17,16 +16,6 @@ export default defineConfig({
   integrations: [
     // Include fs extension for react-refresh
     react({ include: /\.(fs|js|jsx|ts|tsx)$/ }),
-    icon({
-      include: {
-        bi: ["github", "linkedin", "twitter", "chevron-right"],
-        cil: ["speech"],
-        ic: ["round-live-tv"],
-        mdi: ["bullseye-arrow"],
-        "mdi-light": ["email"],
-        ph: ["globe-light"],
-      },
-    }),
   ],
   vite: {
     server: {
