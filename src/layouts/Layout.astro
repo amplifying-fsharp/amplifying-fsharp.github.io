@@ -1,9 +1,5 @@
 ﻿---
-import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
 const { title } = Astro.props;
-import navLogo from "../images/nav-logo.jpg";
-import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
 import Navigation from "../components/Navigation.astro";
 ---
@@ -12,7 +8,9 @@ import Navigation from "../components/Navigation.astro";
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3D96369PRB"
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-3D96369PRB"
     ></script>
     <script type="text/javascript">
       window.dataLayer = window.dataLayer || [];
@@ -47,7 +45,6 @@ import Navigation from "../components/Navigation.astro";
     />
   </head>
   <body>
-    <Banner />
     <Navigation />
     <div id="content">
       <slot />

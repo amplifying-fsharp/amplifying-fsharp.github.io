@@ -18,25 +18,15 @@ const {
   color = "cyan",
 } = props;
 
-import missionStatementHeader from "../images/mission-statement-header.jpg";
-import incitationHeader from "../images/incitation-header.jpg";
 import blogHeader from "../images/blog-header.jpg";
 import sessionsHeader from "../images/sessions-header.jpg";
 import sessionHeader1 from "../images/session-header-1.jpg";
 import sessionHeader2 from "../images/session-header-2.jpg";
 import sessionHeader3 from "../images/session-header-3.jpg";
 import faqHeader from "../images/faq-header.jpg";
-import joinUsHeader from "../images/join-us-header.jpg";
-import testimonialHeader from "../images/testimonials-header.jpg";
-import burnHeader from "../images/burn-header.jpg";
-import donateHeader from "../images/donate.jpg";
 
 function getImageSrc(path) {
-  if (path.match(/mission/)) {
-    return missionStatementHeader.src;
-  } else if (path.match(/incitation/)) {
-    return incitationHeader.src;
-  } else if (path.match(/blog/)) {
+  if (path.match(/blog/)) {
     return blogHeader.src;
   } else if (path.match(/\/sessions\/\d{4}\/\d{2}\/\d{2}/)) {
     if (color === "cyan") {
@@ -50,14 +40,6 @@ function getImageSrc(path) {
     return sessionsHeader.src;
   } else if (path.match(/faq/)) {
     return faqHeader.src;
-  } else if (path.match(/join/)) {
-    return joinUsHeader.src;
-  } else if (path.match(/testimonials/)) {
-    return testimonialHeader.src;
-  } else if (path.match(/burn/)) {
-    return burnHeader.src;
-  } else if (path.match(/donate/)) {
-    return donateHeader.src;
   } else {
     return "";
   }

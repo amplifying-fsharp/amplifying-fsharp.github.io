@@ -228,13 +228,7 @@ let SessionsGrid (props : SessionsGridProps) : JSX.Element =
 
     styledComponent StyledDiv [
         if Array.isEmpty upcomingSessions then
-            p [ Key "no-upcoming-sessions" ; Id "no-new-sessions" ] [
-                str "No news sessions in sight 😔."
-                br []
-                str "Please submit one "
-                a [ Href "/join-us" ] [ str "here" ]
-                str "!"
-            ]
+            p [ Key "no-upcoming-sessions" ; Id "no-new-sessions" ] [ str "No new sessions are planned 😔." ]
         else
             fragment [ Key "has-upcoming-sessions" ] [
                 h2 [] [ str "On the next Amplifying F#!" ]
@@ -255,21 +249,25 @@ let SessionsGrid (props : SessionsGridProps) : JSX.Element =
                 for session in pastSessions do
                     let thumbnail =
                         if String.IsNullOrWhiteSpace session.youtubeId then
-                            $"url({session.thumbnail})"
+                            session.thumbnail |> Option.map (fun thumbnail -> $"url({thumbnail})")
                         else
-                            $"url('https://img.youtube.com/vi/%s{session.youtubeId}/mqdefault.jpg')"
+                            Some $"url('https://img.youtube.com/vi/%s{session.youtubeId}/mqdefault.jpg')"
 
-                    a [
-                        Href $"/sessions/%s{session.id}"
-                        Key session.id
-                        Style
-                            {|
-                                background = thumbnail
-                                backgroundSize = "cover"
-                                backgroundBlendMode = "multiply"
-                                backgroundColor = "grey"
-                            |}
-                    ] [
+                    // Fable's JSX transform needs a static props list, so the prop cannot be conditional.
+                    // React drops the style attribute entirely when the value is null.
+                    let style =
+                        match thumbnail with
+                        | None -> null
+                        | Some thumbnail ->
+                            box
+                                {|
+                                    background = thumbnail
+                                    backgroundSize = "cover"
+                                    backgroundBlendMode = "multiply"
+                                    backgroundColor = "grey"
+                                |}
+
+                    a [ Href $"/sessions/%s{session.id}" ; Key session.id ; Style style ] [
                         div [ ClassName "overlay" ] []
                         h3 [] [ str session.title ]
                         h4 [] [ str $"with %s{session.champion}" ]

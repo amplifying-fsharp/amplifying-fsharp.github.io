@@ -1,0 +1,16 @@
+---
+// ion:chevron-up-sharp from Iconify, inlined so the site does not depend on icon packages.
+const props = Astro.props;
+
+const viewBox = "0 0 512 512";
+const content = `<path fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="48" d="m112 328l144-144l144 144"/>`;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  viewBox={viewBox}
+  {...props}
+  set:html={content}
+/>

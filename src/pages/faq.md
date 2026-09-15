@@ -5,30 +5,20 @@ title: "FAQ"
 color: "magenta"
 ---
 
+## Is Amplifying F# still active?
+
+No. The initiative has come to an end and we no longer organise sessions.  
+The repository stays open though, so if you have a question or want to get in touch, you can still [open an issue](https://github.com/amplifying-fsharp/amplifying-fsharp.github.io/issues/new) there.
+
+## Can I still donate to your Open Collective?
+
+Please don't. We are keeping the [Open Collective](https://opencollective.com/amplifying-fsharp) open because there is still a small balance and it is simply the easiest way to handle the remaining logistics, but we no longer recommend donating to it.  
+If you currently have a recurring donation set up, we encourage you to cancel it.  
+We are very grateful to everyone who supported us over the years. The remaining funds may still be spent on the F# ecosystem at some point, but we have no immediate plans for them.
+
 ## Is this initiative affiliated with Microsoft or the F# Foundation?
 
-No, we wish to remain an independent group of individuals. However, we definitely want to engage with other parties and organizations.  
-To remain as agile as possible, we prefer to organize our sessions independently.
-
-## Will the sessions be recorded?
-
-If possible, we will stream our sessions directly to YouTube, where they can be rewatched afterwards.  
-However, we wish to respect the privacy of each participant, so whether we stream week to week will depend on that.
-
-## Could the sessions be hosted outside of working hours?
-
-Our sessions are designed for people who use F# professionally to give back to the F# community on company time. Therefore, we won't host sessions outside of working hours.  
-However, we are open to people from non-European time zones, and we can adjust our schedule to accommodate their participation.
-
-## How long does one session last?
-
-As a minimum, we want to spend at least one hour on the topic. However, the duration of each session may vary depending on how well things are going and if there are any blockers.  
-Please check with us again in a few months for more information.
-
-## How much foreknowledge do I need?
-
-We don't expect participants to have any prior knowledge to join a session. You should be familiar with F#, but that's about it.  
-Remember, we all started somewhere, and we believe we can help you get there as well.
+No, it never was. Amplifying F# was always an independent group of individuals.
 
 <div style="margin-top: var(--spacing-700); text-align: center">
 <a href="https://github.com/amplifying-fsharp/amplifying-fsharp.github.io/issues/new?title=New+question" target="_blank" class="btn btn-magenta">I have another question!</a>

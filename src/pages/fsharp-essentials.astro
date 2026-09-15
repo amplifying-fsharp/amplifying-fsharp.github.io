@@ -1,6 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Icon } from "astro-icon/components";
+import ScheduleIcon from "../icons/ScheduleIcon.astro";
+import CalendarIcon from "../icons/CalendarIcon.astro";
+import SmileIcon from "../icons/SmileIcon.astro";
+import VideoIcon from "../icons/VideoIcon.astro";
+import ChevronUpIcon from "../icons/ChevronUpIcon.astro";
+import TwitterIcon from "../icons/TwitterIcon.astro";
+import GitHubBrandIcon from "../icons/GitHubBrandIcon.astro";
 import { Image } from "astro:assets";
 import fsharpLogo from "../images/fsharp-logo.svg";
 import Ian from "../images/authors/IanRussell.jpg";
@@ -20,37 +26,35 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+            allowfullscreen
+          ></iframe>
         </div>
         <div>
           <p>
-            This <strong>FREE</strong> online course is based on Ian Russell's <a
-              href="https://leanpub.com/essential-fsharp">Essential F#</a
-            > book and designed for people who already have some experience in other
-            languages, and now want to become a better programmer by learning F#.
-            All you need is your computer and your editor of choice, and two hours
-            of time, that will change the way you develop software forever.
+            This <strong>FREE</strong> online course is based on Ian Russell's{" "}
+            <a href="https://leanpub.com/essential-fsharp">Essential F#</a> book
+            and designed for people who already have some experience in other
+            languages, and now want to become a better programmer by learning
+            F#. All you need is your computer and your editor of choice, and two
+            hours of time, that will change the way you develop software
+            forever.
           </p>
           <hr />
           <ul>
             <li>
-              <Icon
-                name="healthicons:i-schedule-school-date-time-outline"
-                height="24"
-                width="24"
-              />
+              <ScheduleIcon height="24" width="24" />
               <span>7 February 2024</span>
             </li>
             <li>
-              <Icon name="ion:calendar-outline" height="24" width="24" />
+              <CalendarIcon height="24" width="24" />
               <span>Weekly basis</span>
             </li>
             <li>
-              <Icon name="uiw:smile-o" height="24" width="24" />
+              <SmileIcon height="24" width="24" />
               <span>Beginner friendly</span>
             </li>
             <li>
-              <Icon name="fluent:video-24-regular" height="24" width="24" />
+              <VideoIcon height="24" width="24" />
               <span>Live</span>
             </li>
           </ul>
@@ -253,30 +257,27 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
               <input type="checkbox" checked />
             </label>
             <button>
-              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+              <ChevronUpIcon height="16" width="16" />
             </button>
           </h3>
           <ul>
             <li>
               <span>Introduction</span>
-              <a
-                href="https://github.com/ijrussell/essential-fsharp/blob/main/Chapters/00a%20-%20Preface.md"
-                >View</a
-              >
+              <a href="https://github.com/ijrussell/essential-fsharp/blob/main/Chapters/00a%20-%20Preface.md">
+                View
+              </a>
             </li>
             <li>
               <span>Setting up your Environment</span>
-              <a
-                href="https://github.com/ijrussell/essential-fsharp/blob/main/Chapters/00c%20-%20Getting%20Started.md"
-                >View</a
-              >
+              <a href="https://github.com/ijrussell/essential-fsharp/blob/main/Chapters/00c%20-%20Getting%20Started.md">
+                View
+              </a>
             </li>
             <li>
               <span>Resources</span>
-              <a
-                href="https://github.com/amplifying-fsharp/TheEssentialsLectures"
-                >View</a
-              >
+              <a href="https://github.com/amplifying-fsharp/TheEssentialsLectures">
+                View
+              </a>
             </li>
             <li>
               <span>Video</span>
@@ -291,7 +292,7 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
               <input type="checkbox" />
             </label>
             <button>
-              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+              <ChevronUpIcon height="16" width="16" />
             </button>
           </h3>
           <ul>
@@ -316,7 +317,7 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
               <input type="checkbox" />
             </label>
             <button>
-              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+              <ChevronUpIcon height="16" width="16" />
             </button>
           </h3>
           <ul>
@@ -353,7 +354,7 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
               <input type="checkbox" />
             </label>
             <button>
-              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+              <ChevronUpIcon height="16" width="16" />
             </button>
           </h3>
           <ul>
@@ -378,7 +379,7 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
               <input type="checkbox" />
             </label>
             <button>
-              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+              <ChevronUpIcon height="16" width="16" />
             </button>
           </h3>
           <ul>
@@ -415,7 +416,7 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
               <input type="checkbox" />
             </label>
             <button>
-              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+              <ChevronUpIcon height="16" width="16" />
             </button>
           </h3>
           <ul>
@@ -440,7 +441,7 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
               <input type="checkbox" />
             </label>
             <button>
-              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+              <ChevronUpIcon height="16" width="16" />
             </button>
           </h3>
           <ul>
@@ -465,7 +466,7 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
               <input type="checkbox" />
             </label>
             <button>
-              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+              <ChevronUpIcon height="16" width="16" />
             </button>
           </h3>
           <ul>
@@ -486,7 +487,7 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
               <input type="checkbox" />
             </label>
             <button>
-              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+              <ChevronUpIcon height="16" width="16" />
             </button>
           </h3>
           <ul>
@@ -507,7 +508,7 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
               <input type="checkbox" />
             </label>
             <button>
-              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+              <ChevronUpIcon height="16" width="16" />
             </button>
           </h3>
           <ul>
@@ -528,7 +529,7 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
               <input type="checkbox" />
             </label>
             <button>
-              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+              <ChevronUpIcon height="16" width="16" />
             </button>
           </h3>
           <ul>
@@ -557,7 +558,7 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
               <input type="checkbox" />
             </label>
             <button>
-              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+              <ChevronUpIcon height="16" width="16" />
             </button>
           </h3>
           <ul>
@@ -578,7 +579,7 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
               <input type="checkbox" />
             </label>
             <button>
-              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+              <ChevronUpIcon height="16" width="16" />
             </button>
           </h3>
           <ul>
@@ -603,7 +604,7 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
               <input type="checkbox" />
             </label>
             <button>
-              <Icon name="ion:chevron-up-sharp" height="16" width="16" />
+              <ChevronUpIcon height="16" width="16" />
             </button>
           </h3>
           <ul>
@@ -738,10 +739,10 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
           </p>
           <div class="icons">
             <a href="https://twitter.com/ijrussell" target="_blank">
-              <Icon name="bi:twitter" height="32" width="32" />
+              <TwitterIcon height="32" width="32" />
             </a>
             <a href="https://github.com/ijrussell" target="_blank">
-              <Icon name="bi:github" height="32" width="32" />
+              <GitHubBrandIcon height="32" width="32" />
             </a>
           </div>
         </div>
@@ -755,10 +756,10 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
           </p>
           <div class="icons">
             <a href="https://twitter.com/edgarfsharp" target="_blank">
-              <Icon name="bi:twitter" height="32" width="32" />
+              <TwitterIcon height="32" width="32" />
             </a>
             <a href="https://github.com/edgarfgp" target="_blank">
-              <Icon name="bi:github" height="32" width="32" />
+              <GitHubBrandIcon height="32" width="32" />
             </a>
           </div>
         </div>

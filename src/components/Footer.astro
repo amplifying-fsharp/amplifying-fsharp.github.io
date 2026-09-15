@@ -1,42 +1,43 @@
 ---
-import { Icon } from "astro-icon/components";
+import TwitterLogoIcon from "../icons/TwitterLogoIcon.astro";
+import MastodonIcon from "../icons/MastodonIcon.astro";
+import YouTubeIcon from "../icons/YouTubeIcon.astro";
+import GitHubIcon from "../icons/GitHubIcon.astro";
 const footerIcons = [
   {
     link: "https://twitter.com/amplifyfsharp",
     text: "amplifyfsharp",
-    icon: "ion:logo-twitter",
+    icon: TwitterLogoIcon,
     color: "#1DA1F2",
   },
   {
     link: "https://mastodon.social/@amplifyingfsharp",
     text: "@amplifyingfsharp",
-    icon: "simple-icons:mastodon",
+    icon: MastodonIcon,
     color: "#6364ff",
   },
   {
     link: "https://www.youtube.com/@amplifyingfsharp",
     text: "@amplifyingfsharp",
-    icon: "uil:youtube",
+    icon: YouTubeIcon,
     color: "#ff0000",
   },
   {
     link: "https://github.com/amplifying-fsharp/",
     text: "amplifying-fsharp",
-    icon: "uil:github",
+    icon: GitHubIcon,
   },
 ];
 ---
 
 <footer>
   <div class="container">
-    {
-      footerIcons.map(({ link, text, icon, color }) => (
-        <a href={link} target="_blank">
-          <Icon name={icon} width="24" height="24" color={color} />
-          <span>{text}</span>
-        </a>
-      ))
-    }
+    {footerIcons.map(({ link, text, icon: Icon, color }) => (
+      <a href={link} target="_blank">
+        <Icon width="24" height="24" color={color} />
+        <span>{text}</span>
+      </a>
+    ))}
   </div>
 </footer>
 <style>

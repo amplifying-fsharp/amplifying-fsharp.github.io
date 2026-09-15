@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
+import MenuIcon from "../icons/MenuIcon.astro";
 import logo from "../images/nav-logo.jpg";
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.replaceAll("/", "");
@@ -16,56 +16,32 @@ const currentPath = pathname.replaceAll("/", "");
       <a
         href="/blog"
         class={currentPath === "blog" ? "active blog-link" : "blog-link"}
-        >Blog</a
       >
-    </li>
-    <li class="hide-tablet">
-      <a
-        href="/incitation"
-        class={currentPath === "incitation" ? "active" : ""}
-      >
-        Incitation</a
-      >
+        Blog
+      </a>
     </li>
     <li>
       <a
         href="/sessions"
-        class={currentPath === "sessions"
-          ? "active sessions-link"
-          : "sessions-link"}>Sessions</a
+        class={
+          currentPath === "sessions" ? "active sessions-link" : "sessions-link"
+        }
       >
+        Sessions
+      </a>
     </li>
     <li class="hide-tablet">
       <a
         href="/fsharp-essentials"
         class={currentPath === "fsharp-essentials" ? "active" : ""}
       >
-        F# Essentials</a
-      >
+        F# Essentials
+      </a>
     </li>
     <li class="hide-tablet">
-      <a href="/burn-out" class={currentPath === "burn-out" ? "active" : ""}>
-        Burn out</a
-      >
-    </li>
-    <li class="hide-tablet">
-      <a href="/donate" class={currentPath === "donate" ? "active" : ""}>
-        Donate</a
-      >
-    </li>
-    <li class="hide-tablet">
-      <a href="/hire" class={currentPath === "hire" ? "active" : ""}> Hire</a>
-    </li>
-    <li class="hide-tablet">
-      <a href="/faq" class={currentPath === "faq" ? "active" : ""}>FAQ</a>
-    </li>
-    <li>
-      <a
-        href="/join-us"
-        class={currentPath === "join-us"
-          ? "active join-us-link"
-          : "join-us-link"}>Join us!</a
-      >
+      <a href="/faq" class={currentPath === "faq" ? "active" : ""}>
+        FAQ
+      </a>
     </li>
   </ul>
   <ul id="tablet">
@@ -73,56 +49,37 @@ const currentPath = pathname.replaceAll("/", "");
       <a
         href="/blog"
         class={currentPath === "blog" ? "active blog-link" : "blog-link"}
-        >Blog</a
       >
+        Blog
+      </a>
     </li>
     <li>
       <a
         href="/sessions"
-        class={currentPath === "sessions"
-          ? "active sessions-link"
-          : "sessions-link"}>Sessions</a
+        class={
+          currentPath === "sessions" ? "active sessions-link" : "sessions-link"
+        }
       >
-    </li>
-    <li>
-      <a
-        href="/join-us"
-        class={currentPath === "join-us"
-          ? "active join-us-link"
-          : "join-us-link"}>Join us!</a
-      >
+        Sessions
+      </a>
     </li>
   </ul>
   <ul id="more">
-    <li>
-      <a href="/incitation"> Incitation</a>
-    </li>
     <li>
       <a
         href="/fsharp-essentials"
         class={currentPath === "fsharp-essentials" ? "active" : ""}
       >
-        F# Essentials</a
-      >
+        F# Essentials
+      </a>
     </li>
     <li>
-      <a href="/burn-out" class={currentPath === "burn-out" ? "active" : ""}>
-        Burn out</a
-      >
-    </li>
-    <li>
-      <a href="/donate" class={currentPath === "donate" ? "active" : ""}>
-        Donate</a
-      >
-    </li>
-    <li>
-      <a href="/hire" class={currentPath === "hire" ? "active" : ""}> Hire</a>
-    </li>
-    <li>
-      <a href="/faq" class={currentPath === "faq" ? "active" : ""}>FAQ</a>
+      <a href="/faq" class={currentPath === "faq" ? "active" : ""}>
+        FAQ
+      </a>
     </li>
   </ul>
-  <Icon name="ri:menu-fill" width={30} height={30} />
+  <MenuIcon width={30} height={30} />
   <input type="checkbox" name="mobile-menu" />
   <style>
     nav {
@@ -254,14 +211,6 @@ const currentPath = pathname.replaceAll("/", "");
 
           &::after {
             background-color: var(--magenta-200);
-          }
-        }
-
-        .join-us-link {
-          color: var(--cyan-200);
-
-          &::after {
-            background-color: var(--cyan-100);
           }
         }
 

@@ -7,22 +7,20 @@ const blogEntries = await getCollection("blog");
 ---
 
 <PageLayout title="Blog" mainTitle="Blog" color="magenta">
-  {
-    blogEntries
-      .sort((a, b) => b.data.date - a.data.date)
-      .map((blogEntry) => {
-        const { title, author, date } = blogEntry.data;
-        return (
-          <a href={`/blog/${blogEntry.id}`}>
-            <h2>{title}</h2>
-            <h3>
-              <TimeAgo client:only="react" date={date} />
-              <span>by {author}</span>
-            </h3>
-          </a>
-        );
-      })
-  }
+  {blogEntries
+    .sort((a, b) => b.data.date - a.data.date)
+    .map((blogEntry) => {
+      const { title, author, date } = blogEntry.data;
+      return (
+        <a href={`/blog/${blogEntry.id}`}>
+          <h2>{title}</h2>
+          <h3>
+            <TimeAgo client:only="react" date={date} />
+            <span>by {author}</span>
+          </h3>
+        </a>
+      );
+    })}
 </PageLayout>
 <style>
   a {
